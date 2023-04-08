@@ -22,4 +22,59 @@
         android:name="com.example.tonwalletactivities.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_words"
+        android:name="com.example.tonwalletactivities.ui.wallet.WalletFragment"
+        android:label="@string/title_wallet"
+        tools:layout="@layout/fragment_export" />
+
+    <fragment
+        android:id="@+id/screen_5"
+        android:name="com.example.tonwalletactivities.ui.wallet.WalletFragment"
+        android:label="@string/title_wallet"
+        tools:layout="@layout/fragment_export" />
+
+    <fragment
+        android:id="@+id/screen_6"
+        android:name="com.example.tonwalletactivities.ui.wallet.WalletFragment"
+        android:label="@string/title_wallet"
+        tools:layout="@layout/fragment_export" />
+
+    <fragment
+        android:id="@+id/screen_7"
+        android:name="com.example.tonwalletactivities.ui.wallet.WalletFragment"
+        android:label="@string/title_wallet"
+        tools:layout="@layout/fragment_export" />
+
+    <fragment
+        android:id="@+id/screen_8"
+        android:name="com.example.tonwalletactivities.ui.wallet.WalletFragment"
+        android:label="@string/title_wallet"
+        tools:layout="@layout/fragment_export" />
+
+    <fragment
+        android:id="@+id/screen_9"
+        android:name="com.example.tonwalletactivities.ui.wallet.WalletFragment"
+        android:label="@string/title_wallet"
+        tools:layout="@layout/fragment_export" />
+
+    <fragment
+        android:id="@+id/screen_10"
+        android:name="com.example.tonwalletactivities.ui.wallet.WalletFragment"
+        android:label="@string/title_wallet"
+        tools:layout="@layout/fragment_export" />
+
+    <fragment
+        android:id="@+id/screen_11"
+        android:name="com.example.tonwalletactivities.ui.wallet.WalletFragment"
+        android:label="@string/title_wallet"
+        tools:layout="@layout/fragment_export" />
+
+    <fragment
+        android:id="@+id/screen_12"
+        android:name="com.example.tonwalletactivities.ui.wallet.WalletFragment"
+        android:label="@string/title_wallet"
+        tools:layout="@layout/fragment_export" />
+
 </navigation>
