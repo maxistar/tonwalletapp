@@ -32,7 +32,7 @@ class DashboardFragment : Fragment() {
         val textDescription: TextView = binding.tonWalletDescription
         dashboardViewModel.text.observe(viewLifecycleOwner) {
             // textView.text = it
-            textDescription.text = it
+            // textDescription.text = it
         }
 
 

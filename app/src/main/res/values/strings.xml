@@ -3,4 +3,18 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="ton_wallet">TON Wallet</string>
+    <string name="ton_wallet_description">TON Wallet allows you to make fast and secure blockchain-based payments without intermediaries.</string>
+    <string name="ton_wallet_create_wallet">Create my wallet</string>
+    <string name="ton_wallet_import">Import existing wallet</string>
+
+    <string name="screen2_title">Congratulations</string>
+    <string name="screen2_text">Your TON Wallet has just been created.\nOnly you control it.\n\nTo be able to always have access to it, please write down secret words and set up a secure passcode.</string>
+    <string name="screen2_button">Proceed</string>
+
+    <string name="success_screen_title">Perfect!</string>
+    <string name="success_screen_text">Now set up a passcode to secure transactions.</string>
+    <string name="success_screen_bio">Enable Biometric Auth</string>
+    <string name="success_screen_button">Set a Passcode</string>
+
 </resources>
