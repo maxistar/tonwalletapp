@@ -1,6 +1,9 @@
 package com.example.tonwalletactivities
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -36,5 +39,26 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         navController.navigate(R.id.navigation_words);
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.new_game -> {
+                // newGame()
+                true
+            }
+            R.id.help -> {
+                // showHelp()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
