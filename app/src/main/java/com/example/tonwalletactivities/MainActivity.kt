@@ -1,5 +1,6 @@
 package com.example.tonwalletactivities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -51,7 +52,8 @@ class MainActivity : AppCompatActivity() {
         // Handle item selection
         return when (item.itemId) {
             R.id.new_game -> {
-                // newGame()
+                val intent = Intent(this, CreateWalletActivity::class.java)
+                startActivity(intent)
                 true
             }
             R.id.help -> {
