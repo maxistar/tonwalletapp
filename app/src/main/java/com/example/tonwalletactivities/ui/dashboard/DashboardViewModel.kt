@@ -11,7 +11,7 @@ class DashboardViewModel : ViewModel() {
     var greetings: String = Hello.greetings("Android and Gopher")
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+        value = greetings
     }
     val text: LiveData<String> = _text
 }
