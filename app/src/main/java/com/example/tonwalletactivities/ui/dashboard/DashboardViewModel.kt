@@ -8,7 +8,7 @@ import hello.Hello;
 
 class DashboardViewModel : ViewModel() {
 
-    var greetings: String = Hello.greetings("Android and Gopher")
+    var greetings: String = Hello.getNewWalletString()
 
     private val _text = MutableLiveData<String>().apply {
         value = greetings

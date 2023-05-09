@@ -28,11 +28,11 @@ class DashboardFragment : Fragment() {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.tonWalletTitle
+        //val textView: TextView = binding.tonWalletTitle
         val textDescription: TextView = binding.tonWalletDescription
         dashboardViewModel.text.observe(viewLifecycleOwner) {
             // textView.text = it
-            // textDescription.text = it
+            textDescription.text = it
         }
 
 
