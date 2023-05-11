@@ -45,6 +45,14 @@ gomobile bind -o app/hello.aar -androidapi 19 -target=android ./hello
 
 address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 
+
+
+### Todo:
+- should we extract go app to separate folder to speed up IDE?
+- make words in two colons
+- make a singleton for object provider
+
+
 ### Links:
 
 - [Figma Design](https://www.figma.com/file/KYK17IdM2ldAAZL540G2hV/TON-Wallet-%C2%B7-Android?type=design&node-id=0-1&t=vzLRrmDAN2Ki4yqm-0)

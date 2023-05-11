@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.tonwalletactivities.R
 
 class CreateWalletFragment : Fragment() {
@@ -19,6 +20,8 @@ class CreateWalletFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(CreateWalletViewModel::class.java)
+
+
         // TODO: Use the ViewModel
     }
 
@@ -26,7 +29,15 @@ class CreateWalletFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_create_wallet, container, false)
+        val root = inflater.inflate(R.layout.fragment_create_wallet, container, false)
+
+        val textDescription: TextView = root.findViewById(R.id.ton_wallet_description)
+        viewModel.text.observe(viewLifecycleOwner) {
+            // textView.text = it
+            textDescription.text = it
+        }
+
+        return root
     }
 
 }
