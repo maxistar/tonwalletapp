@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/new_game"
         android:icon="@drawable/ic_launcher_background"
-        android:title="@string/title_wallet" />
+        android:title="@string/menu_create_new_wallet" />
     <item android:id="@+id/help"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/app_name" />
+        android:title="@string/menu_quit" />
 </menu>
