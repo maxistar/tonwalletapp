@@ -2,11 +2,11 @@ package com.example.tonwalletactivities.service
 
 object ServiceProvider {
 
-    private lateinit var walletService:WalletService;
+    private var walletService:WalletService? = null;
     fun getWalletService(): WalletService {
-        //if (walletService.) {
+        if (walletService == null) {
             walletService = WalletService();
-        //}
-        return walletService;
+        }
+        return walletService as WalletService;
     }
 }
