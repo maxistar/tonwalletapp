@@ -7,10 +7,10 @@ import com.example.tonwalletactivities.service.ServiceProvider
 
 class CreateWalletViewModel : ViewModel() {
 
-    var newwalletwords: String = ServiceProvider.getWalletService().getNewWalletWords()
+    private val newWalletWords: String = ServiceProvider.getWalletService().getNewWalletWords()
 
     private val _text = MutableLiveData<String>().apply {
-        value = newwalletwords
+        value = newWalletWords
     }
     val text: LiveData<String> = _text
 

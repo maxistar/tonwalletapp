@@ -27,4 +27,32 @@
     <string name="menu_create_new_wallet">Create new wallet</string>
     <string name="menu_quit">Quit</string>
 
+    <string name="create_wallet_wordNumber_0">1</string>
+    <string name="create_wallet_wordNumber_1">2</string>
+    <string name="create_wallet_wordNumber_2">3</string>
+    <string name="create_wallet_wordNumber_3">4</string>
+    <string name="create_wallet_wordNumber_4">5</string>
+    <string name="create_wallet_wordNumber_5">6</string>
+    <string name="create_wallet_wordNumber_6">7</string>
+    <string name="create_wallet_wordNumber_7">8</string>
+    <string name="create_wallet_wordNumber_8">9</string>
+    <string name="create_wallet_wordNumber_9">10</string>
+    <string name="create_wallet_wordNumber_10">11</string>
+    <string name="create_wallet_wordNumber_11">12</string>
+    <string name="create_wallet_wordNumber_12">13</string>
+    <string name="create_wallet_wordNumber_13">14</string>
+    <string name="create_wallet_wordNumber_14">15</string>
+    <string name="create_wallet_wordNumber_15">16</string>
+    <string name="create_wallet_wordNumber_16">17</string>
+    <string name="create_wallet_wordNumber_17">18</string>
+    <string name="create_wallet_wordNumber_18">19</string>
+    <string name="create_wallet_wordNumber_19">20</string>
+    <string name="create_wallet_wordNumber_20">21</string>
+    <string name="create_wallet_wordNumber_21">22</string>
+    <string name="create_wallet_wordNumber_22">23</string>
+    <string name="create_wallet_wordNumber_23">24</string>
+
+    <string name="create_wallet_wordFiller">xxxxxx</string>
+
+
 </resources>

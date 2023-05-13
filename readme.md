@@ -48,9 +48,15 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 
 
 ### Todo:
+
 - [ ] should we extract go app to separate folder to speed up IDE?
-- [ ] make words in two colons
+- [x] make words in two colons
 - [x] make a singleton for object provider
+- [x] setup two columns labels
+- [x] make them scrollable
+- [ ] put elements in correct order according mock
+- [ ] create model classes for Wallet GeneratedWallet
+- [ ] switch fragments depending of the status
 
 
 ### Links:
