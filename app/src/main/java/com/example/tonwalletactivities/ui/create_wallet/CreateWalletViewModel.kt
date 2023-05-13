@@ -3,15 +3,17 @@ package com.example.tonwalletactivities.ui.create_wallet
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.tonwalletactivities.model.WalletSecretPhrase
 import com.example.tonwalletactivities.service.ServiceProvider
 
 class CreateWalletViewModel : ViewModel() {
 
-    private val newWalletWords: String = ServiceProvider.getWalletService().getNewWalletWords()
+    private val newWalletWords: WalletSecretPhrase = ServiceProvider.getWalletService().getNewWalletWords()
 
-    private val _text = MutableLiveData<String>().apply {
+    private val _text = MutableLiveData<WalletSecretPhrase>().apply {
         value = newWalletWords
     }
-    val text: LiveData<String> = _text
+
+    val text: LiveData<WalletSecretPhrase> = _text
 
 }

@@ -31,8 +31,6 @@ class CreateWalletFragment : Fragment() {
     ): View {
         val root = inflater.inflate(R.layout.fragment_create_wallet, container, false)
 
-        val textDescription: TextView = root.findViewById(R.id.ton_wallet_description)
-
         val word0: TextView = root.findViewById((R.id.word_0_value));
         val word1: TextView = root.findViewById((R.id.word_1_value));
         val word2: TextView = root.findViewById((R.id.word_2_value));
@@ -60,7 +58,7 @@ class CreateWalletFragment : Fragment() {
 
 
         viewModel.text.observe(viewLifecycleOwner) {
-            val words = it.split("\\s".toRegex());
+            val words = it.getWords()
             word0.text = words.get(0);
             word1.text = words.get(1);
             word2.text = words.get(2);
