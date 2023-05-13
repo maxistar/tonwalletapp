@@ -17,4 +17,8 @@ class CreateWalletActivity : AppCompatActivity() {
                 .commitNow()
         }
     }
+
+    public fun switchActivity() {
+
+    }
 }

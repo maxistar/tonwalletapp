@@ -3,6 +3,7 @@ package com.example.tonwalletactivities.ui.create_wallet
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,9 @@ import android.view.WindowManager
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.tonwalletactivities.R
+
 
 // import com.example.tonwalletactivities.ui.create_wallet.databinding.FragmentStartWalletBinding
 
@@ -80,7 +83,27 @@ class StartWalletFragment : Fragment() {
         //return binding.root
 
         val root = inflater.inflate(R.layout.fragment_start_wallet, container, false)
+
+
+        val button = root.findViewById<Button>(R.id.dummy_button);
+
+        button.setOnClickListener { gotoNextFragment() }
+
+
         return root
+    }
+
+    private fun gotoNextFragment() {
+        //Log.d("test", "clicked")
+        switchFragment(CreateWalletFragment.newInstance())
+    }
+
+    fun switchFragment(fragment: Fragment) {
+        val fm: FragmentManager = parentFragmentManager
+        fm.beginTransaction()
+            .replace(com.example.tonwalletactivities.R.id.container, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
