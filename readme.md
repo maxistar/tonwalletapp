@@ -54,10 +54,14 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [x] make a singleton for object provider
 - [x] setup two columns labels
 - [x] make them scrollable
-- [ ] put elements in correct order according mock
+- [x] put elements in correct order according mock
 - [ ] create model classes for Wallet GeneratedWallet
 - [ ] switch fragments depending of the status
 
+
+### UI Tassks
+
+- [ ] make forms exactly styled like on screenshots as possible
 
 ### Links:
 
