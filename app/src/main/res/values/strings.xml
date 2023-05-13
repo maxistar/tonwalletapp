@@ -53,6 +53,8 @@
     <string name="create_wallet_wordNumber_23">24</string>
 
     <string name="create_wallet_wordFiller">xxxxxx</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 
 </resources>
