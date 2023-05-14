@@ -1,12 +1,17 @@
 package com.example.tonwalletactivities.ui.create_wallet
 
+import android.content.Context
+import android.content.DialogInterface
+import android.content.res.Resources
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import com.example.tonwalletactivities.R
 
 class CreateWalletFragment : Fragment() {
@@ -85,7 +90,34 @@ class CreateWalletFragment : Fragment() {
             word23.text = words.get(23);
         }
 
+        val button = root.findViewById<Button>(R.id.button);
+
+        button.setOnClickListener {
+            showConfirmation(it.context)
+        }
+
         return root
     }
 
+    /**
+     * @throws NotFoundException
+     */
+    @Throws(Resources.NotFoundException::class)
+    private fun showConfirmation(context: Context) {
+        AlertDialog.Builder(context)
+            .setTitle(getResources().getString(R.string.create_wallet_confirmation_title))
+            .setMessage(
+                getResources().getString(R.string.create_wallet_confirmation_text)
+            )
+            .setPositiveButton(
+                getResources().getString(R.string.create_wallet_confirmation_skip_button),
+                DialogInterface.OnClickListener { dialog, which ->
+                    //Do Something Here
+                })
+            .setNegativeButton(
+                getResources().getString(R.string.create_wallet_confirmation_ok_sorry_button),
+                DialogInterface.OnClickListener { dialog, which ->
+                    //Do Something Here
+                }).show()
+    }
 }

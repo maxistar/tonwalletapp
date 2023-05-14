@@ -56,5 +56,10 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
+    <string name="create_wallet_confirmation_title">Sure done?</string>
+    <string name="create_wallet_confirmation_text">You didn’t have enough time to
+write these words down.</string>
+    <string name="create_wallet_confirmation_skip_button">Skip</string>
+    <string name="create_wallet_confirmation_ok_sorry_button">OK, sorry</string>
 
 </resources>

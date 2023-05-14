@@ -85,7 +85,7 @@ class StartWalletFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_start_wallet, container, false)
 
 
-        val button = root.findViewById<Button>(R.id.dummy_button);
+        val button = root.findViewById<Button>(R.id.button);
 
         button.setOnClickListener { gotoNextFragment() }
 
