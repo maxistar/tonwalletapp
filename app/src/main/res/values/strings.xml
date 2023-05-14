@@ -64,4 +64,19 @@ write these words down.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="access_code_title">Set a Passcode</string>
+    <string name="access_code_enter_invitation">Enter the 4 digits in the passcode.</string>
+    <string name="access_code_options">Passcode options</string>
+    <string name="access_code_number_1">1</string>
+    <string name="access_code_number_2">2</string>
+    <string name="access_code_number_3">3</string>
+    <string name="access_code_number_4">4</string>
+    <string name="access_code_number_5">5</string>
+    <string name="access_code_number_6">6</string>
+    <string name="access_code_number_7">7</string>
+    <string name="access_code_number_8">8</string>
+    <string name="access_code_number_9">9</string>
+    <string name="access_code_number_10">10</string>
+    <string name="access_code_delete">⌫</string>
+
 </resources>
