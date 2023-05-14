@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.FragmentManager
 import com.example.tonwalletactivities.R
 
 class CreateWalletFragment : Fragment() {
@@ -112,7 +113,11 @@ class CreateWalletFragment : Fragment() {
             .setPositiveButton(
                 getResources().getString(R.string.create_wallet_confirmation_skip_button),
                 DialogInterface.OnClickListener { dialog, which ->
-                    //Do Something Here
+                    val fm: FragmentManager = parentFragmentManager
+                    fm.beginTransaction()
+                        .replace(com.example.tonwalletactivities.R.id.container, CreateWalletAfterCreationConfirmationFragment.newInstance("to delete", "to remove"))
+                        .addToBackStack(null)
+                        .commit()
                 })
             .setNegativeButton(
                 getResources().getString(R.string.create_wallet_confirmation_ok_sorry_button),

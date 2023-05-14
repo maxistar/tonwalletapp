@@ -61,5 +61,7 @@
 write these words down.</string>
     <string name="create_wallet_confirmation_skip_button">Skip</string>
     <string name="create_wallet_confirmation_ok_sorry_button">OK, sorry</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
