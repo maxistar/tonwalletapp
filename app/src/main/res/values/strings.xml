@@ -18,6 +18,7 @@
     <string name="success_screen_text">Now set up a passcode to secure transactions.</string>
     <string name="success_screen_bio">Enable Biometric Auth</string>
     <string name="success_screen_button">Set a Passcode</string>
+    <string name="success_screen_use_fingerprint">Enable Biometric Auth</string>
 
     <string name="wallet_title">Your Recovery Phrase</string>
     <string name="wallet_comment">Write down these 24 words in this exact order and keep them in a secure place. Do not share this list with anyone. If you lose it, you will irrevocably lose access to your TON account.</string>

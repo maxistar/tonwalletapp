@@ -51,7 +51,8 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 
 - [ ] should we extract go app to separate folder to speed up IDE?
 - [ ] security code form
-  - [ ] create a layout
+  - [x] create a layout
+  - [x] add tree dots
   - [ ] create a model
   - [ ] create interactions between models
 
