@@ -15,7 +15,7 @@ class StartScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_start_screen)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, StartScreenStartFragment.newInstance("",""))
+                .replace(R.id.container, StartScreenStartFragment.newInstance())
                 .commitNow()
         }
     }
