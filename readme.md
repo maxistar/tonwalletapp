@@ -55,6 +55,8 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] add tree dots
   - [ ] create a model
   - [ ] create interactions between models
+- [ ] select what to do form
+
 
 ### UI Tassks
 
