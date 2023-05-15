@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import com.example.tonwalletactivities.MainActivity
 import com.example.tonwalletactivities.R
 
@@ -28,8 +29,13 @@ class StartScreenStartFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this.context, MainActivity::class.java)
-            startActivity(intent)
+            //val intent = Intent(this.context, MainActivity::class.java)
+            //startActivity(intent)
+            val fm: FragmentManager = parentFragmentManager
+            fm.beginTransaction()
+                .replace(R.id.container, StartScreenWalletFragment.newInstance("", ""))
+                .addToBackStack(null)
+                .commit()
         }, 2000)
 
 
