@@ -80,4 +80,38 @@ write these words down.</string>
     <string name="access_code_number_10">10</string>
     <string name="access_code_delete">⌫</string>
 
+    <string name="general__ok">OK</string>
+
+    <string name="import_wallet_title">24 Secret Words</string>
+    <string name="import_wallet_description">You can restore access to your wallet by entering 24 words you wrote when down you creating the wallet.</string>
+    <string name="import_wallet__button__do_not_have">I don’t have those</string>
+    <string name="import_wallet__button__proceed">Continue</string>
+    <string name="import_wallet__error_dialog__title">Incorrect words</string>
+    <string name="import_wallet__error_dialog__text">Sorry, you have entered incorrect secret words. Please double check and try again.</string>
+
+    <string name="import_wallet_word_number_1">1:</string>
+    <string name="import_wallet_word_number_2">2:</string>
+    <string name="import_wallet_word_number_3">3:</string>
+    <string name="import_wallet_word_number_4">4:</string>
+    <string name="import_wallet_word_number_5">5:</string>
+    <string name="import_wallet_word_number_6">6:</string>
+    <string name="import_wallet_word_number_7">7:</string>
+    <string name="import_wallet_word_number_8">8:</string>
+    <string name="import_wallet_word_number_9">9:</string>
+    <string name="import_wallet_word_number_10">10:</string>
+    <string name="import_wallet_word_number_11">11:</string>
+    <string name="import_wallet_word_number_12">12:</string>
+    <string name="import_wallet_word_number_13">13:</string>
+    <string name="import_wallet_word_number_14">14:</string>
+    <string name="import_wallet_word_number_15">15:</string>
+    <string name="import_wallet_word_number_16">16:</string>
+    <string name="import_wallet_word_number_17">17:</string>
+    <string name="import_wallet_word_number_18">18:</string>
+    <string name="import_wallet_word_number_19">19:</string>
+    <string name="import_wallet_word_number_20">20:</string>
+    <string name="import_wallet_word_number_21">21:</string>
+    <string name="import_wallet_word_number_22">22:</string>
+    <string name="import_wallet_word_number_23">23:</string>
+    <string name="import_wallet_word_number_24">24:</string>
+
 </resources>

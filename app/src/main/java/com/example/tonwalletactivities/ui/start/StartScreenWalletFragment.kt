@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.example.tonwalletactivities.CreateWalletActivity
 import com.example.tonwalletactivities.R
+import com.example.tonwalletactivities.RestoreWalletActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,15 +38,19 @@ class StartScreenWalletFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_start_screen_wallet, container, false)
 
         val button = root.findViewById<Button>(R.id.button)
-        button.setOnClickListener( {
+        button.setOnClickListener {
             val intent = Intent(this.context, CreateWalletActivity::class.java)
             startActivity(intent)
-        });
+        };
 
+        val importButton = root.findViewById<Button>(R.id.importWalletButton)
+        importButton.setOnClickListener {
+            val intent = Intent(this.context, RestoreWalletActivity::class.java)
+            startActivity(intent)
+        }
 
         return root
     }

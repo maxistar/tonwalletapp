@@ -55,10 +55,12 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] add tree dots
   - [ ] create a model
   - [ ] create interactions between models
-- [ ] select what to do form
-  - [ ] move existing start page logic to fragments
-  - [ ] create a second fragment and redirect user there
+- [x] select what to do form
+  - [x] move existing start page logic to fragments
+  - [x] create a second fragment and redirect user there
 - [ ] create form to enter the secret phrase 
+  - [x] create a button to redirect there
+  - [ ] create a layout
 
 
 ### UI Tassks

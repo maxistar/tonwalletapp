@@ -59,17 +59,18 @@ tools:context=".ui.start.StartScreenWalletFragment">
     android:text="@string/ton_wallet_create_wallet"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintBottom_toTopOf="@id/textView"
+    app:layout_constraintBottom_toTopOf="@id/importWalletButton"
 
     />
 
-<TextView
-    android:id="@+id/textView"
-    android:layout_width="match_parent"
+<Button
+    android:id="@+id/importWalletButton"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/ton_wallet_import"
     android:layout_marginBottom="60dp"
-    android:textAlignment="center"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
     />
 
