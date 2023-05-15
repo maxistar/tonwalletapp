@@ -56,6 +56,9 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] create a model
   - [ ] create interactions between models
 - [ ] select what to do form
+  - [ ] move existing start page logic to fragments
+  - [ ] create a second fragment and redirect user there
+- [ ] create form to enter the secret phrase 
 
 
 ### UI Tassks
