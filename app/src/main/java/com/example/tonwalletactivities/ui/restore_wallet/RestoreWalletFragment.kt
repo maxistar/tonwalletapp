@@ -1,12 +1,17 @@
 package com.example.tonwalletactivities.ui.restore_wallet
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.fragment.app.FragmentManager
+import com.example.tonwalletactivities.AccessCodeActivity
 import com.example.tonwalletactivities.R
+import com.example.tonwalletactivities.ui.main.AccessCodeFragment
 
 class RestoreWalletFragment : Fragment() {
 
@@ -26,7 +31,22 @@ class RestoreWalletFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_restore_wallet, container, false)
+        val root = inflater.inflate(R.layout.fragment_restore_wallet, container, false)
+        val button = root.findViewById<Button>(R.id.button)
+        button.setOnClickListener({
+            val intent = Intent(context, AccessCodeActivity::class.java)
+            startActivity(intent)
+        })
+
+        val errorButton = root.findViewById<Button>(R.id.button_do_not_have)
+        errorButton.setOnClickListener({
+            val fm: FragmentManager = parentFragmentManager
+            fm.beginTransaction()
+                .replace(R.id.container, RestoreWalletFailureFragment.newInstance("",""))
+                .addToBackStack(null)
+                .commit()
+        })
+        return root;
     }
 
 }

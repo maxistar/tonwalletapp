@@ -62,10 +62,9 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] create a button to redirect there
   - [x] create a basic layout
   - [ ] create 24 inputs
-  - [ ] move screen from create wallet to security activity
-  - [ ] connect together
+  - [x] move screen from create wallet to security activity
+  - [x] connect together
   - [ ] create error layout
-  - [ ] create success page layout
 
 
 ### UI Tassks

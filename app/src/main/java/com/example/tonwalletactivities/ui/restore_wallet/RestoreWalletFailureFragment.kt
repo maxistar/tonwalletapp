@@ -1,17 +1,11 @@
-package com.example.tonwalletactivities.ui.create_wallet
+package com.example.tonwalletactivities.ui.restore_wallet
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.fragment.app.FragmentManager
-import com.example.tonwalletactivities.AccessCodeActivity
-import com.example.tonwalletactivities.CreateWalletActivity
 import com.example.tonwalletactivities.R
-import com.example.tonwalletactivities.ui.main.AccessCodeFragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [CreateWalletAfterCreationConfirmationFragment.newInstance] factory method to
+ * Use the [RestoreWalletFailureFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class CreateWalletAfterCreationConfirmationFragment : Fragment() {
+class RestoreWalletFailureFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -41,24 +35,7 @@ class CreateWalletAfterCreationConfirmationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val root = inflater.inflate(
-            R.layout.fragment_create_wallet_after_creation_confirmation,
-            container,
-            false
-        )
-
-        val button = root.findViewById<Button>(R.id.button)
-        button.setOnClickListener {
-            // val intent = Intent(it.context, AccessCodeActivity::class.java)
-            // startActivity(intent)
-            val fm: FragmentManager = parentFragmentManager
-            fm.beginTransaction()
-                .replace(R.id.container, AccessCodeFragment.newInstance())
-                .addToBackStack(null)
-                .commit()
-        }
-
-        return root;
+        return inflater.inflate(R.layout.fragment_restore_wallet_failure, container, false)
     }
 
     companion object {
@@ -68,12 +45,12 @@ class CreateWalletAfterCreationConfirmationFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment CreateWalletAfterCreationConfirmationFragment.
+         * @return A new instance of fragment RestoreWalletFailureFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            CreateWalletAfterCreationConfirmationFragment().apply {
+            RestoreWalletFailureFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
