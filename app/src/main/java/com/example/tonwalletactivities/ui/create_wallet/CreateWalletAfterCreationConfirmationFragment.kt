@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.FragmentManager
 import com.example.tonwalletactivities.AccessCodeActivity
 import com.example.tonwalletactivities.CreateWalletActivity
 import com.example.tonwalletactivities.R
+import com.example.tonwalletactivities.ui.main.AccessCodeFragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -47,8 +49,13 @@ class CreateWalletAfterCreationConfirmationFragment : Fragment() {
 
         val button = root.findViewById<Button>(R.id.button)
         button.setOnClickListener {
-            val intent = Intent(it.context, AccessCodeActivity::class.java)
-            startActivity(intent)
+            // val intent = Intent(it.context, AccessCodeActivity::class.java)
+            // startActivity(intent)
+            val fm: FragmentManager = parentFragmentManager
+            fm.beginTransaction()
+                .replace(com.example.tonwalletactivities.R.id.container, AccessCodeFragment.newInstance())
+                .addToBackStack(null)
+                .commit()
         }
 
         return root;

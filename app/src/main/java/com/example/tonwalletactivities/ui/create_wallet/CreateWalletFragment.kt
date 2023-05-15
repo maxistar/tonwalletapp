@@ -2,6 +2,7 @@ package com.example.tonwalletactivities.ui.create_wallet
 
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.content.res.Resources
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -13,6 +14,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.FragmentManager
+import com.example.tonwalletactivities.AccessCodeActivity
 import com.example.tonwalletactivities.R
 
 class CreateWalletFragment : Fragment() {
@@ -112,16 +114,13 @@ class CreateWalletFragment : Fragment() {
             )
             .setPositiveButton(
                 getResources().getString(R.string.create_wallet_confirmation_skip_button),
-                DialogInterface.OnClickListener { dialog, which ->
-                    val fm: FragmentManager = parentFragmentManager
-                    fm.beginTransaction()
-                        .replace(com.example.tonwalletactivities.R.id.container, CreateWalletAfterCreationConfirmationFragment.newInstance("to delete", "to remove"))
-                        .addToBackStack(null)
-                        .commit()
+                { dialog, which ->
+                    val intent = Intent(context, AccessCodeActivity::class.java)
+                    startActivity(intent)
                 })
             .setNegativeButton(
                 getResources().getString(R.string.create_wallet_confirmation_ok_sorry_button),
-                DialogInterface.OnClickListener { dialog, which ->
+                { dialog, which ->
                     //Do Something Here
                 }).show()
     }

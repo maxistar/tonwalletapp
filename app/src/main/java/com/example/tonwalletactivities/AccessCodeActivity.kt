@@ -2,7 +2,7 @@ package com.example.tonwalletactivities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.tonwalletactivities.ui.main.AccessCodeFragment
+import com.example.tonwalletactivities.ui.create_wallet.CreateWalletAfterCreationConfirmationFragment
 
 class AccessCodeActivity : AppCompatActivity() {
 
@@ -11,7 +11,7 @@ class AccessCodeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_access_code)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, AccessCodeFragment.newInstance())
+                .replace(R.id.container, CreateWalletAfterCreationConfirmationFragment.newInstance("", ""))
                 .commitNow()
         }
     }

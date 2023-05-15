@@ -60,7 +60,12 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] create a second fragment and redirect user there
 - [ ] create form to enter the secret phrase 
   - [x] create a button to redirect there
-  - [ ] create a layout
+  - [x] create a basic layout
+  - [ ] create 24 inputs
+  - [ ] move screen from create wallet to security activity
+  - [ ] connect together
+  - [ ] create error layout
+  - [ ] create success page layout
 
 
 ### UI Tassks
