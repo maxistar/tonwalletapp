@@ -64,10 +64,10 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] create 24 inputs
   - [x] move screen from create wallet to security activity
   - [x] connect together
-  - [ ] create error layout
-  - [ ] create success layout 
+  - [x] create error layout
+  - [ ] create success layout (it is not needed now)
 - [ ] create the layout to check the code we skipped earlier 
-- [ ] remove not needed files
+- [x] remove not needed files
 - [ ] business logic, store the created wallet
 - [ ] settings pages
 

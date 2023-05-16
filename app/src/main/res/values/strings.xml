@@ -114,4 +114,9 @@ write these words down.</string>
     <string name="import_wallet_word_number_23">23:</string>
     <string name="import_wallet_word_number_24">24:</string>
 
+    <string name="import_wallet_error_title">Too Bad!</string>
+    <string name="import_wallet_error_description">Without the secret words you can’t restore access to the wallet.</string>
+    <string name="import_wallet_error_button_replay">Enter 24 secret words</string>
+    <string name="import_wallet_error_button_new_wallet">Create a new empty wallet instead</string>
+
 </resources>
