@@ -65,6 +65,11 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] move screen from create wallet to security activity
   - [x] connect together
   - [ ] create error layout
+  - [ ] create success layout 
+- [ ] create the layout to check the code we skipped earlier 
+- [ ] remove not needed files
+- [ ] business logic, store the created wallet
+- [ ] settings pages
 
 
 ### UI Tassks
