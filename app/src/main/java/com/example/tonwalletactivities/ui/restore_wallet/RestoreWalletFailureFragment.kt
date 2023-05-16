@@ -1,11 +1,16 @@
 package com.example.tonwalletactivities.ui.restore_wallet
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import com.example.tonwalletactivities.CreateWalletActivity
 import com.example.tonwalletactivities.R
+import com.example.tonwalletactivities.RestoreWalletActivity
+import com.example.tonwalletactivities.databinding.FragmentRestoreWalletFailureBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,8 +39,24 @@ class RestoreWalletFailureFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // FragmentRestoreWalletFailureBinding
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_restore_wallet_failure, container, false)
+        val root = inflater.inflate(R.layout.fragment_restore_wallet_failure, container, false)
+
+        val button = root.findViewById<Button>(R.id.button)
+        button.setOnClickListener({
+            val intent = Intent(this.context, RestoreWalletActivity::class.java)
+            startActivity(intent)
+        })
+
+        val button_create_empty = root.findViewById<Button>(R.id.button_empty_wallet)
+        button_create_empty.setOnClickListener({
+            val intent = Intent(this.context, CreateWalletActivity::class.java)
+            startActivity(intent)
+        })
+
+        return root
     }
 
     companion object {
