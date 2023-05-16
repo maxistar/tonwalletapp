@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
-import com.example.tonwalletactivities.MainActivity
 import com.example.tonwalletactivities.R
 
 /**
