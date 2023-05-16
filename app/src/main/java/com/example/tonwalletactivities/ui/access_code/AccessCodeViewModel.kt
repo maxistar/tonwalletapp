@@ -1,4 +1,4 @@
-package com.example.tonwalletactivities.ui.main
+package com.example.tonwalletactivities.ui.access_code
 
 import androidx.lifecycle.ViewModel
 

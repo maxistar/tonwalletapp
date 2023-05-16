@@ -1,11 +1,7 @@
 package com.example.tonwalletactivities
 
-import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.example.tonwalletactivities.ui.main.AccessCodeFragment
 import com.example.tonwalletactivities.ui.start.StartScreenStartFragment
 
 

@@ -11,7 +11,6 @@ import android.widget.Button
 import androidx.fragment.app.FragmentManager
 import com.example.tonwalletactivities.AccessCodeActivity
 import com.example.tonwalletactivities.R
-import com.example.tonwalletactivities.ui.main.AccessCodeFragment
 
 class RestoreWalletFragment : Fragment() {
 
