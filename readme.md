@@ -66,11 +66,16 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] connect together
   - [x] create error layout
   - [ ] create success layout (it is not needed now)
-- [ ] create the layout to check the code we skipped earlier 
+- [x] create the layout to check the code we skipped earlier 
 - [x] remove not needed files
 - [ ] business logic, store the created wallet
 - [ ] settings pages
-
+  - generate code for it 
+- [ ] wallet activity
+  - [x] generate code for it
+  - [ ] make it reachable
+  - [ ] connect a top menu
+  - [ ] make a simple layout
 
 ### UI Tassks
 
