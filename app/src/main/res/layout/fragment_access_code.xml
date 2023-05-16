@@ -151,7 +151,7 @@
     <Button
         app:layout_constraintTop_toBottomOf="@id/access_code_button_7"
         android:id="@+id/access_code_button_0"
-        android:text="@string/access_code_number_10"
+        android:text="@string/access_code_number_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintRight_toLeftOf="@id/access_code_button_3"

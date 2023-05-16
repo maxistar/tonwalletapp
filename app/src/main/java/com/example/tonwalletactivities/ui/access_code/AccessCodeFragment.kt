@@ -1,12 +1,16 @@
 package com.example.tonwalletactivities.ui.access_code
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import com.example.tonwalletactivities.AccessCodeActivity
 import com.example.tonwalletactivities.R
+import com.example.tonwalletactivities.WalletActivity
 
 class AccessCodeFragment : Fragment() {
 
@@ -26,7 +30,15 @@ class AccessCodeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_access_code, container, false)
+        val root = inflater.inflate(R.layout.fragment_access_code, container, false)
+
+        val button = root.findViewById<Button>(R.id.access_code_button_0)
+        button.setOnClickListener({
+            val intent = Intent(context, WalletActivity::class.java)
+            startActivity(intent)
+        })
+
+        return root;
     }
 
 }
