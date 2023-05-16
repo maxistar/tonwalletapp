@@ -3,7 +3,6 @@ package com.example.tonwalletactivities.ui.create_wallet
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,7 +20,7 @@ import com.example.tonwalletactivities.R
  * An example full-screen fragment that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-class StartWalletFragment : Fragment() {
+class CreateWalletStartFragment : Fragment() {
 
 
 
@@ -82,7 +81,7 @@ class StartWalletFragment : Fragment() {
         //_binding = FragmentStartWalletBinding.inflate(inflater, container, false)
         //return binding.root
 
-        val root = inflater.inflate(R.layout.fragment_start_wallet, container, false)
+        val root = inflater.inflate(R.layout.fragment_create_wallet_start, container, false)
 
 
         val button = root.findViewById<Button>(R.id.button);
@@ -125,12 +124,12 @@ class StartWalletFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+        // activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
         // Trigger the initial hide() shortly after the activity has been
         // created, to briefly hint to the user that UI controls
         // are available.
-        delayedHide(100)
+        // delayedHide(100)
     }
 
     override fun onPause() {
@@ -192,7 +191,7 @@ class StartWalletFragment : Fragment() {
 
     companion object {
 
-            fun newInstance() = StartWalletFragment()
+            fun newInstance() = CreateWalletStartFragment()
 
 
         /**
