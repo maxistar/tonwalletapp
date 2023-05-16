@@ -101,7 +101,7 @@ class StartWalletFragment : Fragment() {
     fun switchFragment(fragment: Fragment) {
         val fm: FragmentManager = parentFragmentManager
         fm.beginTransaction()
-            .replace(com.example.tonwalletactivities.R.id.container, fragment)
+            .replace(R.id.container, fragment)
             .addToBackStack(null)
             .commit()
     }

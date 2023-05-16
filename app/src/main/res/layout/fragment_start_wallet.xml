@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <ImageView
+        android:id="@+id/ton_image_layout"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/ton_wallet"
+        android:src="@drawable/hura"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/hura" />
+
     <TextView
         android:id="@+id/ton_wallet_title"
         android:layout_width="match_parent"
@@ -13,32 +27,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="20sp"
         android:text="@string/screen2_title"
-        />
-
-    <LinearLayout
-        android:id="@+id/ton_image_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ton_wallet_title"
-        >
-        <ImageView
-            android:id="@+id/ton_wallet_logo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            tools:src="@drawable/hura"
-            android:src="@drawable/hura"
-            android:contentDescription="@string/ton_wallet" />
-    </LinearLayout>
-
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/ton_image_layout" />
 
     <TextView
         android:id="@+id/ton_wallet_description"
@@ -47,20 +39,19 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:text="@string/screen2_text"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:text="@string/screen2_text"
-        app:layout_constraintTop_toBottomOf="@id/ton_image_layout" />
+        app:layout_constraintTop_toBottomOf="@id/ton_wallet_title" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/screen2_button"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="70dp"
-        />
+        android:text="@string/screen2_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

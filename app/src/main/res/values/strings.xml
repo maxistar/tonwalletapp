@@ -62,6 +62,13 @@
 write these words down.</string>
     <string name="create_wallet_confirmation_skip_button">Skip</string>
     <string name="create_wallet_confirmation_ok_sorry_button">OK, sorry</string>
+
+    <string name="create_wallet__test_time__title">Test Time!</string>
+    <string name="create_wallet__test_time__description">Let’s check that you wrote them down correctly. Please enter the words
+5, 15 and 18.</string>
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -81,6 +88,7 @@ write these words down.</string>
     <string name="access_code_delete">⌫</string>
 
     <string name="general__ok">OK</string>
+    <string name="general__continue">Continue</string>
 
     <string name="import_wallet_title">24 Secret Words</string>
     <string name="import_wallet_description">You can restore access to your wallet by entering 24 words you wrote when down you creating the wallet.</string>
