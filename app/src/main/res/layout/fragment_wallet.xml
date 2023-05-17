@@ -20,44 +20,67 @@
         android:background="@color/black"
         android:backgroundTint="@color/black"
         >
-        <TextView
-            android:text="67676767"
-            android:textAlignment="center"
-            android:padding="10dip"
-            android:id="@+id/wallet_address_short"
-            android:textColor="@color/white"
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/wallet_address_balance"
-            />
+            app:layout_constraintBottom_toTopOf="@id/button_send"
+            >
+            <TextView
+                android:text="67676767"
+                android:textAlignment="center"
+                android:padding="5dip"
+                android:id="@+id/wallet_address_short"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
 
-        <TextView
-            android:text="10"
-            android:textSize="40dip"
-            android:textAlignment="center"
-            android:padding="10dip"
-            android:id="@+id/wallet_address_balance"
-            android:textColor="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/wallet_address_short"
-            app:layout_constraintBottom_toTopOf="@id/button_send"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
 
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/ton_wallet"
+                    android:src="@drawable/tonlogo"
+                    tools:src="@drawable/tonlogo"
+                    />
+                <TextView
+                    android:text="10"
+                    android:textSize="40dip"
+                    android:id="@+id/wallet_address_balance"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
         <Button
             android:id="@+id/button_receive"
-            android:text="@string/import_wallet_title"
-            android:layout_width="wrap_content"
+            android:text="@string/wallet__button__receive"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/button_send"
             app:layout_constraintBottom_toBottomOf="parent"
             />
         <Button
             android:id="@+id/button_send"
-            android:text="@string/import_wallet_title"
-            android:layout_width="wrap_content"
+            android:text="@string/wallet__button__send"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toRightOf="@id/button_receive"
             app:layout_constraintBottom_toBottomOf="parent"

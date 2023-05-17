@@ -126,4 +126,7 @@ write these words down.</string>
     <string name="import_wallet_error_button_replay">Enter 24 secret words</string>
     <string name="import_wallet_error_button_new_wallet">Create a new empty wallet instead</string>
 
+    <string name="wallet__button__receive">Receive</string>
+    <string name="wallet__button__send">Send</string>
+
 </resources>
