@@ -61,6 +61,7 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] make a simple layout
 - [ ] send dialog
   - [x] create an activity
+  - [ ] copy text labels
   - [ ] create basic layouts
 - [ ] receive dialog
   - [x] generate activity
