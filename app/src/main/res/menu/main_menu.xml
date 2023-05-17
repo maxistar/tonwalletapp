@@ -4,7 +4,10 @@
     <item android:id="@+id/new_game"
         android:icon="@drawable/ic_launcher_background"
         android:title="@string/menu_create_new_wallet" />
-    <item android:id="@+id/help"
+    <item android:id="@+id/settings"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/menu_settings" />
+    <item android:id="@+id/quit"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/menu_quit" />
 </menu>

@@ -34,7 +34,12 @@ class WalletActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
-            R.id.help -> {
+            R.id.settings -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.quit -> {
                 // showHelp()
                 true
             }

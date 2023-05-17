@@ -70,13 +70,17 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [x] remove not needed files
 - [ ] business logic, store the created wallet
 - [ ] settings pages
-  - generate code for it 
+  - [x] generate code for it 
+  - [ ] connect with menu
+  - [ ] make icons
+  - [ ] make it look like on the mock
 - [ ] wallet activity
   - [x] generate code for it
   - [x] make it reachable
   - [x] connect a top menu
-  - [ ] make a simple layout
-
+  - [x] make a simple layout
+- [ ] send dialog
+- [ ] receive dialog
 
 
 ### UI Tassks
