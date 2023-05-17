@@ -74,7 +74,7 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [ ] wallet activity
   - [x] generate code for it
   - [x] make it reachable
-  - [ ] connect a top menu
+  - [x] connect a top menu
   - [ ] make a simple layout
 
 
