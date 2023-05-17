@@ -71,8 +71,8 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [ ] business logic, store the created wallet
 - [ ] settings pages
   - [x] generate code for it 
-  - [ ] connect with menu
-  - [ ] make icons
+  - [x] connect with menu
+  - [x] make icons
   - [ ] make it look like on the mock
 - [ ] wallet activity
   - [x] generate code for it
@@ -80,10 +80,13 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] connect a top menu
   - [x] make a simple layout
 - [ ] send dialog
+  - [x] create an activity
+  - [ ] create basic layouts
 - [ ] receive dialog
+  - [ ] make a fragment 
 
 
-### UI Tassks
+### UI Tasks
 
 - [ ] make forms exactly styled like on screenshots as possible
 
