@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.example.tonwalletactivities.CreateWalletActivity
 import com.example.tonwalletactivities.R
+import com.example.tonwalletactivities.ReceiveActivity
 import com.example.tonwalletactivities.SendActivity
 
 class WalletFragment : Fragment() {
@@ -32,9 +33,15 @@ class WalletFragment : Fragment() {
     ): View {
         val root = inflater.inflate(R.layout.fragment_wallet, container, false)
 
-        val button = root.findViewById<Button>(R.id.button_send)
-        button.setOnClickListener({
+        val buttonSend = root.findViewById<Button>(R.id.button_send)
+        buttonSend.setOnClickListener({
             val intent = Intent(this.context, SendActivity::class.java)
+            startActivity(intent)
+        })
+
+        val buttonReceive = root.findViewById<Button>(R.id.button_receive)
+        buttonReceive.setOnClickListener({
+            val intent = Intent(this.context, ReceiveActivity::class.java)
             startActivity(intent)
         })
 

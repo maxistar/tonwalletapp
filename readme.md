@@ -63,7 +63,8 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] create an activity
   - [ ] create basic layouts
 - [ ] receive dialog
-  - [ ] make a fragment 
+  - [x] generate activity
+  - [ ] make a qr code 
 
 
 ### UI Tasks
