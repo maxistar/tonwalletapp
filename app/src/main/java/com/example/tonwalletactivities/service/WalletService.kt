@@ -1,10 +1,13 @@
 package com.example.tonwalletactivities.service
 
-import com.example.tonwalletactivities.model.WalletSecretPhrase
 import hello.Hello
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class WalletService {
-    fun getNewWalletWords(): WalletSecretPhrase {
-        return WalletSecretPhrase(Hello.getNewWalletString())
+    suspend fun getNewWalletWords(): String {
+        return withContext(Dispatchers.IO) {
+            Hello.getNewWalletString()
+        }
     }
 }

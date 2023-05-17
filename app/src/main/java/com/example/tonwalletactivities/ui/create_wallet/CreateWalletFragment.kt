@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.res.Resources
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -28,9 +29,7 @@ class CreateWalletFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(CreateWalletViewModel::class.java)
-
-
-        // TODO: Use the ViewModel
+        viewModel.generateNewWallet();
     }
 
     override fun onCreateView(
@@ -66,7 +65,12 @@ class CreateWalletFragment : Fragment() {
 
 
         viewModel.text.observe(viewLifecycleOwner) {
-            val words = it.getWords()
+            Log.w("WALLET", "observe")
+            if (it === "") {
+                return@observe
+            }
+            val wordsStr = it
+            val words = wordsStr.split("\\s".toRegex())
             word0.text = words.get(0);
             word1.text = words.get(1);
             word2.text = words.get(2);
