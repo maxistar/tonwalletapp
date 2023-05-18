@@ -155,6 +155,18 @@ write these words down.</string>
     <string name="send_form__send_all">Send all</string>
     <string name="send_form__insufficient_funds">Insufficient funds</string>
     <string name="send_form__confirm_and_send">Confirm and send</string>
-
+    <string name="send_form__comment">Comment (Optional)</string>
+    <string name="send_form__description">Description of the payment</string>
+    <string name="send_form__full_description">The comment is visible to everyone. You must include the note when sending to an exchange.</string>
+    <string name="send_form__details">Details</string>
+    <string name="send_form__recipient">Recipient</string>
+    <string name="send_form__amount">Amount</string>
+    <string name="send_form__fee">Fee</string>
+    <string name="send_form__sendind_title">Sending TON</string>
+    <string name="send_form__sendind_description">Please wait a few seconds for your
+    transaction to be processed…</string>
+    <string name="send_form__sent_done">Done!</string>
+    <string name="send_form__sent_description">2.2 Toncoin have been sent to</string>
+    <string name="send_form__button_my_wallet">View My Wallet</string>
 
 </resources>

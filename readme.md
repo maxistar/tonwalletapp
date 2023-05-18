@@ -29,43 +29,32 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 
 ### Todo:
 
-- [x] should we extract go app to separate folder to speed up IDE?
 - [ ] security code form
-  - [x] create a layout
-  - [x] add tree dots
+  - [ ] check the code validity
   - [ ] create a model
   - [ ] create interactions between models
 - [x] select what to do form
   - [x] move existing start page logic to fragments
   - [x] create a second fragment and redirect user there
 - [ ] create form to enter the secret phrase 
-  - [x] create a button to redirect there
-  - [x] create a basic layout
   - [ ] create 24 inputs
-  - [x] move screen from create wallet to security activity
-  - [x] connect together
-  - [x] create error layout
   - [ ] create success layout (it is not needed now)
-- [x] create the layout to check the code we skipped earlier 
+- [x] create the layout to check the code we skipped earlier
 - [x] remove not needed files
 - [ ] business logic, store the created wallet
 - [ ] settings pages
-  - [x] generate code for it 
-  - [x] connect with menu
-  - [x] make icons
   - [ ] make it look like on the mock
 - [ ] wallet activity
-  - [x] generate code for it
-  - [x] make it reachable
-  - [x] connect a top menu
-  - [x] make a simple layout
+  - [ ] show transactions and new icon
 - [ ] send dialog
-  - [x] create an activity
-  - [ ] copy text labels
   - [ ] create basic layouts
+    - [ ] fragment 1 recipient
+    - [ ] fragment 2 amount
+    - [ ] fragment 3 comment
+    - [ ] fragment 4 sending
+    - [ ] fragment 5 sent
 - [ ] receive dialog
-  - [x] generate activity
-  - [ ] make a qr code 
+  - [ ] customise form accorging mock
 
 
 ### UI Tasks
