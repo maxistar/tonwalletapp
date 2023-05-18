@@ -173,4 +173,16 @@ write these words down.</string>
     <string name="send_form__sent_description">2.2 Toncoin have been sent to</string>
     <string name="send_form__button_my_wallet">View My Wallet</string>
 
+    <string name="settings__title_general">General</string>
+    <string name="settings__notifications">Notifications</string>
+    <string name="settings__active_address">Active address</string>
+    <string name="settings__currency">Primary currency</string>
+    <string name="settings__list_of_tokens">List of tokens</string>
+    <string name="settings__title_security">Security</string>
+    <string name="settings__phrase">Show recovery phrase</string>
+    <string name="settings__passcode">Change passcode</string>
+    <string name="settings__biometric">Biometric Auth</string>
+    <string name="settings__delete_wallet">Delete Wallet</string>
+
+
 </resources>

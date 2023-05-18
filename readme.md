@@ -43,17 +43,18 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [x] remove not needed files
 - [ ] business logic, store the created wallet
 - [ ] settings pages
-  - [ ] make it look like on the mock
+  - [x] create text labels 
+  - [x] make it look like on the mock
 - [ ] wallet activity
   - [ ] show transactions and new icon
 - [ ] send dialog
   - [ ] create icons  
-  - [ ] create basic layouts
+  - [x] create basic layouts
     - [x] fragment 1 recipient
     - [x] fragment 2 amount
-    - [ ] fragment 3 comment
-    - [ ] fragment 4 sending
-    - [ ] fragment 5 sent
+    - [x] fragment 3 comment
+    - [x] fragment 4 sending
+    - [x] fragment 5 sent
 - [ ] receive dialog
   - [ ] customise form accorging mock
 

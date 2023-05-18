@@ -1,10 +1,14 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory app:title="@string/messages_header">
+    <PreferenceCategory app:title="@string/settings__title_general">
+
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="@string/settings__notifications" />
 
         <EditTextPreference
             app:key="signature"
-            app:title="@string/signature_title"
+            app:title="@string/settings__active_address"
             app:useSimpleSummaryProvider="true" />
 
         <ListPreference
@@ -12,23 +16,42 @@
             app:entries="@array/reply_entries"
             app:entryValues="@array/reply_values"
             app:key="reply"
-            app:title="@string/reply_title"
+            app:title="@string/settings__currency"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="signature"
+            app:title="@string/settings__list_of_tokens"
             app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="@string/sync_header">
+    <PreferenceCategory app:title="@string/settings__title_security">
 
-        <SwitchPreferenceCompat
-            app:key="sync"
-            app:title="@string/sync_title" />
+        <EditTextPreference
+            app:key="signature"
+            app:title="@string/settings__phrase"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="signature"
+            app:title="@string/settings__passcode"
+            app:useSimpleSummaryProvider="true" />
 
         <SwitchPreferenceCompat
             app:dependency="sync"
             app:key="attachment"
+            app:title="@string/settings__biometric" />
+
+        <EditTextPreference
+            app:key="signature"
+            app:title="@string/settings__delete_wallet"
+            app:useSimpleSummaryProvider="true" />
+
+<!--
             app:summaryOff="@string/attachment_summary_off"
             app:summaryOn="@string/attachment_summary_on"
-            app:title="@string/attachment_title" />
+-->
 
     </PreferenceCategory>
 
