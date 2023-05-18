@@ -45,9 +45,11 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [ ] wallet activity
   - [ ] show transactions and new icon
 - [ ] send dialog
+  - [ ] send money 
 - [ ] receive dialog
-  - [ ] add text labels 
-  - [ ] customise form according mock
+  - [x] add text labels 
+  - [x] customise form according mock
+  - [ ] use real wallet value
 
 
 ### UI Tasks

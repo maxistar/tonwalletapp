@@ -16,7 +16,7 @@ class ReceiveActivity : AppCompatActivity() {
 
         try {
             val barcodeEncoder = BarcodeEncoder()
-            val bitmap = barcodeEncoder.encodeBitmap("content", BarcodeFormat.QR_CODE, 400, 400)
+            val bitmap = barcodeEncoder.encodeBitmap("content", BarcodeFormat.QR_CODE, 600, 600)
             val imageViewQrCode: ImageView = findViewById<View>(R.id.qrCode) as ImageView
             imageViewQrCode.setImageBitmap(bitmap)
         } catch (e: Exception) {
