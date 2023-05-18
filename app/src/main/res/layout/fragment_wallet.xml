@@ -5,100 +5,97 @@
     android:id="@+id/wallet"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/teal_700"
     android:background="@color/teal_700"
+    android:backgroundTint="@color/teal_700"
     tools:context=".ui.wallet.WalletFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/wallet_top_part"
-        android:layout_height="0dp"
         android:layout_width="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/wallet_bottom_part"
+        android:layout_height="0dp"
         android:background="@color/black"
         android:backgroundTint="@color/black"
-        >
+        app:layout_constraintBottom_toTopOf="@id/wallet_bottom_part"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/button_send"
-            >
+            app:layout_constraintTop_toTopOf="parent">
+
             <TextView
-                android:text="67676767"
-                android:textAlignment="center"
-                android:padding="5dip"
                 android:id="@+id/wallet_address_short"
-                android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                />
+                android:padding="5dip"
+                android:text="67676767"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:contentDescription="@string/ton_wallet"
                     android:src="@drawable/tonlogo"
-                    tools:src="@drawable/tonlogo"
-                    />
+                    tools:src="@drawable/tonlogo" />
+
                 <TextView
-                    android:text="10"
-                    android:textSize="40dip"
                     android:id="@+id/wallet_address_balance"
-                    android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    />
-
+                    android:text="10"
+                    android:textColor="@color/white"
+                    android:textSize="40dip" />
             </LinearLayout>
 
 
         </LinearLayout>
+
         <Button
             android:id="@+id/button_receive"
-            android:text="@string/wallet__button__receive"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/button_send"
+            android:drawableLeft="@drawable/receive_icon_24dp"
+            android:text="@string/wallet__button__receive"
             app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/button_send" />
+
         <Button
             android:id="@+id/button_send"
-            android:text="@string/wallet__button__send"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/button_receive"
+            android:drawableLeft="@drawable/send_icon_24dp"
+            android:text="@string/wallet__button__send"
             app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintLeft_toRightOf="@id/button_receive"
+            app:layout_constraintRight_toRightOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/wallet_bottom_part"
-        android:layout_height="0dp"
         android:layout_width="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/wallet_top_part"
+        android:layout_height="0dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
         android:padding="10dip"
-        >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wallet_top_part">
 
         <ImageView
             android:id="@+id/ton_image_layout"
@@ -109,12 +106,11 @@
             android:layout_marginEnd="8dp"
             android:contentDescription="@string/import_wallet_error_title"
             android:src="@drawable/sendreceive"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:src="@drawable/sendreceive"
-            />
+            tools:src="@drawable/sendreceive" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

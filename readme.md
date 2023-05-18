@@ -45,6 +45,8 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [ ] settings pages
   - [x] create text labels 
   - [x] make it look like on the mock
+  - [ ] make delete wallet to be red
+  - [ ] use better components for settings
 - [ ] wallet activity
   - [ ] show transactions and new icon
 - [ ] send dialog
@@ -56,6 +58,7 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
     - [x] fragment 4 sending
     - [x] fragment 5 sent
 - [ ] receive dialog
+  - [ ] add text labels 
   - [ ] customise form accorging mock
 
 
