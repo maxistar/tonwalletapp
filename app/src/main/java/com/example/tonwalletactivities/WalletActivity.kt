@@ -29,11 +29,6 @@ class WalletActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle item selection
         return when (item.itemId) {
-            R.id.new_game -> {
-                val intent = Intent(this, CreateWalletActivity::class.java)
-                startActivity(intent)
-                true
-            }
             R.id.settings -> {
                 val intent = Intent(this, SettingsActivity::class.java)
                 startActivity(intent)

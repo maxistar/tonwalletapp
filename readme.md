@@ -33,33 +33,21 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] check the code validity
   - [ ] create a model
   - [ ] create interactions between models
-- [x] select what to do form
-  - [x] move existing start page logic to fragments
-  - [x] create a second fragment and redirect user there
+- [ ] select what to do form
 - [ ] create form to enter the secret phrase 
-  - [ ] create 24 inputs
   - [ ] create success layout (it is not needed now)
-- [x] create the layout to check the code we skipped earlier
-- [x] remove not needed files
+- [ ] create the layout to check the code we skipped earlier
+- [ ] remove not needed files
 - [ ] business logic, store the created wallet
 - [ ] settings pages
-  - [x] create text labels 
-  - [x] make it look like on the mock
   - [ ] make delete wallet to be red
   - [ ] use better components for settings
 - [ ] wallet activity
   - [ ] show transactions and new icon
 - [ ] send dialog
-  - [ ] create icons  
-  - [x] create basic layouts
-    - [x] fragment 1 recipient
-    - [x] fragment 2 amount
-    - [x] fragment 3 comment
-    - [x] fragment 4 sending
-    - [x] fragment 5 sent
 - [ ] receive dialog
   - [ ] add text labels 
-  - [ ] customise form accorging mock
+  - [ ] customise form according mock
 
 
 ### UI Tasks
