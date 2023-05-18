@@ -48,6 +48,102 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/wallet_address" />
 
+    <TextView
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send_form__details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/sublabel" />
+
+    <TextView
+        android:id="@+id/recipient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send_form__recipient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/details" />
+
+    <TextView
+        android:id="@+id/recipient_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_form__recipient_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/details" />
+
+
+    <TextView
+        android:id="@+id/amount_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send_form__amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/recipient" />
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="@id/amount_title_value"
+        app:layout_constraintRight_toLeftOf="@id/amount_title_value"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="5pt"
+        android:contentDescription="@string/ton_wallet"
+        android:src="@drawable/tonlogo"
+        tools:src="@drawable/tonlogo"
+        />
+
+    <TextView
+        android:id="@+id/amount_title_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_form__amount_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/recipient" />
+
+    <TextView
+        android:id="@+id/fee_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send_form__fee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/amount_title" />
+
+    <TextView
+        android:id="@+id/fee_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_form__fee_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/amount_title" />
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="@id/fee_value"
+        app:layout_constraintRight_toLeftOf="@id/fee_value"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="5pt"
+        android:contentDescription="@string/ton_wallet"
+        android:src="@drawable/tonlogo"
+        tools:src="@drawable/tonlogo"
+        />
 
     <Button
         android:id="@+id/button"

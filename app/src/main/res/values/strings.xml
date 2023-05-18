@@ -161,8 +161,11 @@ write these words down.</string>
     <string name="send_form__full_description">The comment is visible to everyone. You must include the note when sending to an exchange.</string>
     <string name="send_form__details">Details</string>
     <string name="send_form__recipient">Recipient</string>
+    <string name="send_form__recipient_value">EQCc…9ZLD</string>
     <string name="send_form__amount">Amount</string>
+    <string name="send_form__amount_value">56</string>
     <string name="send_form__fee">Fee</string>
+    <string name="send_form__fee_value">≈0.007</string>
     <string name="send_form__sendind_title">Sending TON</string>
     <string name="send_form__sendind_description">Please wait a few seconds for your
     transaction to be processed…</string>
