@@ -56,9 +56,6 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 
 - [ ] make forms exactly styled like on screenshots as possible
 
-### Do not forget
-
-- [ ] rename main namespace com.example.tonwalletactivities 
 
 ### Links:
 

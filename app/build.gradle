@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.tonwalletactivities'
+    namespace 'me.maxistar.tonwallet'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.tonwalletactivities"
+        applicationId "me.maxistar.tonwallet"
         minSdk 21
         targetSdk 33
         versionCode 1
