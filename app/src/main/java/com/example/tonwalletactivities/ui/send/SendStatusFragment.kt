@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.fragment.app.FragmentManager
 import com.example.tonwalletactivities.R
+import com.example.tonwalletactivities.ui.create_wallet.CreateWalletCheckFragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +38,18 @@ class SendStatusFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_send_status, container, false)
+        val root = inflater.inflate(R.layout.fragment_send_status, container, false)
+
+        val button = root.findViewById<Button>(R.id.button)
+        button.setOnClickListener({
+            val fm: FragmentManager = parentFragmentManager
+            fm.beginTransaction()
+                .replace(R.id.container, SendDoneFragment.newInstance("", ""))
+                .addToBackStack(null)
+                .commit()
+        })
+
+        return root
     }
 
     companion object {

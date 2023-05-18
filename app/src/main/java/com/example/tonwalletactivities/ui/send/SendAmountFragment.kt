@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.fragment.app.FragmentManager
 import com.example.tonwalletactivities.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,7 +37,18 @@ class SendAmountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_send_amount, container, false)
+        val root = inflater.inflate(R.layout.fragment_send_amount, container, false)
+
+        val button = root.findViewById<Button>(R.id.button)
+        button.setOnClickListener({
+            val fm: FragmentManager = parentFragmentManager
+            fm.beginTransaction()
+                .replace(R.id.container, SendCommentFragment.newInstance("", ""))
+                .addToBackStack(null)
+                .commit()
+        })
+
+        return root;
     }
 
     companion object {
