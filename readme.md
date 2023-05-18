@@ -50,7 +50,7 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] create icons  
   - [ ] create basic layouts
     - [x] fragment 1 recipient
-    - [ ] fragment 2 amount
+    - [x] fragment 2 amount
     - [ ] fragment 3 comment
     - [ ] fragment 4 sending
     - [ ] fragment 5 sent

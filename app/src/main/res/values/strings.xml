@@ -152,6 +152,7 @@ write these words down.</string>
     <string name="send_form__address_text">Enter Wallet Address or Domain…</string>
     <string name="send_form__address_sublabel">Paste the 24-letter wallet address of the recipient here or TON DNS.</string>
     <string name="send_form__send_to">Send to: EQCc…9ZLD</string>
+    <string name="send_form__value_00">00</string>
     <string name="send_form__send_all">Send all</string>
     <string name="send_form__insufficient_funds">Insufficient funds</string>
     <string name="send_form__confirm_and_send">Confirm and send</string>
