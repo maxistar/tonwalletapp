@@ -47,8 +47,9 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [ ] wallet activity
   - [ ] show transactions and new icon
 - [ ] send dialog
+  - [ ] create icons  
   - [ ] create basic layouts
-    - [ ] fragment 1 recipient
+    - [x] fragment 1 recipient
     - [ ] fragment 2 amount
     - [ ] fragment 3 comment
     - [ ] fragment 4 sending
