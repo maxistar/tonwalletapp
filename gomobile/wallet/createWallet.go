@@ -1,8 +1,9 @@
 package wallet
 
 import (
-	"github.com/xssnick/tonutils-go/ton/wallet"
 	"strings"
+
+	"github.com/xssnick/tonutils-go/ton/wallet"
 )
 
 func GetNewWalletString() string {
