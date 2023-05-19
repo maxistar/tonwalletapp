@@ -1,10 +1,17 @@
 package main
 
 import (
-	"binding/hello"
+	"binding/wallet"
 	"fmt"
 )
 
 func main() {
-	fmt.Println(hello.Greetings("test"))
+
+	fmt.Println("general test:")
+
+	fmt.Println(wallet.Greetings("test"))
+
+	fmt.Println("generate new wallet:")
+
+	fmt.Println(wallet.GetNewWalletString())
 }

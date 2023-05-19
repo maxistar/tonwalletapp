@@ -45,7 +45,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
-    implementation files('hello.aar')
+    implementation files('wallet.aar')
     implementation 'androidx.preference:preference:1.2.0'
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
     testImplementation 'junit:junit:4.13.2'
