@@ -26,3 +26,6 @@ Todo:
 [x] add api url as an argument
 [x] return walled address
 [x] get the list of secret words for an application (seed.go)
+[x] return balance
+[ ] return last transactions
+ - [ ] create json structure

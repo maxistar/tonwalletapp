@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	"math/big"
 	"strings"
 
 	"github.com/xssnick/tonutils-go/liteclient"
@@ -13,40 +12,28 @@ import (
 	"github.com/xssnick/tonutils-go/ton/wallet"
 )
 
-type BalanceInfo struct {
-	NanoTons *big.Int
-}
+func GetNewWalletInfo(version int, configUrl string) string {
+	seed := wallet.NewSeed()
 
-func GetBalance(words string, version int, configUrl string) string {
 	client := liteclient.NewConnectionPool()
 
+	// configUrl := "https://ton-blockchain.github.io/testnet-global.config.json"
 	err := client.AddConnectionsFromConfigUrl(context.Background(), configUrl)
 	if err != nil {
 		log.Println(err)
 	}
 	api := ton.NewAPIClient(client)
 
-	seed := strings.Split(words, " ")
-
-	fmt.Println(words)
-
-	w, err := wallet.FromSeed(api, seed, wallet.Version(version))
+	wallet, err := wallet.FromSeed(api, seed, wallet.Version(version))
 	if err != nil {
 		log.Println(err)
 	}
 
-	block, err := api.CurrentMasterchainInfo(context.Background())
-	if err != nil {
-		log.Println(err)
-	}
+	address := wallet.Address()
 
-	balance, err := w.GetBalance(context.Background(), block)
-	if err != nil {
-		log.Println(err)
-	}
-
-	info := BalanceInfo{
-		NanoTons: balance.NanoTON(),
+	info := WalletInfo{
+		Seed:    strings.Join(seed, " "),
+		Address: address.String(),
 	}
 
 	b, err := json.Marshal(info)

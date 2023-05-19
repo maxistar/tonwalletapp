@@ -25,4 +25,24 @@ func main() {
 
 	fmt.Println(wallet.GenerateNewWallet(wallet2.V3, "https://ton-blockchain.github.io/testnet-global.config.json"))
 
+	fmt.Println("get balance")
+
+	fmt.Println(
+		wallet.GetBalance(
+			"salad able company apology able apology audit salad update provide dance update ginger destroy provide destroy intact salute vivid apology team oyster sword destroy",
+			int(wallet2.V3),
+			"https://ton-blockchain.github.io/testnet-global.config.json",
+		),
+	)
+
+	fmt.Println("get transactions")
+
+	fmt.Println(
+		wallet.GetTransactions(
+			"salad able company apology able apology audit salad update provide dance update ginger destroy provide destroy intact salute vivid apology team oyster sword destroy",
+			int(wallet2.V3),
+			"https://ton-blockchain.github.io/testnet-global.config.json",
+		),
+	)
+
 }
