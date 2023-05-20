@@ -9,9 +9,9 @@ import kotlinx.coroutines.launch
 
 class CreateWalletViewModel : ViewModel() {
 
-    private var newWalletWords: String = ""
+    var newWalletWords: String = ""
 
-    private var newWalletAddress: String = ""
+    var newWalletAddress: String = ""
 
     fun generateNewWallet(walletVersion: Long, configUrl: String) {
         viewModelScope.launch {
@@ -24,6 +24,8 @@ class CreateWalletViewModel : ViewModel() {
     private val _text = MutableLiveData<String>().apply {
         value = newWalletWords
     }
+
+
 
     val text: LiveData<String> = _text
 

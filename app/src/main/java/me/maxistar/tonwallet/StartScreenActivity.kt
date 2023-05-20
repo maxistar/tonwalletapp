@@ -14,6 +14,7 @@ class StartScreenActivity : AppCompatActivity() {
         if (settingsService.isWalletStored(this)) {
             val intent = Intent(this, WalletActivity::class.java)
             startActivity(intent)
+            return
         }
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()

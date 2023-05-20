@@ -119,20 +119,21 @@ class CreateWalletFragment : Fragment() {
                 getResources().getString(R.string.create_wallet_confirmation_text)
             )
             .setPositiveButton(
-                getResources().getString(R.string.create_wallet_confirmation_skip_button),
-                { dialog, which ->
-                    //val intent = Intent(context, AccessCodeActivity::class.java)
-                    //startActivity(intent)
-                    val fm: FragmentManager = parentFragmentManager
-                    fm.beginTransaction()
-                        .replace(R.id.container, CreateWalletCheckFragment.newInstance("", ""))
-                        .addToBackStack(null)
-                        .commit()
-                })
+                getResources().getString(R.string.create_wallet_confirmation_skip_button)
+            ) { dialog, which ->
+                val fm: FragmentManager = parentFragmentManager
+                fm.beginTransaction()
+                    .replace(R.id.container, CreateWalletCheckFragment.newInstance(
+                        viewModel.text.value!!,
+                        viewModel.newWalletAddress
+                    ))
+                    .addToBackStack(null)
+                    .commit()
+            }
             .setNegativeButton(
-                getResources().getString(R.string.create_wallet_confirmation_ok_sorry_button),
-                { dialog, which ->
-                    //Do Something Here
-                }).show()
+                getResources().getString(R.string.create_wallet_confirmation_ok_sorry_button)
+            ) { dialog, which ->
+                //Do Something Here
+            }.show()
     }
 }
