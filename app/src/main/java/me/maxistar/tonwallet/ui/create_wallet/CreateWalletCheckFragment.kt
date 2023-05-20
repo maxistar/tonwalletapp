@@ -1,14 +1,18 @@
 package me.maxistar.tonwallet.ui.create_wallet
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Button
 import me.maxistar.tonwallet.AccessCodeActivity
 import me.maxistar.tonwallet.R
+import me.maxistar.tonwallet.model.MemoWords
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,12 +45,32 @@ class CreateWalletCheckFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_create_wallet_check, container, false)
 
         val button = root.findViewById<Button>(R.id.button)
-        button.setOnClickListener({
+        button.setOnClickListener {
             val intent = Intent(context, AccessCodeActivity::class.java)
             startActivity(intent)
-        });
+        };
+
+        setupAutosuggestions(context!!, root)
 
         return root;
+    }
+
+
+    private fun setupAutosuggestions(context: Context, root: View) {
+        val words = MemoWords()
+        val fruits = words.getWords()
+        val adapter: ArrayAdapter<String> =
+            ArrayAdapter<String>(context, android.R.layout.select_dialog_item, fruits)
+
+        setAdapterForControl(root, R.id.test_word1, adapter)
+        setAdapterForControl(root, R.id.test_word2, adapter)
+        setAdapterForControl(root, R.id.test_word3, adapter)
+    }
+
+    private fun setAdapterForControl(root: View, controlId: Int, adapter: ArrayAdapter<String>) {
+        val actv = root.findViewById(controlId) as AutoCompleteTextView
+        actv.threshold = 1
+        actv.setAdapter(adapter)
     }
 
     companion object {

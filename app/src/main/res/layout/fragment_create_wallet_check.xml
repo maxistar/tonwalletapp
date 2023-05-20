@@ -60,13 +60,12 @@ tools:context=".ui.create_wallet.CreateWalletCheckFragment">
                 android:textAlignment="textEnd"
                 android:labelFor="@id/test_word1"
                 android:text="@string/import_wallet_word_number_1" />
-            <EditText
+            <AutoCompleteTextView
                 android:id="@+id/test_word1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:autofillHints=""
-                android:inputType="" />
+                android:autofillHints="" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -78,13 +77,12 @@ tools:context=".ui.create_wallet.CreateWalletCheckFragment">
                 android:labelFor="@+id/test_word2"
                 android:textAlignment="textEnd"
                 android:text="@string/import_wallet_word_number_5" />
-            <EditText
+            <AutoCompleteTextView
                 android:id="@+id/test_word2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:autofillHints=""
-                android:inputType="" />
+                android:autofillHints="" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -96,13 +94,12 @@ tools:context=".ui.create_wallet.CreateWalletCheckFragment">
                 android:labelFor="@id/test_word3"
                 android:textAlignment="textEnd"
                 android:text="@string/import_wallet_word_number_10" />
-            <EditText
+            <AutoCompleteTextView
                 android:id="@+id/test_word3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:autofillHints=""
-                android:inputType="" />
+                android:autofillHints="" />
         </LinearLayout>
 
     </LinearLayout>

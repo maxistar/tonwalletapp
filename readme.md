@@ -33,15 +33,24 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] check the code validity
   - [ ] create a model
   - [ ] create interactions between models
+  - [ ] use security form when application starts
 - [ ] select what to do form
 - [ ] create form to enter the secret phrase 
   - [ ] create success layout (it is not needed now)
-- [ ] create the layout to check the code we skipped earlier
-- [ ] remove not needed files
+  - [x] words autosuggestion
+    - [x] copy real words from the library
+    - [x] replace all components with the autosuggest
+    - [x] connect all components in the code
+    - [x] make another form the same way
+- [x] create the layout to check the code we skipped earlier
+  - [ ] check words for correctness
+  - [ ] store wallet in the application
+- [x] remove not needed files
 - [ ] business logic, store the created wallet
 - [ ] settings pages
   - [ ] make delete wallet to be red
   - [ ] use better components for settings
+  - [ ] list of wallet types
 - [ ] wallet activity
   - [ ] show transactions and new icon
 - [ ] send dialog
@@ -56,7 +65,8 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 ### UI Tasks
 
 - [ ] make forms exactly styled like on screenshots as possible
-
+- [ ] create launch icon
+- [ ] style buttons and texts
 
 ### Links:
 

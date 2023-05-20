@@ -87,13 +87,14 @@
                     android:text="@string/import_wallet_word_number_1"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10">
+                    <requestFocus />
+                </AutoCompleteTextView>
             </LinearLayout>
 
             <LinearLayout
@@ -108,13 +109,12 @@
                     android:text="@string/import_wallet_word_number_2"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -129,13 +129,12 @@
                     android:text="@string/import_wallet_word_number_3"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -150,13 +149,12 @@
                     android:text="@string/import_wallet_word_number_4"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -171,13 +169,12 @@
                     android:text="@string/import_wallet_word_number_5"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -192,13 +189,12 @@
                     android:text="@string/import_wallet_word_number_6"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -213,13 +209,12 @@
                     android:text="@string/import_wallet_word_number_7"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -234,13 +229,12 @@
                     android:text="@string/import_wallet_word_number_8"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -255,13 +249,12 @@
                     android:text="@string/import_wallet_word_number_9"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -276,13 +269,12 @@
                     android:text="@string/import_wallet_word_number_10"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -297,13 +289,12 @@
                     android:text="@string/import_wallet_word_number_11"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -318,13 +309,12 @@
                     android:text="@string/import_wallet_word_number_12"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -339,13 +329,12 @@
                     android:text="@string/import_wallet_word_number_13"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -360,13 +349,12 @@
                     android:text="@string/import_wallet_word_number_14"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -381,13 +369,12 @@
                     android:text="@string/import_wallet_word_number_15"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -402,13 +389,12 @@
                     android:text="@string/import_wallet_word_number_16"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -423,13 +409,12 @@
                     android:text="@string/import_wallet_word_number_17"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -444,13 +429,12 @@
                     android:text="@string/import_wallet_word_number_18"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -465,13 +449,12 @@
                     android:text="@string/import_wallet_word_number_19"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -486,13 +469,12 @@
                     android:text="@string/import_wallet_word_number_20"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -507,13 +489,12 @@
                     android:text="@string/import_wallet_word_number_21"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -528,13 +509,12 @@
                     android:text="@string/import_wallet_word_number_22"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -549,13 +529,12 @@
                     android:text="@string/import_wallet_word_number_23"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -570,13 +549,12 @@
                     android:text="@string/import_wallet_word_number_24"
                     android:textAlignment="textEnd" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/test_word24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="" />
+                    android:ems="10" />
             </LinearLayout>
         </LinearLayout>
 
