@@ -34,6 +34,11 @@ class WalletActivity : AppCompatActivity() {
                 startActivity(intent)
                 true
             }
+            R.id.scan_menu -> {
+                val intent = Intent(this, ScanActivity::class.java)
+                startActivity(intent)
+                true
+            }
             R.id.quit -> {
                 // showHelp()
                 true

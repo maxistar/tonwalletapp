@@ -1,16 +1,21 @@
 package me.maxistar.tonwallet.ui.wallet
 
 import android.content.Intent
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.journeyapps.barcodescanner.ScanContract
+import com.journeyapps.barcodescanner.ScanIntentResult
+import com.journeyapps.barcodescanner.ScanOptions
 import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.ReceiveActivity
 import me.maxistar.tonwallet.SendActivity
+
 
 class WalletFragment : Fragment() {
 

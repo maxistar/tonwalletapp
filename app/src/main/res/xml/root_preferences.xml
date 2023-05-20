@@ -3,11 +3,11 @@
     <PreferenceCategory app:title="@string/settings__title_general">
 
         <SwitchPreferenceCompat
-            app:key="sync"
+            app:key="notification"
             app:title="@string/settings__notifications" />
 
         <EditTextPreference
-            app:key="signature"
+            app:key="walletversion"
             app:title="@string/settings__active_address"
             app:useSimpleSummaryProvider="true" />
 
@@ -20,31 +20,36 @@
             app:useSimpleSummaryProvider="true" />
 
         <EditTextPreference
-            app:key="signature"
+            app:key="tokens"
             app:title="@string/settings__list_of_tokens"
             app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="configurl"
+            app:title="@string/settings__config_url"
+            app:useSimpleSummaryProvider="true"
+            app:defaultValue="https://ton-blockchain.github.io/testnet-global.config.json" />
 
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/settings__title_security">
 
         <EditTextPreference
-            app:key="signature"
+            app:key="phrase"
             app:title="@string/settings__phrase"
             app:useSimpleSummaryProvider="true" />
 
         <EditTextPreference
-            app:key="signature"
+            app:key="passcode"
             app:title="@string/settings__passcode"
             app:useSimpleSummaryProvider="true" />
 
         <SwitchPreferenceCompat
-            app:dependency="sync"
-            app:key="attachment"
+            app:key="biometic"
             app:title="@string/settings__biometric" />
 
         <EditTextPreference
-            app:key="signature"
+            app:key="delete_wallet"
             app:title="@string/settings__delete_wallet"
             app:useSimpleSummaryProvider="true" />
 

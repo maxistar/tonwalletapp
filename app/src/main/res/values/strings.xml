@@ -184,6 +184,7 @@ write these words down.</string>
     <string name="settings__passcode">Change passcode</string>
     <string name="settings__biometric">Biometric Auth</string>
     <string name="settings__delete_wallet">Delete Wallet</string>
+    <string name="settings__config_url">TON Config URL</string>
 
     <string name="receive__title">Receive TON</string>
     <string name="receive__description">Share this address with other TON
@@ -191,7 +192,6 @@ wallet owners to receive TON from them.</string>
     <string name="receive__button_label">Share Wallet Address</string>
     <string name="receive__address">lhGE49PbJckcU1y70jEQwf
 6InI414L1PLMIs3rrFx50F</string>
-
 
 
 </resources>

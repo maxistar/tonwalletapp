@@ -50,7 +50,8 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] add text labels 
   - [x] customise form according mock
   - [ ] use real wallet value
-
+- [ ] scan wallet barcode
+  - [x] basic scaning implementation 
 
 ### UI Tasks
 
