@@ -45,4 +45,13 @@ func main() {
 		),
 	)
 
+	fmt.Println("get address info:")
+	fmt.Println(
+		wallet.GetAddressInfo(
+			"salad able company apology able apology audit salad update provide dance update ginger destroy provide destroy intact salute vivid apology team oyster sword destroy",
+			int(wallet2.V3),
+			"https://ton-blockchain.github.io/testnet-global.config.json",
+		),
+	)
+
 }

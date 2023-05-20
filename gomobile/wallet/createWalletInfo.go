@@ -17,7 +17,6 @@ func GetNewWalletInfo(version int, configUrl string) string {
 
 	client := liteclient.NewConnectionPool()
 
-	// configUrl := "https://ton-blockchain.github.io/testnet-global.config.json"
 	err := client.AddConnectionsFromConfigUrl(context.Background(), configUrl)
 	if err != nil {
 		log.Println(err)

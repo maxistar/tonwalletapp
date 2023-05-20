@@ -27,5 +27,6 @@ Todo:
 [x] return walled address
 [x] get the list of secret words for an application (seed.go)
 [x] return balance
-[ ] return last transactions
- - [ ] create json structure
+[x] return last transactions
+ - [x] create json structure
+[x] convert phrase to wallet address
