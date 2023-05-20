@@ -6,9 +6,12 @@
             app:key="notification"
             app:title="@string/settings__notifications" />
 
-        <EditTextPreference
+        <ListPreference
+            app:defaultValue="32"
             app:key="walletversion"
             app:title="@string/settings__active_address"
+            app:entries="@array/wallet_values"
+            app:entryValues="@array/wallet_versions"
             app:useSimpleSummaryProvider="true" />
 
         <ListPreference
@@ -48,7 +51,7 @@
             app:key="biometic"
             app:title="@string/settings__biometric" />
 
-        <EditTextPreference
+        <Preference
             app:key="delete_wallet"
             app:title="@string/settings__delete_wallet"
             app:useSimpleSummaryProvider="true" />

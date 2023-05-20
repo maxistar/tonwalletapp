@@ -1,5 +1,6 @@
 package me.maxistar.tonwallet.ui.create_wallet
 
+import android.content.ContentProvider
 import android.content.Context
 import android.content.res.Resources
 import androidx.lifecycle.ViewModelProvider
@@ -14,6 +15,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.FragmentManager
 import me.maxistar.tonwallet.R
+import me.maxistar.tonwallet.service.ServiceProvider
 
 class CreateWalletFragment : Fragment() {
 
@@ -25,8 +27,11 @@ class CreateWalletFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val settingsService = ServiceProvider.getSettingsService();
+
         viewModel = ViewModelProvider(this).get(CreateWalletViewModel::class.java)
-        viewModel.generateNewWallet();
+        viewModel.generateNewWallet(settingsService.getWalletVersion(context!!), settingsService.getTonConfiguration(context!!));
     }
 
     override fun onCreateView(
@@ -114,20 +119,21 @@ class CreateWalletFragment : Fragment() {
                 getResources().getString(R.string.create_wallet_confirmation_text)
             )
             .setPositiveButton(
-                getResources().getString(R.string.create_wallet_confirmation_skip_button),
-                { dialog, which ->
-                    //val intent = Intent(context, AccessCodeActivity::class.java)
-                    //startActivity(intent)
-                    val fm: FragmentManager = parentFragmentManager
-                    fm.beginTransaction()
-                        .replace(R.id.container, CreateWalletCheckFragment.newInstance("", ""))
-                        .addToBackStack(null)
-                        .commit()
-                })
+                getResources().getString(R.string.create_wallet_confirmation_skip_button)
+            ) { dialog, which ->
+                val fm: FragmentManager = parentFragmentManager
+                fm.beginTransaction()
+                    .replace(R.id.container, CreateWalletCheckFragment.newInstance(
+                        viewModel.text.value!!,
+                        viewModel.newWalletAddress
+                    ))
+                    .addToBackStack(null)
+                    .commit()
+            }
             .setNegativeButton(
-                getResources().getString(R.string.create_wallet_confirmation_ok_sorry_button),
-                { dialog, which ->
-                    //Do Something Here
-                }).show()
+                getResources().getString(R.string.create_wallet_confirmation_ok_sorry_button)
+            ) { dialog, which ->
+                //Do Something Here
+            }.show()
     }
 }

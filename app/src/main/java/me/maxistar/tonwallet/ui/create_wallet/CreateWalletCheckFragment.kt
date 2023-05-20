@@ -3,6 +3,7 @@ package me.maxistar.tonwallet.ui.create_wallet
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +11,11 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
+import androidx.lifecycle.ViewModelProvider
 import me.maxistar.tonwallet.AccessCodeActivity
 import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.model.MemoWords
+import me.maxistar.tonwallet.service.ServiceProvider
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,15 +29,19 @@ private const val ARG_PARAM2 = "param2"
  */
 class CreateWalletCheckFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var seed: String? = null
+    private var address: String? = null
+
+    //private lateinit var seed: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            seed = it.getString(ARG_PARAM1)
+            address = it.getString(ARG_PARAM2)
         }
+        //viewModel = ViewModelProvider(this).get(CreateWalletViewModel::class.java)
+        //Log.w("viewModel", viewModel.newWalletAddress)
     }
 
     override fun onCreateView(
@@ -44,8 +51,14 @@ class CreateWalletCheckFragment : Fragment() {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_create_wallet_check, container, false)
 
+        val settings = ServiceProvider.getSettingsService();
+
         val button = root.findViewById<Button>(R.id.button)
         button.setOnClickListener {
+            Log.w("address", address!!)
+            Log.w("seed", seed!!)
+            settings.storeWallet(context!!, address!!, seed!!)
+
             val intent = Intent(context, AccessCodeActivity::class.java)
             startActivity(intent)
         };
@@ -84,11 +97,11 @@ class CreateWalletCheckFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(seed: String, address: String) =
             CreateWalletCheckFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(ARG_PARAM1, seed)
+                    putString(ARG_PARAM2, address)
                 }
             }
     }

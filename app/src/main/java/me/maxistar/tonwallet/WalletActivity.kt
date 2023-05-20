@@ -1,11 +1,12 @@
 package me.maxistar.tonwallet
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Process
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import me.maxistar.tonwallet.ui.wallet.WalletFragment
 
 class WalletActivity : AppCompatActivity() {
@@ -40,7 +41,10 @@ class WalletActivity : AppCompatActivity() {
                 true
             }
             R.id.quit -> {
-                // showHelp()
+                finishAffinity()
+                val pid = Process.myPid()
+                Process.killProcess(pid)
+                //System.exit(0);
                 true
             }
             else -> super.onOptionsItemSelected(item)
