@@ -70,6 +70,10 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [ ] make forms exactly styled like on screenshots as possible
 - [ ] create launch icon
 - [ ] style buttons and texts
+- [ ] make sure elements are in correct order
+  - []
+  - []
+  - []
 
 ### Links:
 
