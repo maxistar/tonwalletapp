@@ -11,9 +11,13 @@ class CreateWalletViewModel : ViewModel() {
 
     private var newWalletWords: String = ""
 
-    fun generateNewWallet() {
+    private var newWalletAddress: String = ""
+
+    fun generateNewWallet(walletVersion: Long, configUrl: String) {
         viewModelScope.launch {
-            _text.value = ServiceProvider.getWalletService().getNewWalletWords()
+            val walletInfo = ServiceProvider.getWalletService().getNewWalletInfo(walletVersion, configUrl)
+            _text.value = walletInfo.getSeed();
+            newWalletAddress = walletInfo.getPublicAddress();
         }
     }
 

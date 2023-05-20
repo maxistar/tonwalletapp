@@ -25,10 +25,7 @@ class StartScreenStartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         Handler(Looper.getMainLooper()).postDelayed({
-            //val intent = Intent(this.context, MainActivity::class.java)
-            //startActivity(intent)
             val fm: FragmentManager = parentFragmentManager
             fm.beginTransaction()
                 .replace(R.id.container, StartScreenWalletFragment.newInstance("", ""))
@@ -41,12 +38,6 @@ class StartScreenStartFragment : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @return A new instance of fragment StartScreenStartFragment.
-         */
         @JvmStatic
         fun newInstance() = StartScreenStartFragment()
     }

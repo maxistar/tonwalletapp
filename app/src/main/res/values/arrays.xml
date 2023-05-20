@@ -9,4 +9,35 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+
+
+    <string-array name="wallet_versions">
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>21</item>
+        <item>22</item>
+        <item>31</item>
+        <item>32</item>
+        <item>41</item>
+        <item>42</item>
+        <item>122</item>
+        <item>200</item>
+    </string-array>
+
+
+    <string-array name="wallet_values">
+        <item>V1R1</item>
+        <item>V1R2</item>
+        <item>V1R3</item>
+        <item>V2R1</item>
+        <item>V2R2</item>
+        <item>V3R1</item>
+        <item>V3R2</item>
+        <item>V4R1</item>
+        <item>V4R2</item>
+        <item>HighloadV2R2</item>
+        <item>Lockup</item>
+    </string-array>
+
 </resources>

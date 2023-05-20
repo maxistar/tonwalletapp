@@ -6,9 +6,12 @@
             app:key="notification"
             app:title="@string/settings__notifications" />
 
-        <EditTextPreference
+        <ListPreference
+            app:defaultValue="32"
             app:key="walletversion"
             app:title="@string/settings__active_address"
+            app:entries="@array/wallet_values"
+            app:entryValues="@array/wallet_versions"
             app:useSimpleSummaryProvider="true" />
 
         <ListPreference

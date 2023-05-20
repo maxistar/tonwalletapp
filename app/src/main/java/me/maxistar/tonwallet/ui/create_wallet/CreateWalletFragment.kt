@@ -1,5 +1,6 @@
 package me.maxistar.tonwallet.ui.create_wallet
 
+import android.content.ContentProvider
 import android.content.Context
 import android.content.res.Resources
 import androidx.lifecycle.ViewModelProvider
@@ -14,6 +15,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.FragmentManager
 import me.maxistar.tonwallet.R
+import me.maxistar.tonwallet.service.ServiceProvider
 
 class CreateWalletFragment : Fragment() {
 
@@ -25,8 +27,11 @@ class CreateWalletFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val settingsService = ServiceProvider.getSettingsService();
+
         viewModel = ViewModelProvider(this).get(CreateWalletViewModel::class.java)
-        viewModel.generateNewWallet();
+        viewModel.generateNewWallet(settingsService.getWalletVersion(context!!), settingsService.getTonConfiguration(context!!));
     }
 
     override fun onCreateView(
