@@ -1,5 +1,6 @@
 package me.maxistar.tonwallet.ui.restore_wallet
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -15,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider
 import me.maxistar.tonwallet.AccessCodeActivity
 import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.model.MemoWords
+import me.maxistar.tonwallet.service.ServiceProvider
 
 
 class RestoreWalletFragment : Fragment() {
@@ -38,8 +40,12 @@ class RestoreWalletFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_restore_wallet, container, false)
         val button = root.findViewById<Button>(R.id.button)
         button.setOnClickListener {
-            val intent = Intent(context, AccessCodeActivity::class.java)
-            startActivity(intent)
+            if (tryToRestoreWallet(root)) {
+                val intent = Intent(context, AccessCodeActivity::class.java)
+                startActivity(intent)
+            } else {
+                showErrorMessage()
+            }
         }
 
         val errorButton = root.findViewById<Button>(R.id.button_do_not_have)
@@ -54,6 +60,70 @@ class RestoreWalletFragment : Fragment() {
         setupAutosuggestions(context!!, root)
 
         return root;
+    }
+
+    private fun tryToRestoreWallet(view: View): Boolean {
+
+        try {
+            val seed = getSeed(view)
+            val walletService = ServiceProvider.getWalletService()
+            val settingsService = ServiceProvider.getSettingsService()
+            val info = walletService.loadWalletInfo(seed, settingsService.getWalletVersion(context!!), settingsService.getTonConfiguration(context!!))
+
+            if (info.getPublicAddress() !== "") {
+                settingsService.storeWallet(context!!, info.getPublicAddress(), info.getSeed())
+                return true
+            }
+        } catch (e: Throwable) {
+            // log error
+        }
+
+        return false;
+    }
+
+    private fun getSeed(root: View): String {
+        val words = arrayOf(
+            root.findViewById<AutoCompleteTextView>(R.id.test_word1).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word2).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word3).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word4).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word5).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word6).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word7).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word8).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word9).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word10).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word11).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word12).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word13).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word14).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word15).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word16).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word17).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word18).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word19).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word20).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word21).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word22).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word23).text,
+            root.findViewById<AutoCompleteTextView>(R.id.test_word24).text,
+        );
+        return words.joinToString(separator = " ")
+    }
+
+    private fun showErrorMessage() {
+        AlertDialog.Builder(context)
+            .setTitle(R.string.import_wallet__error_dialog__title)
+            .setMessage(R.string.import_wallet__error_dialog__text)
+            .setIcon(R.drawable.ic_launcher_background)
+            .setPositiveButton(
+                R.string.general__ok,
+                { dialog, whichButton -> nothingToDo() })
+            .show()
+    }
+
+    private fun nothingToDo() {
+        // TODO("Not yet implemented")
     }
 
     private fun setupAutosuggestions(context: Context, root: View) {

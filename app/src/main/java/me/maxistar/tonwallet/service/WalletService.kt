@@ -27,4 +27,11 @@ class WalletService {
         val details = WalletDetails(jsonValue.getString("Seed"), jsonValue.getString("Address"))
         return details;
     }
+
+    fun loadWalletInfo(seed: String, walletVersion: Long, configUrl: String?): WalletDetails {
+        val result = Wallet.getAddressInfo(seed, walletVersion, configUrl)
+        val jsonValue = JSONObject(result)
+        val details = WalletDetails(jsonValue.getString("Seed"), jsonValue.getString("Address"))
+        return details;
+    }
 }
