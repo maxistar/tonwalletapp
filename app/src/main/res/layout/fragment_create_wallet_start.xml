@@ -10,7 +10,7 @@
         android:id="@+id/ton_image_layout"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="20dp"
         android:contentDescription="@string/ton_wallet"
         android:src="@drawable/hura"
         app:layout_constraintBottom_toTopOf="@+id/ton_wallet_title"
@@ -51,11 +51,13 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginBottom="70dp"
         android:fontFamily="@font/roboto"
         android:text="@string/screen2_button"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:drawablePadding="14dp"
+        app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />

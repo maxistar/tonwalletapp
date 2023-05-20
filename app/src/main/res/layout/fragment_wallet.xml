@@ -64,7 +64,7 @@
         <Button
             android:id="@+id/button_receive"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_margin="5dp"
             android:drawableLeft="@drawable/receive_icon_24dp"
             android:text="@string/wallet__button__receive"
@@ -75,7 +75,7 @@
         <Button
             android:id="@+id/button_send"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_margin="5dp"
             android:drawableLeft="@drawable/send_icon_24dp"
             android:text="@string/wallet__button__send"
