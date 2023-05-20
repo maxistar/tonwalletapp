@@ -39,4 +39,12 @@ class SettingsService {
         return (getWalletAddress(context) !== "" && getWalletSecretPhrase(context) !== "")
     }
 
+    fun resetWallet(context: Context) {
+        val settings: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        val editor: SharedPreferences.Editor = settings.edit()
+        editor.remove("address")
+        editor.remove("secret")
+        editor.apply()
+    }
+
 }

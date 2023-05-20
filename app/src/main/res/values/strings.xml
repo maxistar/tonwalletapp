@@ -207,4 +207,9 @@ wallet owners to receive TON from them.</string>
 6InI414L1PLMIs3rrFx50F</string>
 
 
+    <string name="Warning">Warning</string>
+    <string name="User_Data_Is_About_To_Delete">User Data Is About To Delete</string>
+    <string name="general_Yes">Yes</string>
+    <string name="general_No">No</string>
+
 </resources>

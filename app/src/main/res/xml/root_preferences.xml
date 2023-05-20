@@ -51,7 +51,7 @@
             app:key="biometic"
             app:title="@string/settings__biometric" />
 
-        <EditTextPreference
+        <Preference
             app:key="delete_wallet"
             app:title="@string/settings__delete_wallet"
             app:useSimpleSummaryProvider="true" />
