@@ -86,6 +86,19 @@ write these words down.</string>
     <string name="access_code_number_8">8</string>
     <string name="access_code_number_9">9</string>
     <string name="access_code_number_0">0</string>
+
+
+    <string name="access_code_number_html_1">&lt;b&gt;1&lt;/b&gt; &lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/small&gt;</string>
+    <string name="access_code_number_html_2">&lt;b&gt;2&lt;/b&gt; &lt;small&gt;ABC&lt;/small&gt;</string>
+    <string name="access_code_number_html_3">&lt;b&gt;3&lt;/b&gt; &lt;small&gt;DEF&lt;/small&gt;</string>
+    <string name="access_code_number_html_4">&lt;b&gt;4&lt;/b&gt; &lt;small&gt;GHI&lt;/small&gt;</string>
+    <string name="access_code_number_html_5">&lt;b&gt;5&lt;/b&gt; &lt;small&gt;JKL&lt;/small&gt;</string>
+    <string name="access_code_number_html_6">&lt;b&gt;6&lt;/b&gt; &lt;small&gt;MNO&lt;/small&gt;</string>
+    <string name="access_code_number_html_7">&lt;b&gt;7&lt;/b&gt; &lt;small&gt;PQRS&lt;/small&gt;</string>
+    <string name="access_code_number_html_8">&lt;b&gt;8&lt;/b&gt; &lt;small&gt;TUV&lt;/small&gt;</string>
+    <string name="access_code_number_html_9">&lt;b&gt;9&lt;/b&gt; &lt;small&gt;WXYZ&lt;/small&gt;</string>
+    <string name="access_code_number_html_0">&lt;b&gt;0&lt;/b&gt; &lt;small&gt;+&lt;/small&gt;</string>
+
     <string name="access_code_delete">⌫</string>
 
     <string name="general__ok">OK</string>

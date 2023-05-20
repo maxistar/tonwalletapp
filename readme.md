@@ -34,6 +34,9 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] create a model
   - [ ] create interactions between models
   - [ ] use security form when application starts
+  - [x] try to use html for buttons
+  - [x] make additional letters for buttons
+  - [ ] better positioning on the page
 - [ ] select what to do form
 - [ ] create form to enter the secret phrase 
   - [ ] create success layout (it is not needed now)
