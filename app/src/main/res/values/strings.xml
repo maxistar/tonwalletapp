@@ -216,5 +216,6 @@ wallet owners to receive TON from them.</string>
     <string name="wallet__your_wallet_address">Your wallet address</string>
     <string name="wallet__your_wallet_address_defaul_value">UQBFz01R2CU7YA8pevUaNIYE
 zi1mRo4cX-r3W2Dwx-WEAoKP</string>
+    <string name="wallet__item_storage_fee">-0.000065732 storage fee</string>
 
 </resources>
