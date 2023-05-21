@@ -20,12 +20,14 @@ func GetNewWalletInfo(version int, configUrl string) string {
 	err := client.AddConnectionsFromConfigUrl(context.Background(), configUrl)
 	if err != nil {
 		log.Println(err)
+		return ""
 	}
 	api := ton.NewAPIClient(client)
 
 	wallet, err := wallet.FromSeed(api, seed, wallet.Version(version))
 	if err != nil {
 		log.Println(err)
+		return ""
 	}
 
 	address := wallet.Address()

@@ -18,6 +18,7 @@ type TransactionInfo struct {
 	LT      uint64
 	Address string
 	Amount  *big.Int
+	Type    string
 }
 
 type AccountInfo struct {
@@ -112,10 +113,26 @@ func GetTransactions(words string, version int, configUrl string) string {
 			log.Printf("send err: %s", err.Error())
 			return ""
 		}
-		in := new(big.Int)
+
 		// oldest = first in list
 		for _, t := range list {
+			var destinations []string
+			in, out := new(big.Int), new(big.Int)
 			fmt.Println(t.String())
+
+			if t.IO.Out != nil {
+				listOut, err := t.IO.Out.ToSlice()
+				if err != nil {
+					continue
+				}
+
+				for _, m := range listOut {
+					destinations = append(destinations, m.Msg.DestAddr().String())
+					if m.MsgType == tlb.MsgTypeInternal {
+						out.Add(out, m.AsInternal().Amount.NanoTON())
+					}
+				}
+			}
 
 			//incomment transaction
 			if t.IO.In != nil {
@@ -131,10 +148,19 @@ func GetTransactions(words string, version int, configUrl string) string {
 						LT:      t.LT,
 						Address: intTx.SrcAddr.String(),
 						Amount:  in,
+						Type:    "in",
 					})
 				}
 			}
 
+			if out.Cmp(big.NewInt(0)) != 0 {
+				info.Transactions = append(info.Transactions, TransactionInfo{
+					LT:      t.LT,
+					Address: strings.Join(destinations, " "),
+					Amount:  out,
+					Type:    "out",
+				})
+			}
 		}
 
 		// set previous info from the oldest transaction in list
