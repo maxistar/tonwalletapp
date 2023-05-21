@@ -92,12 +92,13 @@ class WalletFragment : Fragment() {
         }
 
         val listView = binding!!.transactions
-        listView.adapter =
-            viewModel.transactions.let { it.value?.let { it1 -> TransactionsAdapter(context!!, R.layout.transaction_item, it1.toList()) } }
 
         listView.emptyView = binding!!.noTransactions
 
         viewModel.transactions.observe(viewLifecycleOwner) {
+            Log.w("ddffdfd", it.size.toString())
+            listView.adapter =
+                viewModel.transactions.let { it.value?.let { it1 -> TransactionsAdapter(context!!, R.layout.transaction_item, it1.toList()) } }
             (listView.adapter as TransactionsAdapter?)?.notifyDataSetChanged()
         }
 
