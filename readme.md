@@ -55,6 +55,8 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] list of wallet types
 - [ ] wallet activity
   - [ ] show transactions and new icon
+    - [ ] show real transactions
+    - [ ] make the list look like on the mock
 - [ ] send dialog
   - [ ] send money 
 - [ ] receive dialog
@@ -62,7 +64,8 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] customise form according mock
   - [ ] use real wallet value
 - [ ] scan wallet barcode
-  - [x] basic scaning implementation 
+  - [x] basic scaning implementation
+  - [ ] customize dialog
 
 ### UI Tasks
 
