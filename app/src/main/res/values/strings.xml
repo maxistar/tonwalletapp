@@ -29,6 +29,7 @@
     <string name="menu_settings">Settings</string>
     <string name="menu_quit">Quit</string>
     <string name="menu_scan">Scan</string>
+    <string name="menu_refresh">Refresh</string>
 
     <string name="create_wallet_wordNumber_0">1</string>
     <string name="create_wallet_wordNumber_1">2</string>
@@ -211,5 +212,11 @@ wallet owners to receive TON from them.</string>
     <string name="User_Data_Is_About_To_Delete">User Data Is About To Delete</string>
     <string name="general_Yes">Yes</string>
     <string name="general_No">No</string>
+
+    <string name="wallet__wallet_created">Wallet Created</string>
+    <string name="wallet__your_wallet_address">Your wallet address</string>
+    <string name="wallet__your_wallet_address_defaul_value">UQBFz01R2CU7YA8pevUaNIYE
+zi1mRo4cX-r3W2Dwx-WEAoKP</string>
+    <string name="wallet__item_storage_fee">-0.000065732 storage fee</string>
 
 </resources>

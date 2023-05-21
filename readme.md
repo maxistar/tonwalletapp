@@ -48,13 +48,16 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] check words for correctness
   - [ ] store wallet in the application
 - [x] remove not needed files
-- [ ] business logic, store the created wallet
+- [x] business logic, store the created wallet
 - [ ] settings pages
   - [ ] make delete wallet to be red
   - [ ] use better components for settings
-  - [ ] list of wallet types
+  - [x] list of wallet types
+  - [ ] use wallet types in code
 - [ ] wallet activity
   - [ ] show transactions and new icon
+    - [ ] show real transactions
+    - [x] make the list look like on the mock
 - [ ] send dialog
   - [ ] send money 
 - [ ] receive dialog
@@ -62,7 +65,8 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] customise form according mock
   - [ ] use real wallet value
 - [ ] scan wallet barcode
-  - [x] basic scaning implementation 
+  - [x] basic scaning implementation
+  - [ ] customize dialog
 
 ### UI Tasks
 

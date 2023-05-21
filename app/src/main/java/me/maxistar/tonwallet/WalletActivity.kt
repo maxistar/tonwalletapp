@@ -3,9 +3,11 @@ package me.maxistar.tonwallet
 import android.content.Intent
 import android.os.Bundle
 import android.os.Process
+import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import me.maxistar.tonwallet.ui.wallet.WalletFragment
 
@@ -50,4 +52,11 @@ class WalletActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    /*
+    override fun onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenu.ContextMenuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.wallet_context_menu, menu)
+    }*/
 }
