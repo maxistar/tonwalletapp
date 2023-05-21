@@ -2,7 +2,9 @@ package me.maxistar.tonwallet.ui.wallet
 
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +21,7 @@ import me.maxistar.tonwallet.ReceiveActivity
 import me.maxistar.tonwallet.SendActivity
 import me.maxistar.tonwallet.model.TransactionItem
 import me.maxistar.tonwallet.service.ServiceProvider
+import me.maxistar.tonwallet.util.TonFormatter
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -40,6 +43,7 @@ class WalletFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(WalletViewModel::class.java)
         viewModel.updateWallet(
+            settingsService.getWalletSecretPhrase(context!!),
             settingsService.getWalletVersion(context!!),
             settingsService.getTonConfiguration(context!!)
         )
@@ -67,13 +71,16 @@ class WalletFragment : Fragment() {
             val intent = Intent(this.context, ReceiveActivity::class.java)
             startActivity(intent)
         }
-
-        Log.w("dfdfdfd", "test observe!!!!")
-
         val textView = root.findViewById<TextView>(R.id.wallet_address_balance)
         viewModel.balance.observe(viewLifecycleOwner) {
-            Log.w("dfdfdfd!!!!", it.toString())
-            textView.text = it.toString()
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                textView.setText(
+                    Html.fromHtml(TonFormatter.nanoTonsToHtmlString(it), Html.FROM_HTML_MODE_COMPACT),
+                    TextView.BufferType.SPANNABLE
+                )
+            } else {
+                textView.setText(TonFormatter.nanoTonsToString(it))
+            }
         }
 
         val listView = root.findViewById<ListView>(R.id.transactions)

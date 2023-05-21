@@ -34,4 +34,12 @@ class WalletService {
         val details = WalletDetails(jsonValue.getString("Seed"), jsonValue.getString("Address"))
         return details;
     }
+
+    fun getBalance(seed: String, walletVersion: Long, configUrl: String?): Long {
+        val result = Wallet.getBalance(seed, walletVersion, configUrl);
+        Log.w("balance", result.toString())
+        val jsonValue = JSONObject(result)
+        val details = jsonValue.getLong("NanoTons")
+        return details;
+    }
 }

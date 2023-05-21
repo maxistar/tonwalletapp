@@ -55,6 +55,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/access_code_number_0"
                     android:textColor="@color/white"
+                    android:textStyle="bold"
                     android:textSize="40sp" />
             </LinearLayout>
 
