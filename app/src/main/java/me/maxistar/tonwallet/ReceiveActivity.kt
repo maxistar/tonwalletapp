@@ -1,9 +1,11 @@
 package me.maxistar.tonwallet
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +22,7 @@ class ReceiveActivity : AppCompatActivity() {
         val walletService = ServiceProvider.getWalletService()
         val settingsService = ServiceProvider.getSettingsService()
         val address = settingsService.getWalletAddress(this)
-        val addressLink = "ton://transfet/$address"
+        val addressLink = "ton://transfer/$address"
 
         val addressLabel = findViewById<TextView>(R.id.ton_wallet_address)
         addressLabel.text = address;
@@ -33,5 +35,21 @@ class ReceiveActivity : AppCompatActivity() {
         } catch (e: Exception) {
             e.message?.let { Log.w("warning", it) }
         }
+
+        val button = findViewById<Button>(R.id.button)
+        button.setOnClickListener {
+            shareWallet(addressLink)
+        }
+    }
+
+    private fun shareWallet(addressLink: String) {
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, addressLink)
+            type = "text/plain"
+        }
+
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
     }
 }
