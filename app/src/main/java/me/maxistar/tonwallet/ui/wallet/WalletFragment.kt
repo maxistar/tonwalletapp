@@ -3,6 +3,7 @@ package me.maxistar.tonwallet.ui.wallet
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,7 @@ import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.ReceiveActivity
 import me.maxistar.tonwallet.SendActivity
 import me.maxistar.tonwallet.model.TransactionItem
+import me.maxistar.tonwallet.service.ServiceProvider
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -29,16 +31,22 @@ class WalletFragment : Fragment() {
 
     private lateinit var viewModel: WalletViewModel
 
-    var values: ArrayList<TransactionItem>? = null
+    // var values: ArrayList<TransactionItem>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(WalletViewModel::class.java)
 
-        values = ArrayList(3)
-        values!!.add(TransactionItem(10, "comment", "address"))
-        values!!.add(TransactionItem(10, "comment", "address"))
-        values!!.add(TransactionItem(10, "comment", "address"))
+        val settingsService = ServiceProvider.getSettingsService();
+
+        viewModel = ViewModelProvider(this).get(WalletViewModel::class.java)
+        viewModel.updateWallet(
+            settingsService.getWalletVersion(context!!),
+            settingsService.getTonConfiguration(context!!)
+        )
+        //values = ArrayList(3)
+        //values!!.add(TransactionItem(10, "comment", "address"))
+        //values!!.add(TransactionItem(10, "comment", "address"))
+        //values!!.add(TransactionItem(10, "comment", "address"))
 
     }
 
@@ -60,17 +68,29 @@ class WalletFragment : Fragment() {
             startActivity(intent)
         }
 
+        Log.w("dfdfdfd", "test observe!!!!")
+
+        val textView = root.findViewById<TextView>(R.id.wallet_address_balance)
+        viewModel.balance.observe(viewLifecycleOwner) {
+            Log.w("dfdfdfd!!!!", it.toString())
+            textView.text = it.toString()
+        }
+
         val listView = root.findViewById<ListView>(R.id.transactions)
         listView.adapter =
-            values?.let { TransactionsAdapter(context!!, R.layout.transaction_item, it.toTypedArray()) }
+            viewModel.transactions.let { it.value?.let { it1 -> TransactionsAdapter(context!!, R.layout.transaction_item, it1.toList()) } }
 
         listView.emptyView = root.findViewById(R.id.no_transactions)
+
+        viewModel.transactions.observe(viewLifecycleOwner) {
+            (listView.adapter as TransactionsAdapter?)?.notifyDataSetChanged()
+        }
 
         return root;
     }
 
 
-    protected class TransactionsAdapter(context: Context, textViewResourceId: Int, values_: Array<TransactionItem>) :
+    protected class TransactionsAdapter(context: Context, textViewResourceId: Int, values_: List<TransactionItem>) :
         ArrayAdapter<TransactionItem?>(context, textViewResourceId, values_) {
 
         val values = values_;
