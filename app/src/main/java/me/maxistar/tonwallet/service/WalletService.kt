@@ -4,6 +4,7 @@ import android.util.Log
 import wallet.Wallet
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import me.maxistar.tonwallet.model.TransactionItem
 import me.maxistar.tonwallet.model.WalletDetails
 import org.json.JSONObject
 import wallet.WalletInfo
@@ -41,5 +42,12 @@ class WalletService {
         val jsonValue = JSONObject(result)
         val details = jsonValue.getLong("NanoTons")
         return details;
+    }
+
+    fun getTransactions(seed: String, walletVersion: Long, configUrl: String?): List<TransactionItem> {
+        val result = Wallet.getTransactions(seed, walletVersion, configUrl);
+        Log.w("transactions", result.toString())
+        val transactions = mutableListOf<TransactionItem>()
+        return transactions
     }
 }

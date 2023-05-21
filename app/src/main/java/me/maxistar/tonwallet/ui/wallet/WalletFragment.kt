@@ -6,7 +6,10 @@ import android.os.Build
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
+import android.view.ContextMenu
 import android.view.LayoutInflater
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
@@ -19,6 +22,7 @@ import androidx.lifecycle.ViewModelProvider
 import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.ReceiveActivity
 import me.maxistar.tonwallet.SendActivity
+import me.maxistar.tonwallet.databinding.FragmentWalletBinding
 import me.maxistar.tonwallet.model.TransactionItem
 import me.maxistar.tonwallet.service.ServiceProvider
 import me.maxistar.tonwallet.util.TonFormatter
@@ -33,6 +37,8 @@ class WalletFragment : Fragment() {
     }
 
     private lateinit var viewModel: WalletViewModel
+
+    private var binding: FragmentWalletBinding? = null
 
     // var values: ArrayList<TransactionItem>? = null
 
@@ -58,20 +64,22 @@ class WalletFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val root = inflater.inflate(R.layout.fragment_wallet, container, false)
+        //val root = inflater.inflate(R.layout.fragment_wallet, container, false)
+        binding = FragmentWalletBinding.inflate(inflater, container, false)
 
-        val buttonSend = root.findViewById<Button>(R.id.button_send)
+
+        val buttonSend = binding!!.buttonSend
         buttonSend.setOnClickListener({
             val intent = Intent(this.context, SendActivity::class.java)
             startActivity(intent)
         })
 
-        val buttonReceive = root.findViewById<Button>(R.id.button_receive)
+        val buttonReceive = binding!!.buttonReceive
         buttonReceive.setOnClickListener {
             val intent = Intent(this.context, ReceiveActivity::class.java)
             startActivity(intent)
         }
-        val textView = root.findViewById<TextView>(R.id.wallet_address_balance)
+        val textView = binding!!.walletAddressBalance
         viewModel.balance.observe(viewLifecycleOwner) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 textView.setText(
@@ -83,19 +91,50 @@ class WalletFragment : Fragment() {
             }
         }
 
-        val listView = root.findViewById<ListView>(R.id.transactions)
+        val listView = binding!!.transactions
         listView.adapter =
             viewModel.transactions.let { it.value?.let { it1 -> TransactionsAdapter(context!!, R.layout.transaction_item, it1.toList()) } }
 
-        listView.emptyView = root.findViewById(R.id.no_transactions)
+        listView.emptyView = binding!!.noTransactions
 
         viewModel.transactions.observe(viewLifecycleOwner) {
             (listView.adapter as TransactionsAdapter?)?.notifyDataSetChanged()
         }
 
-        return root;
+        // registerComponentCallbacks
+        binding?.apply { registerForContextMenu(binding!!.walletTopPart) }
+
+        return binding!!.root;
     }
 
+    override fun onCreateContextMenu(
+        menu: ContextMenu,
+        v: View,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        menu.setHeaderTitle("Pick option")
+        requireActivity().menuInflater.inflate(R.menu.wallet_context_menu, menu)
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.refresh -> {
+                refreshWallet()
+            }
+        }
+        return super.onContextItemSelected(item)
+    }
+
+    private fun refreshWallet() {
+        val settingsService = ServiceProvider.getSettingsService();
+
+        viewModel.updateWallet(
+            settingsService.getWalletSecretPhrase(context!!),
+            settingsService.getWalletVersion(context!!),
+            settingsService.getTonConfiguration(context!!)
+        )
+    }
 
     protected class TransactionsAdapter(context: Context, textViewResourceId: Int, values_: List<TransactionItem>) :
         ArrayAdapter<TransactionItem?>(context, textViewResourceId, values_) {
@@ -104,7 +143,7 @@ class WalletFragment : Fragment() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
             var v = convertView
             if (v == null) {
-                val vi = getSystemService(context, LayoutInflater::class.java) as LayoutInflater?
+                val vi = getSystemService(context, LayoutInflater::class.java)
                 val g: ViewGroup? = null
                 if (vi != null) {
                     v = vi.inflate(R.layout.transaction_item, g)
@@ -121,5 +160,9 @@ class WalletFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
 
 }

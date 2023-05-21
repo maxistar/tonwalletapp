@@ -25,11 +25,14 @@ class WalletViewModel : ViewModel() {
 
     fun updateWallet(seed: String, walletVersion: Long, configUrl: String) {
         Log.w("updateWallet", "UpdateWallet")
+        val walletService = ServiceProvider.getWalletService();
+        walletService.getTransactions(seed, walletVersion, configUrl)
+
         _liveTransactions.value?.add(TransactionItem(10, "comment 1", "address 1"))
         _liveTransactions.value?.add(TransactionItem(10, "comment 2", "address 2"))
         _liveTransactions.value?.add(TransactionItem(10, "comment 3", "address 3"))
 
-        _liveBalance.value = ServiceProvider.getWalletService().getBalance(seed, walletVersion, configUrl)
+        _liveBalance.value = walletService.getBalance(seed, walletVersion, configUrl)
     }
 
     val transactions: LiveData<MutableList<TransactionItem>> = _liveTransactions
