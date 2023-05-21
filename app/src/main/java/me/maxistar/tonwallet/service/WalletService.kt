@@ -47,20 +47,31 @@ class WalletService {
 
     fun getTransactions(seed: String, walletVersion: Long, configUrl: String?): WalletHistoryDetails? {
         val result = Wallet.getTransactions(seed, walletVersion, configUrl);
+        Log.w("responce", result)
         if (result == "") {
             return null
         }
-        val jsonValue = JSONObject(result)
-        val balance = jsonValue.getLong("Balance")
-        val status = jsonValue.getString("Status")
-        val data = jsonValue.getString("Data")
-        val transactionsList = jsonValue.getJSONArray("Transactions")
-        val transactions = mutableListOf<TransactionItem>()
-        for (i in 0 until transactionsList.length()) {
-            val item = transactionsList.getJSONObject(i)
-            transactions.add(TransactionItem(item.getLong("Amount"), "comment to do", item.getString("Address")))
+        try {
+            val jsonValue = JSONObject(result)
+            val balance = jsonValue.getLong("Balance")
+            val status = jsonValue.getString("Status")
+            val data = jsonValue.getString("Data")
+            val transactionsList = jsonValue.getJSONArray("Transactions")
+            val transactions = mutableListOf<TransactionItem>()
+            for (i in 0 until transactionsList.length()) {
+                val item = transactionsList.getJSONObject(i)
+                transactions.add(
+                    TransactionItem(
+                        item.getLong("Amount"),
+                        "comment to do",
+                        item.getString("Address")
+                    )
+                )
+            }
+            Log.w("transactions", result.toString())
+            return WalletHistoryDetails(balance, status, data, transactions)
+        } catch (e: Exception) {
+            return null
         }
-        Log.w("transactions", result.toString())
-        return WalletHistoryDetails(balance, status, data, transactions)
     }
 }

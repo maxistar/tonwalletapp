@@ -79,13 +79,12 @@ class WalletFragment : Fragment() {
             val intent = Intent(this.context, ReceiveActivity::class.java)
             startActivity(intent)
         }
-        val textView = binding!!.walletAddressBalance
 
         val settingsService = ServiceProvider.getSettingsService();
-        val textViewAddress = root.findViewById<TextView>(R.id.wallet_address_short)
+        val textViewAddress = binding!!.walletAddressShort
         textViewAddress.text = settingsService.getWalletAddress(context!!)
 
-        val textView = root.findViewById<TextView>(R.id.wallet_address_balance)
+        val textView = binding!!.walletAddressBalance
         viewModel.balance.observe(viewLifecycleOwner) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 textView.setText(
