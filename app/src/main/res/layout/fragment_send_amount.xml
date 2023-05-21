@@ -13,6 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/send_form__title"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,6 +23,7 @@
         android:id="@+id/label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
         android:text="@string/send_form__send_to"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,8 +39,8 @@
         app:layout_constraintTop_toBottomOf="@+id/label">
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="64dp"
+            android:layout_height="match_parent"
             android:contentDescription="@string/ton_wallet"
             android:src="@drawable/tonlogo"
             tools:src="@drawable/tonlogo" />
@@ -48,10 +51,12 @@
             android:layout_height="wrap_content"
             android:autofillHints="true"
             android:ems="3"
+            android:fontFamily="sans-serif"
             android:hint="0"
-            android:inputType="textPersonName"
+            android:inputType="number|textPersonName"
             android:text=""
-            android:textSize="30sp" />
+            android:textColor="@color/black"
+            android:textSize="44sp" />
     </LinearLayout>
 
 
@@ -66,6 +71,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
             android:text="@string/send_form__send_all" />
 
         <ImageView
@@ -78,6 +84,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
             android:text="@string/send_form__value_00" />
     </LinearLayout>
 
@@ -90,7 +97,7 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:drawablePadding="14dp"
         android:text="@string/general__continue"
@@ -98,6 +105,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button4"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="71dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="-12dp"
+        android:text="Edit"
+        android:textAllCaps="false"
+        android:textColor="@color/ton_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/label"
+        app:layout_constraintEnd_toEndOf="@+id/label" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

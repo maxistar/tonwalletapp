@@ -22,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/send_form__comment"
+        android:textColor="@color/ton_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
@@ -44,6 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/send_form__full_description"
+        android:textColor="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/wallet_address" />
@@ -55,6 +57,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:text="@string/send_form__details"
+        android:textColor="@color/ton_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sublabel" />
@@ -65,6 +68,8 @@
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:shadowColor="#757575"
+        android:shadowDy="50"
         android:text="@string/send_form__recipient"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -145,7 +150,7 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:drawablePadding="14dp"
         android:text="@string/send_form__confirm_and_send"

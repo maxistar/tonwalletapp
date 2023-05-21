@@ -68,6 +68,7 @@
             android:layout_margin="5dp"
             android:drawableLeft="@drawable/receive_icon_24dp"
             android:text="@string/wallet__button__receive"
+            app:iconGravity="textStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/button_send" />
@@ -79,6 +80,7 @@
             android:layout_margin="5dp"
             android:drawableLeft="@drawable/send_icon_24dp"
             android:text="@string/wallet__button__send"
+            app:iconGravity="textStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/button_receive"
             app:layout_constraintRight_toRightOf="parent" />
