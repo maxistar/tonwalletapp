@@ -2,6 +2,7 @@ package me.maxistar.tonwallet.service
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 import androidx.preference.PreferenceManager
 
 val ADDRESS_KEY = "address";
@@ -44,7 +45,25 @@ class SettingsService {
         val editor: SharedPreferences.Editor = settings.edit()
         editor.remove("address")
         editor.remove("secret")
+        editor.remove("access")
         editor.apply()
     }
 
+
+    fun securityKeyStored(context: Context): Boolean {
+        val key = getSecurityKey(context)
+        return key.length > 3;
+    }
+    fun storeSecurityKey(context: Context, key: String) {
+        Log.w("security", key)
+        val settings: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        val editor: SharedPreferences.Editor = settings.edit()
+        editor.putString("access", key)
+        editor.apply()
+    }
+
+    fun getSecurityKey(context: Context): String {
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        return sharedPreferences.getString("access", "") as String;
+    }
 }

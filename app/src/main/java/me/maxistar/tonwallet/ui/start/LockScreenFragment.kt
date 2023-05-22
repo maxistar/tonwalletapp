@@ -1,4 +1,4 @@
-package me.maxistar.tonwallet.ui.access_code
+package me.maxistar.tonwallet.ui.start
 
 import android.content.Intent
 import android.os.Build
@@ -15,56 +15,41 @@ import androidx.annotation.RequiresApi
 import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.WalletActivity
 import me.maxistar.tonwallet.service.ServiceProvider
+import me.maxistar.tonwallet.ui.access_code.AccessCodeViewModel
 
-class AccessCodeFragment : Fragment() {
+class LockScreenFragment : Fragment() {
 
     companion object {
-        fun newInstance() = AccessCodeFragment()
+        fun newInstance() = LockScreenFragment()
     }
 
-    private lateinit var viewModel: AccessCodeViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(AccessCodeViewModel::class.java)
-    }
+    private lateinit var viewModel: LockScreenViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val root = inflater.inflate(R.layout.fragment_access_code, container, false)
-
-        //val button = root.findViewById<Button>(R.id.access_code_button_0)
-        //button.setOnClickListener {
-        //    val intent = Intent(context, WalletActivity::class.java)
-        //    startActivity(intent)
-        //}
+        val root = inflater.inflate(R.layout.fragment_lock_screen, container, false)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             decorateButtons(root!!)
         }
 
-        val title = root.findViewById<TextView>(R.id.ton_wallet_title)
-        viewModel.liveEnterMode.observe(viewLifecycleOwner) {
-            if (it) {
-                title.setText(R.string.access_code_title)
-            } else {
-                title.setText(R.string.access_code_title_confirm)
-            }
-        }
-
         viewModel.liveReady.observe(viewLifecycleOwner) {
             if (it) {
-                ServiceProvider.getSettingsService().storeSecurityKey(context!!, viewModel.code.toString())
                 val intent = Intent(context, WalletActivity::class.java)
-                startActivity(intent)
-            }
+                startActivity(intent)            }
         }
 
         setupButtonEventHandlers(root!!);
 
-        return root;
+        return root
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(LockScreenViewModel::class.java)
+        viewModel.code.setCode(ServiceProvider.getSettingsService().getSecurityKey(context!!))
     }
 
     private fun setupButtonEventHandlers(root: View) {

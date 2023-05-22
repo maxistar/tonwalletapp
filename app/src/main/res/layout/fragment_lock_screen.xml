@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.start.LockScreenFragment"
+    android:padding="10dp">
+
+
+    <ImageView
+        android:id="@+id/fragment_central_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/donotwatch"
+        app:layout_constraintBottom_toTopOf="@+id/ton_wallet_description"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:src="@drawable/donotwatch" />
+
+
+    <TextView
+        android:id="@+id/ton_wallet_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/access_code_enter_invitation"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_central_image" />
+
+    <ProgressBar
+        android:id="@+id/access_code_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        app:layout_constraintTop_toBottomOf="@id/ton_wallet_description" />
+
+
+    <TextView
+        android:id="@+id/access_code_options_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/access_code_options"
+        android:textAlignment="center"
+        android:textColor="@color/ton_blue"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/access_code_progress_bar"
+        tools:layout_editor_absoluteX="8dp" />
+
+
+    <Button
+        android:id="@+id/access_code_button_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/access_code_number_1"
+        android:layout_marginHorizontal="2pt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/access_code_button_2"
+        app:layout_constraintTop_toBottomOf="@id/access_code_options_text" />
+
+    <Button
+        android:id="@+id/access_code_button_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/access_code_number_2"
+        android:layout_marginHorizontal="2pt"
+        app:layout_constraintLeft_toRightOf="@id/access_code_button_1"
+        app:layout_constraintRight_toLeftOf="@id/access_code_button_3"
+        app:layout_constraintTop_toBottomOf="@id/access_code_options_text" />
+
+    <Button
+        android:id="@+id/access_code_button_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/access_code_number_3"
+        android:layout_marginHorizontal="2pt"
+        app:layout_constraintLeft_toRightOf="@id/access_code_button_2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/access_code_options_text" />
+
+    <Button
+        android:id="@+id/access_code_button_4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/access_code_number_4"
+        app:layout_constraintRight_toRightOf="@id/access_code_button_1"
+        app:layout_constraintLeft_toLeftOf="@id/access_code_button_1"
+        app:layout_constraintTop_toBottomOf="@id/access_code_button_1" />
+
+    <Button
+        android:id="@+id/access_code_button_5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/access_code_number_5"
+        app:layout_constraintRight_toRightOf="@id/access_code_button_2"
+        app:layout_constraintLeft_toLeftOf="@id/access_code_button_2"
+        app:layout_constraintTop_toBottomOf="@id/access_code_button_1" />
+
+    <Button
+        android:id="@+id/access_code_button_6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/access_code_number_6"
+        app:layout_constraintRight_toRightOf="@id/access_code_button_3"
+        app:layout_constraintLeft_toLeftOf="@id/access_code_button_3"
+        app:layout_constraintTop_toBottomOf="@id/access_code_button_1" />
+
+    <Button
+        android:id="@+id/access_code_button_7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/access_code_number_7"
+        app:layout_constraintLeft_toLeftOf="@id/access_code_button_1"
+        app:layout_constraintRight_toRightOf="@id/access_code_button_1"
+        app:layout_constraintTop_toBottomOf="@id/access_code_button_4" />
+
+    <Button
+        android:id="@+id/access_code_button_8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/access_code_number_8"
+        app:layout_constraintRight_toRightOf="@id/access_code_button_2"
+        app:layout_constraintLeft_toLeftOf="@id/access_code_button_2"
+        app:layout_constraintTop_toBottomOf="@id/access_code_button_4" />
+
+    <Button
+        android:id="@+id/access_code_button_9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/access_code_number_9"
+        app:layout_constraintLeft_toLeftOf="@id/access_code_button_3"
+        app:layout_constraintRight_toRightOf="@id/access_code_button_3"
+        app:layout_constraintTop_toBottomOf="@id/access_code_button_4" />
+
+
+    <Button
+        android:id="@+id/access_code_button_0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/access_code_number_0"
+        app:layout_constraintRight_toRightOf="@id/access_code_button_2"
+        app:layout_constraintLeft_toLeftOf="@id/access_code_button_2"
+        app:layout_constraintTop_toBottomOf="@id/access_code_button_7" />
+
+    <Button
+        android:id="@+id/access_code_button_delete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/access_code_delete"
+        app:layout_constraintRight_toRightOf="@id/access_code_button_3"
+        app:layout_constraintLeft_toLeftOf="@id/access_code_button_3"
+        app:layout_constraintTop_toBottomOf="@id/access_code_button_7" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

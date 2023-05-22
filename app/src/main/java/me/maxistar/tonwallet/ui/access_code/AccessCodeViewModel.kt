@@ -7,7 +7,7 @@ import me.maxistar.tonwallet.model.AccessCodeModel
 import me.maxistar.tonwallet.model.TransactionItem
 
 class AccessCodeViewModel : ViewModel() {
-    private var code: AccessCodeModel = AccessCodeModel()
+    var code: AccessCodeModel = AccessCodeModel()
 
     private var enterMode: Boolean = true
 
