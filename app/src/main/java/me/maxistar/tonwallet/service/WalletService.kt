@@ -64,7 +64,8 @@ class WalletService {
                     TransactionItem(
                         item.getLong("Amount"),
                         "comment to do",
-                        item.getString("Address")
+                        item.getString("Address"),
+                        item.getString("Type")
                     )
                 )
             }
@@ -72,6 +73,12 @@ class WalletService {
             return WalletHistoryDetails(balance, status, data, transactions)
         } catch (e: Exception) {
             return null
+        }
+    }
+
+    suspend fun sendTransaction(seed: String, walletVersion: Long, configUrl: String, recipient: String, amount: Double, comment: String): String {
+        return withContext(Dispatchers.IO) {
+            Wallet.sendTons(seed, walletVersion, configUrl, recipient, amount, comment)
         }
     }
 }

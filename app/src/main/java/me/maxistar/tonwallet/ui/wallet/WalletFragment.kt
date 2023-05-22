@@ -40,8 +40,6 @@ class WalletFragment : Fragment() {
 
     private var binding: FragmentWalletBinding? = null
 
-    // var values: ArrayList<TransactionItem>? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -53,11 +51,6 @@ class WalletFragment : Fragment() {
             settingsService.getWalletVersion(context!!),
             settingsService.getTonConfiguration(context!!)
         )
-        //values = ArrayList(3)
-        //values!!.add(TransactionItem(10, "comment", "address"))
-        //values!!.add(TransactionItem(10, "comment", "address"))
-        //values!!.add(TransactionItem(10, "comment", "address"))
-
     }
 
     override fun onCreateView(
@@ -82,13 +75,20 @@ class WalletFragment : Fragment() {
 
         val settingsService = ServiceProvider.getSettingsService();
         val textViewAddress = binding!!.walletAddressShort
-        textViewAddress.text = settingsService.getWalletAddress(context!!)
+        textViewAddress.text =
+            TonFormatter.addressShorten(settingsService.getWalletAddress(context!!))
+        val textYourWalletAddress = binding!!.yourWalletAddress
+        textYourWalletAddress.text = settingsService.getWalletAddress(context!!)
+
 
         val textView = binding!!.walletAddressBalance
         viewModel.balance.observe(viewLifecycleOwner) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 textView.setText(
-                    Html.fromHtml(TonFormatter.nanoTonsToHtmlString(it), Html.FROM_HTML_MODE_COMPACT),
+                    Html.fromHtml(
+                        TonFormatter.nanoTonsToHtmlString(it),
+                        Html.FROM_HTML_MODE_COMPACT
+                    ),
                     TextView.BufferType.SPANNABLE
                 )
             } else {
@@ -101,9 +101,16 @@ class WalletFragment : Fragment() {
         listView.emptyView = binding!!.noTransactions
 
         viewModel.transactions.observe(viewLifecycleOwner) {
-            Log.w("ddffdfd", it.size.toString())
             listView.adapter =
-                viewModel.transactions.let { it.value?.let { it1 -> TransactionsAdapter(context!!, R.layout.transaction_item, it1.toList()) } }
+                viewModel.transactions.let {
+                    it.value?.let { it1 ->
+                        TransactionsAdapter(
+                            context!!,
+                            R.layout.transaction_item,
+                            it1.toList()
+                        )
+                    }
+                }
             (listView.adapter as TransactionsAdapter?)?.notifyDataSetChanged()
         }
 
@@ -142,7 +149,11 @@ class WalletFragment : Fragment() {
         )
     }
 
-    protected class TransactionsAdapter(context: Context, textViewResourceId: Int, values_: List<TransactionItem>) :
+    protected class TransactionsAdapter(
+        context: Context,
+        textViewResourceId: Int,
+        values_: List<TransactionItem>
+    ) :
         ArrayAdapter<TransactionItem?>(context, textViewResourceId, values_) {
 
         val values = values_;
@@ -156,12 +167,34 @@ class WalletFragment : Fragment() {
                 }
             }
             val d: TransactionItem = values[position]
-                var tv = v!!.findViewById<TextView>(R.id.amount_label)
-                tv.setText(d.amount.toString())
-                tv = v.findViewById<TextView>(R.id.comment_label)
-                tv.setText(d.comment)
-                tv = v.findViewById<TextView>(R.id.address_label)
-                tv.setText(d.address)
+            var tv = v!!.findViewById<TextView>(R.id.amount_label)
+            val tonAmount = TonFormatter.nanoTonsToString(d.amount);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+
+                if (d.transactionType == "in") {
+                    tv.setText(
+                        Html.fromHtml("<span style=\"color:#37A818\">$tonAmount<span> from", Html.FROM_HTML_MODE_COMPACT),
+                        TextView.BufferType.SPANNABLE
+                    )
+                } else {
+                    tv.setText(
+                        Html.fromHtml("<span style=\"color:#FE3C30\">$tonAmount<span> to", Html.FROM_HTML_MODE_COMPACT),
+                        TextView.BufferType.SPANNABLE
+                    )
+                }
+            } else {
+                if (d.transactionType == "in") {
+                    tv.setText("$tonAmount from")
+                } else {
+                    tv.setText("$tonAmount to")
+                }
+            }
+
+
+            tv = v.findViewById(R.id.comment_label)
+            tv.setText(d.comment)
+            tv = v.findViewById(R.id.address_label)
+            tv.setText(TonFormatter.addressShorten(d.address))
             return v
         }
     }

@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.WalletActivity
+import me.maxistar.tonwallet.databinding.FragmentSendDoneBinding
+import me.maxistar.tonwallet.databinding.FragmentSendRecipientBinding
+import me.maxistar.tonwallet.util.TonFormatter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,14 +25,16 @@ private const val ARG_PARAM2 = "param2"
  */
 class SendDoneFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var recipient: String? = null
+    private var amount: String? = null
+
+    private var binding: FragmentSendDoneBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            recipient = it.getString(ARG_PARAM1)
+            amount = it.getString(ARG_PARAM2)
         }
     }
 
@@ -39,14 +44,18 @@ class SendDoneFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_send_done, container, false)
+        binding = FragmentSendDoneBinding.inflate(inflater, container, false)
 
-        val button = root.findViewById<Button>(R.id.button)
+        val label = binding!!.tonWalletDescription
+        label.text = getResources().getString(R.string.send_form__sent_description).format(amount, TonFormatter.addressShorten(recipient!!))
+
+        val button = binding!!.button
         button.setOnClickListener({
             val intent = Intent(context, WalletActivity::class.java)
             startActivity(intent)
         })
 
-        return root
+        return binding!!.root;
     }
 
     companion object {
@@ -67,5 +76,10 @@ class SendDoneFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 }

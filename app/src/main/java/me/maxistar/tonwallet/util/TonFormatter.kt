@@ -22,4 +22,10 @@ object TonFormatter {
         val integralPart = (tons).toInt()
         return "$integralPart";
     }
+
+    fun addressShorten(address: String): String {
+        val firstPart = address.substring(0, 4)
+        val lastPart = address.substring(address.length - 4)
+        return "$firstPart...$lastPart"
+    }
 }

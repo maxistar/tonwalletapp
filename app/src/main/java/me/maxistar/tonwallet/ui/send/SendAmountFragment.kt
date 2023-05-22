@@ -8,11 +8,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.FragmentManager
 import me.maxistar.tonwallet.R
+import me.maxistar.tonwallet.databinding.FragmentSendAmountBinding
+import me.maxistar.tonwallet.util.TonFormatter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val ARG_PARAM1 = "recipient"
 
 /**
  * A simple [Fragment] subclass.
@@ -20,35 +19,57 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class SendAmountFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var recipient: String? = null
+
+    private var binding: FragmentSendAmountBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            recipient = it.getString(ARG_PARAM1)
         }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        val root = inflater.inflate(R.layout.fragment_send_amount, container, false)
+        //val root = inflater.inflate(R.layout.fragment_send_amount, container, false)
+        binding = FragmentSendAmountBinding.inflate(inflater, container, false)
+        val fm: FragmentManager = parentFragmentManager
 
-        val button = root.findViewById<Button>(R.id.button)
-        button.setOnClickListener({
-            val fm: FragmentManager = parentFragmentManager
+        val addressLabel = binding!!.addressLabel
+        addressLabel.text = TonFormatter.addressShorten(recipient!!)
+
+        val edit_button = binding!!.editAddressButton
+        edit_button.setOnClickListener {
             fm.beginTransaction()
-                .replace(R.id.container, SendCommentFragment.newInstance("", ""))
+                .replace(
+                    R.id.container, SendRecipientFragment.newInstance()
+                )
+                .addToBackStack(null)
+                .commit()
+        }
+
+        val button = binding!!.button
+        button.setOnClickListener({
+
+            fm.beginTransaction()
+                .replace(R.id.container, SendCommentFragment.newInstance(
+                    recipient!!,
+                    binding!!.tonAmount.text.toString(),
+                ))
                 .addToBackStack(null)
                 .commit()
         })
 
-        return root;
+        return binding!!.root;
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 
     companion object {
@@ -56,17 +77,14 @@ class SendAmountFragment : Fragment() {
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @param param1 Parameter 1.
          * @param param2 Parameter 2.
          * @return A new instance of fragment SendAmountFragment.
          */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(param1: String) =
             SendAmountFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
                 }
             }
     }

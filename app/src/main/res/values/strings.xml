@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TonWalletActivities</string>
+    <string name="app_name">Ton Wallet</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -185,7 +185,7 @@ write these words down.</string>
     <string name="send_form__sendind_description">Please wait a few seconds for your
     transaction to be processed…</string>
     <string name="send_form__sent_done">Done!</string>
-    <string name="send_form__sent_description">2.2 Toncoin have been sent to</string>
+    <string name="send_form__sent_description">%s Toncoin have been sent to %s</string>
     <string name="send_form__button_my_wallet">View My Wallet</string>
 
     <string name="settings__title_general">General</string>

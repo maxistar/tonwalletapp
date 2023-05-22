@@ -154,9 +154,11 @@
                 android:text="@string/wallet__your_wallet_address" />
 
             <TextView
+                android:id="@+id/your_wallet_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                android:textIsSelectable="true"
                 android:text="@string/wallet__your_wallet_address_defaul_value" />
 
 

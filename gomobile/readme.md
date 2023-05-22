@@ -20,13 +20,3 @@ Test locally:
 
 `go run main.go`
 
-Todo: 
-
-[x] rename hello to wallet
-[x] add api url as an argument
-[x] return walled address
-[x] get the list of secret words for an application (seed.go)
-[x] return balance
-[x] return last transactions
- - [x] create json structure
-[x] convert phrase to wallet address

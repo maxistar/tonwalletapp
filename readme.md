@@ -50,20 +50,21 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [x] remove not needed files
 - [x] business logic, store the created wallet
 - [ ] settings pages
-  - [ ] make delete wallet to be red
+  - [ ] make "delete wallet" to be red
   - [ ] use better components for settings
   - [x] list of wallet types
   - [ ] use wallet types in code
 - [ ] wallet activity
   - [ ] show transactions and new icon
-    - [ ] show real transactions
-    - [x] make the list look like on the mock
+    - [ ] format list
+    - [ ] reverse order
+    - [ ] store transaction in case there is no internet
 - [ ] send dialog
-  - [ ] send money 
+  - [ ] scan address feature 
 - [ ] receive dialog
   - [x] add text labels 
   - [x] customise form according mock
-  - [ ] use real wallet value
+  - [x] use real wallet value
 - [ ] scan wallet barcode
   - [x] basic scaning implementation
   - [ ] customize dialog
