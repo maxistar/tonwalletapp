@@ -25,7 +25,7 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 
 ## Screens
 
-![](./screenshots/Screenshot 2023-05-22 at 07.46.01.png)
+![](screenshots/Screenshot 2023-05-22 at 07.46.01.png)
 
 ![](./screenshots/Screenshot 2023-05-22 at 07.46.12.png)
 
