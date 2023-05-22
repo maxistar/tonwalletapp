@@ -19,7 +19,7 @@ class SettingsService {
 
     fun getTonConfiguration(context: Context): String {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-        return sharedPreferences.getString("configurl", "https://ton-blockchain.github.io/testnet-global.config.json") as String;
+        return sharedPreferences.getString("configurl", "https://ton-blockchain.github.io/global.config.json") as String;
     }
 
     fun getWalletAddress(context: Context): String {

@@ -31,7 +31,7 @@
             app:key="configurl"
             app:title="@string/settings__config_url"
             app:useSimpleSummaryProvider="true"
-            app:defaultValue="https://ton-blockchain.github.io/testnet-global.config.json" />
+            app:defaultValue="https://ton-blockchain.github.io/global.config.json" />
 
     </PreferenceCategory>
 
