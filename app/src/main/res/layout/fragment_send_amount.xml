@@ -112,7 +112,7 @@
         android:layout_width="71dp"
         android:layout_height="40dp"
         android:layout_marginBottom="-12dp"
-        android:text="Edit"
+        android:text="@string/general__edit"
         android:textAllCaps="false"
         android:textColor="@color/ton_blue"
         app:layout_constraintBottom_toBottomOf="@+id/address_label"

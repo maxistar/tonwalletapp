@@ -46,7 +46,7 @@ class SendAmountFragment : Fragment() {
         edit_button.setOnClickListener {
             fm.beginTransaction()
                 .replace(
-                    R.id.container, SendRecipientFragment.newInstance()
+                    R.id.container, SendRecipientFragment.newInstance(recipient!!)
                 )
                 .addToBackStack(null)
                 .commit()

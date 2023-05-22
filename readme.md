@@ -2,10 +2,11 @@
 
 this project is part of Ton [Wallet Contest](https://github.com/ton-community/wallet-contest)
 
-## Requirements
+## Libraries used
 
 In order to work with Ton Network the [tonutils-go](https://github.com/xssnick/tonutils-go) was used.
 
+Scanner library [zxing-android-embedded](https://github.com/journeyapps/zxing-android-embedded)
 
 ## Roadmap
 
@@ -72,10 +73,11 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [ ] receive dialog
   - [ ] connect with scanner 
 - [ ] scan wallet barcode
+  - [ ] add barcode to send form 
   - [x] basic scaning implementation
-  - [ ] customize scanning dialog
-  - [ ] scan from the wallet activity
-  - [ ] populate wallet value to the fragment
+  - [x] customize scanning dialog
+  - [x] scan from the wallet activity
+  - [x] populate wallet value to the fragment
 
 ### UI Tasks
 

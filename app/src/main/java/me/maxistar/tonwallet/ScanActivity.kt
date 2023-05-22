@@ -35,6 +35,13 @@ class ScanActivity : AppCompatActivity() {
     }
 
     fun onButtonClick(view: View?) {
-        barcodeLauncher.launch(ScanOptions())
+        val options = ScanOptions()
+        options.setDesiredBarcodeFormats(ScanOptions.QR_CODE);
+        options.setPrompt("Scan a barcode");
+        options.setCameraId(0);  // Use a specific camera of the device
+        options.setBeepEnabled(false);
+        options.setBarcodeImageEnabled(true);
+        options.setOrientationLocked(false);
+        barcodeLauncher.launch(options)
     }
 }

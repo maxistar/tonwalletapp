@@ -8,7 +8,11 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.journeyapps.barcodescanner.ScanContract
+import com.journeyapps.barcodescanner.ScanIntentResult
+import com.journeyapps.barcodescanner.ScanOptions
 import me.maxistar.tonwallet.ui.wallet.WalletFragment
 
 class WalletActivity : AppCompatActivity() {
@@ -38,8 +42,9 @@ class WalletActivity : AppCompatActivity() {
                 true
             }
             R.id.scan_menu -> {
-                val intent = Intent(this, ScanActivity::class.java)
-                startActivity(intent)
+                //val intent = Intent(this, ScanActivity::class.java)
+                //startActivity(intent)
+                onButtonClick()
                 true
             }
             R.id.quit -> {
@@ -53,10 +58,9 @@ class WalletActivity : AppCompatActivity() {
         }
     }
 
-    /*
-    override fun onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenu.ContextMenuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo)
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.wallet_context_menu, menu)
-    }*/
+    private fun onButtonClick() {
+        val intent = Intent(this, SendActivity::class.java)
+        intent.putExtra("scan", true)
+        startActivity(intent)
+    }
 }
