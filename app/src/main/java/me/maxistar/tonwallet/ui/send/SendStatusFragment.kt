@@ -59,10 +59,10 @@ class SendStatusFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_send_status, container, false)
 
         val button = root.findViewById<Button>(R.id.button)
-        button.setOnClickListener({
+        button.setOnClickListener {
             val intent = Intent(context, WalletActivity::class.java)
             startActivity(intent)
-        })
+        }
 
         viewModel.liveOperationStatus.observe(viewLifecycleOwner) {
             if (it !== "new") {
@@ -73,6 +73,10 @@ class SendStatusFragment : Fragment() {
                     .commit()
             }
         }
+
+        val image = root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.ton_wallet_logo)
+        image.setAnimation(R.raw.waiting_ton)
+        image.playAnimation()
 
         return root
     }

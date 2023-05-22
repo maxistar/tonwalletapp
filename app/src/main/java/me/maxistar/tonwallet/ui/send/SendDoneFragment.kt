@@ -52,6 +52,10 @@ class SendDoneFragment : Fragment() {
             startActivity(intent)
         }
 
+        val image = binding!!.root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.ton_wallet_logo)
+        image.setAnimation(R.raw.success)
+        image.playAnimation()
+
         return binding!!.root
     }
 

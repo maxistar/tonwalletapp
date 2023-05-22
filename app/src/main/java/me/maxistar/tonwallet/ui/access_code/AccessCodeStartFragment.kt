@@ -45,7 +45,11 @@ class AccessCodeStartFragment : Fragment() {
                 .commit()
         }
 
-        return root;
+        val image = root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.ton_wallet_logo)
+        image.setAnimation(R.raw.success)
+        image.playAnimation()
+
+        return root
     }
 
     companion object {

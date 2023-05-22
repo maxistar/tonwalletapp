@@ -44,16 +44,20 @@ class RestoreWalletFailureFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_restore_wallet_failure, container, false)
 
         val button = root.findViewById<Button>(R.id.button)
-        button.setOnClickListener({
+        button.setOnClickListener {
             val intent = Intent(this.context, RestoreWalletActivity::class.java)
             startActivity(intent)
-        })
+        }
 
         val button_create_empty = root.findViewById<Button>(R.id.button_empty_wallet)
-        button_create_empty.setOnClickListener({
+        button_create_empty.setOnClickListener {
             val intent = Intent(this.context, CreateWalletActivity::class.java)
             startActivity(intent)
-        })
+        }
+
+        val image = root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.ton_image_layout)
+        image.setAnimation(R.raw.too_bad)
+        image.playAnimation()
 
         return root
     }

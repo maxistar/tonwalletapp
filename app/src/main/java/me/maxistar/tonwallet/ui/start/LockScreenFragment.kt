@@ -43,6 +43,10 @@ class LockScreenFragment : Fragment() {
 
         setupButtonEventHandlers(root!!);
 
+        val image = root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.fragment_central_image)
+        image.setAnimation(R.raw.password)
+        image.playAnimation()
+
         return root
     }
 

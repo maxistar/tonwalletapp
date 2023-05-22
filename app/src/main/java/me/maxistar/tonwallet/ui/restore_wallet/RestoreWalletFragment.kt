@@ -49,13 +49,17 @@ class RestoreWalletFragment : Fragment() {
         }
 
         val errorButton = root.findViewById<Button>(R.id.button_do_not_have)
-        errorButton.setOnClickListener({
+        errorButton.setOnClickListener {
             val fm: FragmentManager = parentFragmentManager
             fm.beginTransaction()
-                .replace(R.id.container, RestoreWalletFailureFragment.newInstance("",""))
+                .replace(R.id.container, RestoreWalletFailureFragment.newInstance("", ""))
                 .addToBackStack(null)
                 .commit()
-        })
+        }
+
+        val image = root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.ton_image_layout)
+        image.setAnimation(R.raw.recovery_phrase)
+        image.playAnimation()
 
         setupAutosuggestions(context!!, root)
 

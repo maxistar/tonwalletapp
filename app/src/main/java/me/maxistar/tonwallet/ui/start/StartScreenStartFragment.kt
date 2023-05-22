@@ -34,7 +34,13 @@ class StartScreenStartFragment : Fragment() {
         }, 2000)
 
 
-        return inflater.inflate(R.layout.fragment_start_screen_start, container, false)
+        val root = inflater.inflate(R.layout.fragment_start_screen_start, container, false)
+
+        val image = root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.image_logo)
+        image.setAnimation(R.raw.main)
+        image.playAnimation()
+
+        return root
     }
 
     companion object {

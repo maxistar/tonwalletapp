@@ -62,9 +62,13 @@ class AccessCodeFragment : Fragment() {
             }
         }
 
-        setupButtonEventHandlers(root!!);
+        setupButtonEventHandlers(root!!)
 
-        return root;
+        val image = root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.fragment_central_image)
+        image.setAnimation(R.raw.password)
+        image.playAnimation()
+
+        return root
     }
 
     private fun setupButtonEventHandlers(root: View) {
@@ -84,7 +88,7 @@ class AccessCodeFragment : Fragment() {
     private fun setupButton(root: View, accessCodeButton1: Int, s: Char) {
         val button = root.findViewById<Button>(accessCodeButton1)
         button.setOnClickListener {
-            viewModel.setCharacter(s);
+            viewModel.setCharacter(s)
         }
     }
 

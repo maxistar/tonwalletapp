@@ -8,7 +8,7 @@
     android:padding="10dp">
 
 
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/fragment_central_image"
         android:layout_width="100dp"
         android:layout_height="100dp"

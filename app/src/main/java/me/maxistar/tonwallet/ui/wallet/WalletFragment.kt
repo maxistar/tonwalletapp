@@ -117,6 +117,10 @@ class WalletFragment : Fragment() {
         // registerComponentCallbacks
         binding?.apply { registerForContextMenu(binding!!.walletTopPart) }
 
+        val image = binding!!.root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.ton_image_chicken)
+        image.setAnimation(R.raw.created)
+        image.playAnimation()
+
         return binding!!.root;
     }
 

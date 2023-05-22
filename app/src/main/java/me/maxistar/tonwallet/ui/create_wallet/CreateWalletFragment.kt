@@ -105,6 +105,10 @@ class CreateWalletFragment : Fragment() {
             showConfirmation(it.context)
         }
 
+        val image = root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.ton_wallet_logo)
+        image.setAnimation(R.raw.recovery_phrase)
+        image.playAnimation()
+
         return root
     }
 
