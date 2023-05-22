@@ -1,14 +1,12 @@
 package me.maxistar.tonwallet.ui.send
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import me.maxistar.tonwallet.R
-import me.maxistar.tonwallet.databinding.FragmentSendAmountBinding
 import me.maxistar.tonwallet.databinding.FragmentSendCommentBinding
 import me.maxistar.tonwallet.util.TonFormatter
 
@@ -52,19 +50,21 @@ class SendCommentFragment : Fragment() {
         amountValue.text = amount
 
         val button = binding!!.button
-        button.setOnClickListener({
+        button.setOnClickListener {
             val fm: FragmentManager = parentFragmentManager
             fm.beginTransaction()
-                .replace(R.id.container, SendStatusFragment.newInstance(
-                    recipient!!,
-                    amount!!,
-                    binding!!.comment.text.toString()
-                ))
+                .replace(
+                    R.id.container, SendStatusFragment.newInstance(
+                        recipient!!,
+                        amount!!,
+                        binding!!.comment.text.toString()
+                    )
+                )
                 .addToBackStack(null)
                 .commit()
-        })
+        }
 
-        return binding!!.root;
+        return binding!!.root
     }
 
     companion object {
@@ -72,11 +72,10 @@ class SendCommentFragment : Fragment() {
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
+         * @param recipient Parameter 1.
+         * @param amount Parameter 2.
          * @return A new instance of fragment SendCommentFragment.
          */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(recipient: String, amount: String) =
             SendCommentFragment().apply {

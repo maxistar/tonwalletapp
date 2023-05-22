@@ -1,11 +1,10 @@
 package me.maxistar.tonwallet.ui.send
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.databinding.FragmentSendAmountBinding
@@ -53,16 +52,18 @@ class SendAmountFragment : Fragment() {
         }
 
         val button = binding!!.button
-        button.setOnClickListener({
+        button.setOnClickListener {
 
             fm.beginTransaction()
-                .replace(R.id.container, SendCommentFragment.newInstance(
-                    recipient!!,
-                    binding!!.tonAmount.text.toString(),
-                ))
+                .replace(
+                    R.id.container, SendCommentFragment.newInstance(
+                        recipient!!,
+                        binding!!.tonAmount.text.toString(),
+                    )
+                )
                 .addToBackStack(null)
                 .commit()
-        })
+        }
 
         return binding!!.root;
     }

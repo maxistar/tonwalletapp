@@ -69,6 +69,6 @@ class SendRecipientFragment : Fragment() {
             startActivity(intent)
         }
 
-        return binding!!.root;
+        return binding!!.root
     }
 }

@@ -3,16 +3,10 @@ package me.maxistar.tonwallet
 import android.content.Intent
 import android.os.Bundle
 import android.os.Process
-import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.journeyapps.barcodescanner.ScanContract
-import com.journeyapps.barcodescanner.ScanIntentResult
-import com.journeyapps.barcodescanner.ScanOptions
 import me.maxistar.tonwallet.ui.wallet.WalletFragment
 
 class WalletActivity : AppCompatActivity() {

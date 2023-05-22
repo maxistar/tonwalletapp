@@ -26,7 +26,6 @@ class AccessCodeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(AccessCodeViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
     override fun onCreateView(
@@ -35,18 +34,56 @@ class AccessCodeFragment : Fragment() {
     ): View {
         val root = inflater.inflate(R.layout.fragment_access_code, container, false)
 
-        val button = root.findViewById<Button>(R.id.access_code_button_0)
-        button.setOnClickListener({
-            val intent = Intent(context, WalletActivity::class.java)
-            startActivity(intent)
-        })
-
+        //val button = root.findViewById<Button>(R.id.access_code_button_0)
+        //button.setOnClickListener {
+        //    val intent = Intent(context, WalletActivity::class.java)
+        //    startActivity(intent)
+        //}
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             decorateButtons(root!!)
         }
 
+        val title = root.findViewById<TextView>(R.id.ton_wallet_title)
+        viewModel.liveEnterMode.observe(viewLifecycleOwner) {
+            if (it) {
+                title.setText(R.string.access_code_title)
+            } else {
+                title.setText(R.string.access_code_title_confirm)
+            }
+        }
+
+        viewModel.liveReady.observe(viewLifecycleOwner) {
+            if (it) {
+                val intent = Intent(context, WalletActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        setupButtonEventHandlers(root!!);
+
         return root;
+    }
+
+    private fun setupButtonEventHandlers(root: View) {
+        setupButton(root, R.id.access_code_button_1, '1')
+        setupButton(root, R.id.access_code_button_2, '2')
+        setupButton(root, R.id.access_code_button_3, '3')
+        setupButton(root, R.id.access_code_button_4, '4')
+        setupButton(root, R.id.access_code_button_5, '5')
+        setupButton(root, R.id.access_code_button_6, '6')
+        setupButton(root, R.id.access_code_button_7, '7')
+        setupButton(root, R.id.access_code_button_8, '8')
+        setupButton(root, R.id.access_code_button_9, '9')
+        setupButton(root, R.id.access_code_button_0, '0')
+        setupButton(root, R.id.access_code_button_delete, 'd')
+    }
+
+    private fun setupButton(root: View, accessCodeButton1: Int, s: Char) {
+        val button = root.findViewById<Button>(accessCodeButton1)
+        button.setOnClickListener {
+            viewModel.setCharacter(s);
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.N)

@@ -75,6 +75,8 @@ write these words down.</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="access_code_title">Set a Passcode</string>
+    <string name="access_code_title_confirm">Confirm a Passcode</string>
+
     <string name="access_code_enter_invitation">Enter the 4 digits in the passcode.</string>
     <string name="access_code_options">Passcode options</string>
     <string name="access_code_number_1">1</string>
