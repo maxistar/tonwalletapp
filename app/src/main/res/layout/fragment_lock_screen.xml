@@ -45,6 +45,39 @@
         android:padding="10dip"
         app:layout_constraintTop_toBottomOf="@id/ton_wallet_description" />
 
+    <LinearLayout
+        android:id="@+id/dots_progress_bar"
+        app:layout_constraintTop_toBottomOf="@id/access_code_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <ImageView
+            android:id="@+id/imageView0"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/bar_selector_lock"
+            android:contentDescription="@string/screen2_button" />
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/bar_selector_lock"
+            android:contentDescription="@string/screen2_button" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/bar_selector_lock"
+            android:contentDescription="@string/screen2_button" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/bar_selector_lock"
+            android:contentDescription="@string/screen2_button" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/access_code_options_text"
@@ -56,7 +89,7 @@
         android:textAlignment="center"
         android:textColor="@color/ton_blue"
         android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@id/access_code_progress_bar"
+        app:layout_constraintTop_toBottomOf="@id/dots_progress_bar"
         tools:layout_editor_absoluteX="8dp" />
 
 
@@ -162,6 +195,8 @@
         app:layout_constraintRight_toRightOf="@id/access_code_button_3"
         app:layout_constraintLeft_toLeftOf="@id/access_code_button_3"
         app:layout_constraintTop_toBottomOf="@id/access_code_button_7" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
