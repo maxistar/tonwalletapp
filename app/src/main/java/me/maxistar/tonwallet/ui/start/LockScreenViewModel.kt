@@ -1,5 +1,6 @@
 package me.maxistar.tonwallet.ui.start
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,11 +17,23 @@ class LockScreenViewModel : ViewModel() {
 
     val liveReady: LiveData<Boolean> = _liveReady
 
+    private var step: Int = 0
+
+    private val _liveStep = MutableLiveData<Int>().apply {
+        value = step
+    }
+
+    val liveStep: LiveData<Int> = _liveStep
+
     private var error: Boolean = false
+    private val _liveError = MutableLiveData<Boolean>().apply {
+        value = error
+    }
+    val liveError: LiveData<Boolean> = _liveError
+
 
     private var progress: Int = 0
 
-    private var step: Int = 0
 
     // todo simplify this!!!
     fun setCharacter(char: Char) {
@@ -31,19 +44,26 @@ class LockScreenViewModel : ViewModel() {
             return
         }
         if (step == 0) {
-            error = code.code1 == char
+            error = (error || (code.code1 != char))
         } else if (step == 1) {
-            error = code.code2 == char
+            error = (error || (code.code2 != char))
         } else if (step == 2) {
-            error = code.code3 == char
+            error = (error || (code.code3 != char))
         } else {
-            error = code.code4 == char
+            error = (error || (code.code4 != char))
         }
         step++
+        _liveStep.value = step
         if (step == 4) {
-            step = 0
-            ready = true
-            _liveReady.value = ready
+            if (error) {
+                step = 0;
+                _liveError.value = error
+                error = false
+                Log.w("Error4", error.toString())
+            } else {
+                ready = true
+                _liveReady.value = ready
+            }
         }
     }
 }

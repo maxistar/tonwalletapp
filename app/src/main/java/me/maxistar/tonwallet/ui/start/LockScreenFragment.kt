@@ -4,14 +4,18 @@ import android.content.Intent
 import android.os.Build
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Html
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.fragment.app.FragmentManager
 import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.WalletActivity
 import me.maxistar.tonwallet.service.ServiceProvider
@@ -25,6 +29,12 @@ class LockScreenFragment : Fragment() {
 
     private lateinit var viewModel: LockScreenViewModel
 
+    private lateinit var pointImage1: ImageView
+    private lateinit var pointImage2: ImageView
+    private lateinit var pointImage3: ImageView
+    private lateinit var pointImage4: ImageView
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,17 +45,58 @@ class LockScreenFragment : Fragment() {
             decorateButtons(root!!)
         }
 
+        pointImage1 = root.findViewById<ImageView>(R.id.imageView0)
+        pointImage2 = root.findViewById<ImageView>(R.id.imageView1)
+        pointImage3 = root.findViewById<ImageView>(R.id.imageView2)
+        pointImage4 = root.findViewById<ImageView>(R.id.imageView3)
+
         viewModel.liveReady.observe(viewLifecycleOwner) {
             if (it) {
+                pointImage1.setImageResource(R.drawable.point_green_24dp)
+                pointImage2.setImageResource(R.drawable.point_green_24dp)
+                pointImage3.setImageResource(R.drawable.point_green_24dp)
+                pointImage4.setImageResource(R.drawable.point_green_24dp)
+
                 val intent = Intent(context, WalletActivity::class.java)
-                startActivity(intent)            }
+                startActivity(intent)
+            }
+        }
+
+        viewModel.liveStep.observe(viewLifecycleOwner) {
+            if (it == 1) {
+                pointImage1.setImageResource(R.drawable.point_filled_24dp)
+            } else if (it == 2) {
+                pointImage2.setImageResource(R.drawable.point_filled_24dp)
+            } else if (it == 3) {
+                pointImage3.setImageResource(R.drawable.point_filled_24dp)
+            } else if (it == 4) {
+                pointImage4.setImageResource(R.drawable.point_filled_24dp)
+            }
+        }
+
+        viewModel.liveError.observe(viewLifecycleOwner) {
+            if (it == true) {
+                pointImage1.setImageResource(R.drawable.point_red_24dp)
+                pointImage2.setImageResource(R.drawable.point_red_24dp)
+                pointImage3.setImageResource(R.drawable.point_red_24dp)
+                pointImage4.setImageResource(R.drawable.point_red_24dp)
+
+                Handler(Looper.getMainLooper()).postDelayed({
+                    pointImage1.setImageResource(R.drawable.point_empty_24dp)
+                    pointImage2.setImageResource(R.drawable.point_empty_24dp)
+                    pointImage3.setImageResource(R.drawable.point_empty_24dp)
+                    pointImage4.setImageResource(R.drawable.point_empty_24dp)
+                }, 500)
+            }
         }
 
         setupButtonEventHandlers(root!!);
 
-        val image = root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.fragment_central_image)
+        val image =
+            root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.fragment_central_image)
         image.setAnimation(R.raw.password)
         image.playAnimation()
+
 
         return root
     }
@@ -78,8 +129,7 @@ class LockScreenFragment : Fragment() {
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
-    private fun decorateButtons(root: View)
-    {
+    private fun decorateButtons(root: View) {
         decorateButton(root, R.id.access_code_button_1, R.string.access_code_number_html_1)
         decorateButton(root, R.id.access_code_button_2, R.string.access_code_number_html_2)
         decorateButton(root, R.id.access_code_button_3, R.string.access_code_number_html_3)
@@ -97,7 +147,8 @@ class LockScreenFragment : Fragment() {
         val button3 = root.findViewById<Button>(buttonId)
         button3.setText(
             Html.fromHtml(getResources().getString(textId), Html.FROM_HTML_MODE_LEGACY),
-            TextView.BufferType.SPANNABLE)
+            TextView.BufferType.SPANNABLE
+        )
 
     }
 

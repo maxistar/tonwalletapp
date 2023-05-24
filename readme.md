@@ -51,10 +51,12 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 ### Todo:
 
 - [ ] security code form
-  - draw non active dots
-  - connect dots to the logic
-  - it opens a form event the code is not correct
-  - fingerprint authentication 
+  - [x] draw non active dots
+  - [x] connect dots to the logic
+  - [x] it opens a form event the code is not correct
+  - [ ] fingerprint authentication 
+- [ ] set secret code dialog
+  - [ ] make the same that I have done for pin code form
 - [ ] settings pages
   - [ ] make "delete wallet" to be red
   - [ ] use better components for settings
