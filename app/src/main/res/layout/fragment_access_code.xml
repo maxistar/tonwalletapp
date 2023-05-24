@@ -48,13 +48,44 @@
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/ton_wallet_title" />
 
-    <ProgressBar
-        android:id="@+id/access_code_progress_bar"
-        style="?android:attr/progressBarStyleHorizontal"
+    <LinearLayout
+        android:id="@+id/dots_progress_bar"
+        app:layout_constraintTop_toBottomOf="@id/ton_wallet_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dip"
-        app:layout_constraintTop_toBottomOf="@id/ton_wallet_description" />
+        android:orientation="horizontal"
+        android:paddingVertical="10pt"
+        android:gravity="center"
+        >
+        <ImageView
+            android:id="@+id/imageView0"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/bar_selector_lock"
+            android:contentDescription="@string/screen2_button" />
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/bar_selector_lock"
+            android:contentDescription="@string/screen2_button" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/bar_selector_lock"
+            android:contentDescription="@string/screen2_button" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/bar_selector_lock"
+            android:contentDescription="@string/screen2_button" />
+    </LinearLayout>
 
 
     <TextView
@@ -62,12 +93,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:paddingBottom="20dp"
         android:text="@string/access_code_options"
         android:textAlignment="center"
         android:textColor="@color/ton_blue"
         android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@id/access_code_progress_bar"
+        app:layout_constraintTop_toBottomOf="@id/dots_progress_bar"
         tools:layout_editor_absoluteX="8dp" />
 
 

@@ -51,18 +51,17 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 ### Todo:
 
 - [ ] security code form
-  - [ ] check the code validity
-  - [ ] create a model
-  - [ ] create interactions between models
-  - [ ] use security form when application starts
-  - [ ] better positioning on the page
-- [ ] create form to enter the secret phrase 
-  - [ ] create success layout (it is not needed now)
+  - draw non active dots
+  - connect dots to the logic
+  - it opens a form event the code is not correct
+  - fingerprint authentication 
 - [ ] settings pages
   - [ ] make "delete wallet" to be red
   - [ ] use better components for settings
   - [x] list of wallet types
   - [ ] use wallet types in code
+  - [ ] connect elements with secret phrase
+  - [ ] make feature to show the secret phrase
 - [ ] wallet activity
   - [ ] show transactions and new icon
     - [ ] format list
@@ -73,11 +72,7 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [ ] receive dialog
   - [ ] connect with scanner 
 - [ ] scan wallet barcode
-  - [ ] add barcode to send form 
-  - [x] basic scaning implementation
-  - [x] customize scanning dialog
-  - [x] scan from the wallet activity
-  - [x] populate wallet value to the fragment
+  - add an image to the video screen 
 
 ### UI Tasks
 
