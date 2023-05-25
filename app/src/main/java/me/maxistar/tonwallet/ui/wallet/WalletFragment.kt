@@ -57,15 +57,14 @@ class WalletFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        //val root = inflater.inflate(R.layout.fragment_wallet, container, false)
         binding = FragmentWalletBinding.inflate(inflater, container, false)
 
 
         val buttonSend = binding!!.buttonSend
-        buttonSend.setOnClickListener({
+        buttonSend.setOnClickListener {
             val intent = Intent(this.context, SendActivity::class.java)
             startActivity(intent)
-        })
+        }
 
         val buttonReceive = binding!!.buttonReceive
         buttonReceive.setOnClickListener {

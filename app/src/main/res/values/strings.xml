@@ -221,4 +221,8 @@ wallet owners to receive TON from them.</string>
 zi1mRo4cX-r3W2Dwx-WEAoKP</string>
     <string name="wallet__item_storage_fee">-0.000065732 storage fee</string>
 
+
+    <string name="access_code__4_digit_code">4-digit code</string>
+    <string name="access_code__6_digit_code">6-digit code</string>
+
 </resources>

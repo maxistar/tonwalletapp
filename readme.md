@@ -57,6 +57,7 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] fingerprint authentication 
 - [ ] set secret code dialog
   - [ ] make the same that I have done for pin code form
+  - [ ] set 6 digits option
 - [ ] settings pages
   - [ ] make "delete wallet" to be red
   - [ ] use better components for settings
@@ -72,7 +73,7 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [ ] send dialog
   - [ ] scan address feature 
 - [ ] receive dialog
-  - [ ] connect with scanner 
+  - [ ] add paste icon 
 - [ ] scan wallet barcode
   - add an image to the video screen 
 

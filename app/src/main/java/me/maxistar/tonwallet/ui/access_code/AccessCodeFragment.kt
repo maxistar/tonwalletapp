@@ -5,15 +5,20 @@ import android.os.Build
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.text.Html
+import android.view.ContextMenu
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.WalletActivity
+import me.maxistar.tonwallet.databinding.FragmentAccessCodeBinding
+import me.maxistar.tonwallet.databinding.FragmentWalletBinding
 import me.maxistar.tonwallet.service.ServiceProvider
 
 class AccessCodeFragment : Fragment() {
@@ -24,6 +29,8 @@ class AccessCodeFragment : Fragment() {
 
     private lateinit var viewModel: AccessCodeViewModel
 
+    private var binding: FragmentAccessCodeBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(AccessCodeViewModel::class.java)
@@ -33,19 +40,16 @@ class AccessCodeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val root = inflater.inflate(R.layout.fragment_access_code, container, false)
+        //val root = inflater.inflate(R.layout.fragment_access_code, container, false)
+        binding = FragmentAccessCodeBinding.inflate(inflater, container, false)
+        val root = binding!!.root
 
-        //val button = root.findViewById<Button>(R.id.access_code_button_0)
-        //button.setOnClickListener {
-        //    val intent = Intent(context, WalletActivity::class.java)
-        //    startActivity(intent)
-        //}
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            decorateButtons(root!!)
+            decorateButtons(root)
         }
 
-        val title = root.findViewById<TextView>(R.id.ton_wallet_title)
+        val title = binding!!.tonWalletTitle
         viewModel.liveEnterMode.observe(viewLifecycleOwner) {
             if (it) {
                 title.setText(R.string.access_code_title)
@@ -62,13 +66,27 @@ class AccessCodeFragment : Fragment() {
             }
         }
 
-        setupButtonEventHandlers(root!!)
+        setupButtonEventHandlers(root)
 
-        val image = root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.fragment_central_image)
+        val image = binding!!.fragmentCentralImage
         image.setAnimation(R.raw.password)
         image.playAnimation()
 
+        binding?.apply { registerForContextMenu(binding!!.accessCodeOptionsText) }
+        binding!!.accessCodeOptionsText.setOnClickListener {
+            it.showContextMenu()
+        }
+
         return root
+    }
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu,
+        v: View,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        requireActivity().menuInflater.inflate(R.menu.access_code_context_menu, menu)
     }
 
     private fun setupButtonEventHandlers(root: View) {
@@ -114,6 +132,11 @@ class AccessCodeFragment : Fragment() {
             Html.fromHtml(getResources().getString(textId), Html.FROM_HTML_MODE_LEGACY),
             TextView.BufferType.SPANNABLE)
 
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 
 }

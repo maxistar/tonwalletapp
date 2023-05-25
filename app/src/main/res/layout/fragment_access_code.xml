@@ -87,7 +87,6 @@
             android:contentDescription="@string/screen2_button" />
     </LinearLayout>
 
-
     <TextView
         android:id="@+id/access_code_options_text"
         android:layout_width="match_parent"
