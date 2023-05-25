@@ -33,6 +33,8 @@ class LockScreenFragment : Fragment() {
     private lateinit var pointImage2: ImageView
     private lateinit var pointImage3: ImageView
     private lateinit var pointImage4: ImageView
+    private lateinit var pointImage5: ImageView
+    private lateinit var pointImage6: ImageView
 
 
     override fun onCreateView(
@@ -49,6 +51,8 @@ class LockScreenFragment : Fragment() {
         pointImage2 = root.findViewById<ImageView>(R.id.imageView1)
         pointImage3 = root.findViewById<ImageView>(R.id.imageView2)
         pointImage4 = root.findViewById<ImageView>(R.id.imageView3)
+        pointImage5 = root.findViewById<ImageView>(R.id.imageView4)
+        pointImage6 = root.findViewById<ImageView>(R.id.imageView5)
 
         viewModel.liveReady.observe(viewLifecycleOwner) {
             if (it) {
@@ -56,22 +60,15 @@ class LockScreenFragment : Fragment() {
                 pointImage2.setImageResource(R.drawable.point_green_24dp)
                 pointImage3.setImageResource(R.drawable.point_green_24dp)
                 pointImage4.setImageResource(R.drawable.point_green_24dp)
-
+                pointImage5.setImageResource(R.drawable.point_green_24dp)
+                pointImage6.setImageResource(R.drawable.point_green_24dp)
                 val intent = Intent(context, WalletActivity::class.java)
                 startActivity(intent)
             }
         }
 
         viewModel.liveStep.observe(viewLifecycleOwner) {
-            if (it == 1) {
-                pointImage1.setImageResource(R.drawable.point_filled_24dp)
-            } else if (it == 2) {
-                pointImage2.setImageResource(R.drawable.point_filled_24dp)
-            } else if (it == 3) {
-                pointImage3.setImageResource(R.drawable.point_filled_24dp)
-            } else if (it == 4) {
-                pointImage4.setImageResource(R.drawable.point_filled_24dp)
-            }
+            showPoints(it)
         }
 
         viewModel.liveError.observe(viewLifecycleOwner) {
@@ -80,12 +77,16 @@ class LockScreenFragment : Fragment() {
                 pointImage2.setImageResource(R.drawable.point_red_24dp)
                 pointImage3.setImageResource(R.drawable.point_red_24dp)
                 pointImage4.setImageResource(R.drawable.point_red_24dp)
+                pointImage5.setImageResource(R.drawable.point_red_24dp)
+                pointImage6.setImageResource(R.drawable.point_red_24dp)
 
                 Handler(Looper.getMainLooper()).postDelayed({
                     pointImage1.setImageResource(R.drawable.point_empty_24dp)
                     pointImage2.setImageResource(R.drawable.point_empty_24dp)
                     pointImage3.setImageResource(R.drawable.point_empty_24dp)
                     pointImage4.setImageResource(R.drawable.point_empty_24dp)
+                    pointImage5.setImageResource(R.drawable.point_empty_24dp)
+                    pointImage6.setImageResource(R.drawable.point_empty_24dp)
                 }, 500)
             }
         }
@@ -99,6 +100,18 @@ class LockScreenFragment : Fragment() {
 
 
         return root
+    }
+
+
+    private fun showPoints(step: Int) {
+        val arr = arrayOf(pointImage1, pointImage2, pointImage3, pointImage4, pointImage5, pointImage6)
+        for ((index, point) in arr.withIndex()) {
+            if (index < step) {
+                point.setImageResource(R.drawable.point_filled_24dp)
+            } else {
+                point.setImageResource(R.drawable.point_empty_24dp)
+            }
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

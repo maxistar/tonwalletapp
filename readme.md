@@ -55,6 +55,7 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] connect dots to the logic
   - [x] it opens a form event the code is not correct
   - [ ] fingerprint authentication 
+  - [x] support for delete characters
 - [ ] set secret code dialog
   - [ ] make the same that I have done for pin code form
   - [ ] set 6 digits option
@@ -71,7 +72,7 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
     - [ ] reverse order
     - [ ] store transaction in case there is no internet
 - [ ] send dialog
-  - [ ] scan address feature 
+  - [ ] copy address feature 
 - [ ] receive dialog
   - [ ] add paste icon 
 - [ ] scan wallet barcode

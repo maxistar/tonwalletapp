@@ -26,7 +26,6 @@ class SendRecipientFragment : Fragment() {
         }
     }
 
-
     private var binding: FragmentSendRecipientBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,6 +66,12 @@ class SendRecipientFragment : Fragment() {
             val intent = Intent(context, SendActivity::class.java)
             intent.putExtra("scan", true)
             startActivity(intent)
+        }
+
+        val copyButton = binding!!.copyAddressButton
+        copyButton.setOnClickListener {
+            //val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            //val clip: ClipData = ClipData.newUri(contentResolver, "URI", copyUri)
         }
 
         return binding!!.root

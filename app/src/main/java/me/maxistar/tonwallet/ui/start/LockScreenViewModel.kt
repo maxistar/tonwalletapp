@@ -40,6 +40,7 @@ class LockScreenViewModel : ViewModel() {
         if (char == 'd') {
             if (step > 0) {
                 step--
+                _liveStep.value = step
             }
             return
         }

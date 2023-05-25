@@ -224,5 +224,6 @@ zi1mRo4cX-r3W2Dwx-WEAoKP</string>
 
     <string name="access_code__4_digit_code">4-digit code</string>
     <string name="access_code__6_digit_code">6-digit code</string>
+    <string name="send_form__copy_button">Copy</string>
 
 </resources>

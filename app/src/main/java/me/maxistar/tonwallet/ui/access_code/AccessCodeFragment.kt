@@ -8,10 +8,12 @@ import android.text.Html
 import android.view.ContextMenu
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.annotation.RequiresApi
@@ -22,6 +24,13 @@ import me.maxistar.tonwallet.databinding.FragmentWalletBinding
 import me.maxistar.tonwallet.service.ServiceProvider
 
 class AccessCodeFragment : Fragment() {
+
+    private lateinit var pointImage1: ImageView
+    private lateinit var pointImage2: ImageView
+    private lateinit var pointImage3: ImageView
+    private lateinit var pointImage4: ImageView
+    private lateinit var pointImage5: ImageView
+    private lateinit var pointImage6: ImageView
 
     companion object {
         fun newInstance() = AccessCodeFragment()
@@ -44,6 +53,12 @@ class AccessCodeFragment : Fragment() {
         binding = FragmentAccessCodeBinding.inflate(inflater, container, false)
         val root = binding!!.root
 
+        pointImage1 = binding!!.imageView0
+        pointImage2 = binding!!.imageView1
+        pointImage3 = binding!!.imageView2
+        pointImage4 = binding!!.imageView3
+        pointImage5 = binding!!.imageView4
+        pointImage6 = binding!!.imageView5
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             decorateButtons(root)
@@ -66,6 +81,10 @@ class AccessCodeFragment : Fragment() {
             }
         }
 
+        viewModel.liveStep.observe(viewLifecycleOwner) {
+            showPoints(it)
+        }
+
         setupButtonEventHandlers(root)
 
         val image = binding!!.fragmentCentralImage
@@ -80,6 +99,17 @@ class AccessCodeFragment : Fragment() {
         return root
     }
 
+    private fun showPoints(step: Int) {
+        val arr = arrayOf(pointImage1, pointImage2, pointImage3, pointImage4, pointImage5, pointImage6)
+        for ((index, point) in arr.withIndex()) {
+            if (index < step) {
+                point.setImageResource(R.drawable.point_filled_24dp)
+            } else {
+                point.setImageResource(R.drawable.point_empty_24dp)
+            }
+        }
+    }
+
     override fun onCreateContextMenu(
         menu: ContextMenu,
         v: View,
@@ -87,6 +117,30 @@ class AccessCodeFragment : Fragment() {
     ) {
         super.onCreateContextMenu(menu, v, menuInfo)
         requireActivity().menuInflater.inflate(R.menu.access_code_context_menu, menu)
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_access_code_4 -> {
+                setAccessCodeLength4()
+            }
+            R.id.menu_access_code_6 -> {
+                setAccessCodeLength6()
+            }
+        }
+        return super.onContextItemSelected(item)
+    }
+
+    private fun setAccessCodeLength6() {
+        pointImage5.visibility = ImageView.VISIBLE
+        pointImage6.visibility = ImageView.VISIBLE
+        viewModel.setCodeLength(6)
+    }
+
+    private fun setAccessCodeLength4() {
+        pointImage5.visibility = ImageView.GONE
+        pointImage6.visibility = ImageView.GONE
+        viewModel.setCodeLength(4)
     }
 
     private fun setupButtonEventHandlers(root: View) {

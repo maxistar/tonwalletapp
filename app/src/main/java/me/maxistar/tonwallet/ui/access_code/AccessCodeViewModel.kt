@@ -11,6 +11,9 @@ class AccessCodeViewModel : ViewModel() {
 
     private var enterMode: Boolean = true
 
+    private var codeLength = 4
+
+
     private val _liveEnterMode = MutableLiveData<Boolean>().apply {
         value = enterMode
     }
@@ -31,12 +34,23 @@ class AccessCodeViewModel : ViewModel() {
 
     private var step: Int = 0
 
+    private val _liveStep = MutableLiveData<Int>().apply {
+        value = step
+    }
+
+    val liveStep: LiveData<Int> = _liveStep
+
+    fun setCodeLength(lenght: Int) {
+        codeLength = lenght
+    }
+
     // todo simplify this!!!
     fun setCharacter(char: Char) {
         if (enterMode) {
             if (char == 'd') {
                 if (step > 0) {
                     step--
+                    _liveStep.value = step
                 }
                 return
             }
@@ -50,8 +64,10 @@ class AccessCodeViewModel : ViewModel() {
                 code.code4 = char
             }
             step++
+            _liveStep.value = step
             if (step == 4) {
                 step = 0
+                _liveStep.value = step
                 enterMode = false
                 _liveEnterMode.value = enterMode
             }
@@ -59,6 +75,7 @@ class AccessCodeViewModel : ViewModel() {
             if (char == 'd') {
                 if (step > 0) {
                     step--
+                    _liveStep.value = step
                 }
                 return
             }
@@ -72,6 +89,7 @@ class AccessCodeViewModel : ViewModel() {
                 error = code.code4 == char
             }
             step++
+            _liveStep.value = step
             if (step == 4) {
                 step = 0
                 ready = true

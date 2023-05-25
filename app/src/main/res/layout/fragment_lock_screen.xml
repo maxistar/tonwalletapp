@@ -74,6 +74,22 @@
             android:layout_margin="10dp"
             android:src="@drawable/point_empty_24dp"
             android:contentDescription="@string/screen2_button" />
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            android:src="@drawable/point_empty_24dp"
+            android:contentDescription="@string/screen2_button" />
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            android:src="@drawable/point_empty_24dp"
+            android:contentDescription="@string/screen2_button" />
     </LinearLayout>
 
     <Button
