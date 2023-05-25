@@ -33,8 +33,6 @@ class SendAmountFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
-        //val root = inflater.inflate(R.layout.fragment_send_amount, container, false)
         binding = FragmentSendAmountBinding.inflate(inflater, container, false)
         val fm: FragmentManager = parentFragmentManager
 

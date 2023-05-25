@@ -16,16 +16,14 @@ class CreateWalletViewModel : ViewModel() {
     fun generateNewWallet(walletVersion: Long, configUrl: String) {
         viewModelScope.launch {
             val walletInfo = ServiceProvider.getWalletService().getNewWalletInfo(walletVersion, configUrl)
-            _text.value = walletInfo.getSeed();
             newWalletAddress = walletInfo.getPublicAddress();
+            _text.value = walletInfo.getSeed();
         }
     }
 
     private val _text = MutableLiveData<String>().apply {
         value = newWalletWords
     }
-
-
 
     val text: LiveData<String> = _text
 

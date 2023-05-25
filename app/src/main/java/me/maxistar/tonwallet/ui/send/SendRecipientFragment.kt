@@ -70,6 +70,7 @@ class SendRecipientFragment : Fragment() {
 
         val copyButton = binding!!.copyAddressButton
         copyButton.setOnClickListener {
+            // todo
             //val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             //val clip: ClipData = ClipData.newUri(contentResolver, "URI", copyUri)
         }

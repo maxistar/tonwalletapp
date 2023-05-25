@@ -37,8 +37,6 @@ class CreateWalletCheckFragment : Fragment() {
             seed = it.getString(ARG_PARAM1)
             address = it.getString(ARG_PARAM2)
         }
-        //viewModel = ViewModelProvider(this).get(CreateWalletViewModel::class.java)
-        //Log.w("viewModel", viewModel.newWalletAddress)
     }
 
     override fun onCreateView(
