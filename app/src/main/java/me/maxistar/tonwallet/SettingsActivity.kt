@@ -81,7 +81,6 @@ class SettingsActivity : AppCompatActivity() {
             AlertDialog.Builder(context)
                 .setTitle(R.string.Warning)
                 .setMessage(R.string.User_Data_Is_About_To_Delete)
-                .setIcon(R.drawable.ic_launcher_background)
                 .setPositiveButton(
                     R.string.general_Yes,
                     DialogInterface.OnClickListener { dialog, whichButton -> resetWallet() })
