@@ -71,16 +71,22 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
     - [ ] format list
     - [ ] reverse order
     - [ ] store transaction in case there is no internet
+    - [ ] can we check the network in background to see if money arrived?
+    - [ ] can we show status message on the top as required in the mock?
+    - [ ] can we better format icons on the buttons?
+  - [ ] layout round corners 
 - [ ] send dialog
-  - [ ] copy address feature 
+  - [x] add paste icon
+  - [ ] use paste icon
 - [ ] receive dialog
-  - [ ] add paste icon 
+  - make fonts as provided 
 - [ ] scan wallet barcode
   - add an image to the video screen 
-
-### UI Tasks
-
-- [ ] create launch icon
+- [ ] security
+  - [ ] do not show secret phrase to logs
+  - [ ] can se use better method to store the wallet? e.g. secret phrase?
+  - [ ] can we cipher it in the application?
+- [ ] link for the external intents as described in the requirements
 
 ### Links:
 

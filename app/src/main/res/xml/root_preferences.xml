@@ -37,12 +37,12 @@
 
     <PreferenceCategory app:title="@string/settings__title_security">
 
-        <EditTextPreference
+        <Preference
             app:key="phrase"
             app:title="@string/settings__phrase"
             app:useSimpleSummaryProvider="true" />
 
-        <EditTextPreference
+        <Preference
             app:key="passcode"
             app:title="@string/settings__passcode"
             app:useSimpleSummaryProvider="true" />

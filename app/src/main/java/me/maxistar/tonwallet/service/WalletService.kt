@@ -40,9 +40,19 @@ class WalletService {
     fun getBalance(seed: String, walletVersion: Long, configUrl: String?): Long {
         val result = Wallet.getBalance(seed, walletVersion, configUrl);
         Log.w("balance", result.toString())
+        if (result == "") {
+            // todo add proper error handling
+            return 0
+        }
         val jsonValue = JSONObject(result)
         val details = jsonValue.getLong("NanoTons")
         return details;
+    }
+
+    suspend fun getBalanceSuspended(seed: String, walletVersion: Long, configUrl: String?): Long {
+        return withContext(Dispatchers.IO) {
+            getBalance(seed, walletVersion, configUrl)
+        }
     }
 
     fun getTransactions(seed: String, walletVersion: Long, configUrl: String?): WalletHistoryDetails? {
@@ -73,6 +83,12 @@ class WalletService {
             return WalletHistoryDetails(balance, status, data, transactions)
         } catch (e: Exception) {
             return null
+        }
+    }
+
+    suspend fun getTransactionsSuspended(seed: String, walletVersion: Long, configUrl: String?): WalletHistoryDetails? {
+        return withContext(Dispatchers.IO) {
+            getTransactions(seed, walletVersion, configUrl)
         }
     }
 

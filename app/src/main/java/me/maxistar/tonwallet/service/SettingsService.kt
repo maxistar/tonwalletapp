@@ -5,8 +5,6 @@ import android.content.SharedPreferences
 import android.util.Log
 import androidx.preference.PreferenceManager
 
-val ADDRESS_KEY = "address";
-
 class SettingsService {
 
     fun storeWallet(context: Context, address: String, secret: String) {
@@ -19,21 +17,24 @@ class SettingsService {
 
     fun getTonConfiguration(context: Context): String {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-        return sharedPreferences.getString("configurl", "https://ton-blockchain.github.io/global.config.json") as String;
+        return sharedPreferences.getString("configurl", "https://ton-blockchain.github.io/global.config.json") as String
     }
 
     fun getWalletAddress(context: Context): String {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-        return sharedPreferences.getString("address", "") as String;
+        return sharedPreferences.getString("address", "") as String
     }
 
     fun getWalletSecretPhrase(context: Context): String {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-        return sharedPreferences.getString("secret", "") as String;
+        return sharedPreferences.getString("secret", "") as String
     }
 
     fun getWalletVersion(context: Context): Long {
-        return 32;
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        val version = sharedPreferences.getString("walletversion", "32") as String
+        Log.w("version", version.toString())
+        return version.toLong()
     }
 
     fun isWalletStored(context: Context): Boolean {
@@ -52,7 +53,7 @@ class SettingsService {
 
     fun securityKeyStored(context: Context): Boolean {
         val key = getSecurityKey(context)
-        return key.length > 3;
+        return key.length > 3
     }
     fun storeSecurityKey(context: Context, key: String) {
         Log.w("security", key)
@@ -64,6 +65,6 @@ class SettingsService {
 
     fun getSecurityKey(context: Context): String {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-        return sharedPreferences.getString("access", "") as String;
+        return sharedPreferences.getString("access", "") as String
     }
 }
