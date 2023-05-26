@@ -16,8 +16,8 @@
 
         <ListPreference
             app:defaultValue="reply"
-            app:entries="@array/reply_entries"
-            app:entryValues="@array/reply_values"
+            app:entries="@array/currency_entries"
+            app:entryValues="@array/currency_values"
             app:key="reply"
             app:title="@string/settings__currency"
             app:useSimpleSummaryProvider="true" />

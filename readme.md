@@ -60,7 +60,7 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] make the same that I have done for pin code form
   - [ ] set 6 digits option
 - [ ] settings pages
-  - [ ] make "delete wallet" to be red
+  - [x] make "delete wallet" to be red
   - [ ] use better components for settings
   - [x] list of wallet types
   - [x] use wallet types in code

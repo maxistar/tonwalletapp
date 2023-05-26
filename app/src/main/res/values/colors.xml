@@ -16,4 +16,5 @@
     <color name="ton_blue">#339CEC</color>
     <color name="ton_gray">#757575</color>
     <color name="button_gray">#F0F0F0</color>
+    <color name="red">#FF0000</color>
 </resources>
