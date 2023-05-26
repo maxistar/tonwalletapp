@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Build
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Html
 import android.view.ContextMenu
 import androidx.fragment.app.Fragment
@@ -72,6 +74,23 @@ class AccessCodeFragment : Fragment() {
                 title.setText(R.string.access_code_title_confirm)
             }
         }
+
+        viewModel.liveError.observe(viewLifecycleOwner) {
+            if (it == true) {
+                val arr = arrayOf(pointImage1, pointImage2, pointImage3, pointImage4, pointImage5, pointImage6)
+                for (point in arr) {
+                    point.setImageResource(R.drawable.point_red_24dp)
+                }
+
+                Handler(Looper.getMainLooper()).postDelayed({
+                    for (point in arr) {
+                        point.setImageResource(R.drawable.point_empty_24dp)
+                    }
+                }, 500)
+            }
+        }
+
+
 
         viewModel.liveReady.observe(viewLifecycleOwner) {
             if (it) {

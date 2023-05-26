@@ -7,9 +7,12 @@ import androidx.lifecycle.ViewModel
 import me.maxistar.tonwallet.model.AccessCodeModel
 
 class LockScreenViewModel : ViewModel() {
-    var code: AccessCodeModel = AccessCodeModel()
+    private var code: AccessCodeModel = AccessCodeModel()
+    var codeCompare: AccessCodeModel = AccessCodeModel()
 
     private var ready: Boolean = false
+
+    private var codeLength = 4
 
     private val _liveReady = MutableLiveData<Boolean>().apply {
         value = ready
@@ -26,13 +29,11 @@ class LockScreenViewModel : ViewModel() {
     val liveStep: LiveData<Int> = _liveStep
 
     private var error: Boolean = false
+
     private val _liveError = MutableLiveData<Boolean>().apply {
         value = error
     }
     val liveError: LiveData<Boolean> = _liveError
-
-
-    private var progress: Int = 0
 
 
     // todo simplify this!!!
@@ -45,26 +46,36 @@ class LockScreenViewModel : ViewModel() {
             return
         }
         if (step == 0) {
-            error = (error || (code.code1 != char))
+            codeCompare.code1 = char
         } else if (step == 1) {
-            error = (error || (code.code2 != char))
+            codeCompare.code2 = char
         } else if (step == 2) {
-            error = (error || (code.code3 != char))
+            codeCompare.code3 = char
+        } else if (step == 3) {
+            codeCompare.code4 = char
+        } else if (step == 4) {
+            codeCompare.code5 = char
         } else {
-            error = (error || (code.code4 != char))
+            codeCompare.code6 = char
         }
         step++
         _liveStep.value = step
-        if (step == 4) {
-            if (error) {
+        if ((step == 4 && codeLength == 4) || (step == 6 && codeLength == 6)) {
+            if (code.toString() != codeCompare.toString()) {
                 step = 0;
-                _liveError.value = error
+                _liveError.value = true
                 error = false
-                Log.w("Error4", error.toString())
             } else {
                 ready = true
                 _liveReady.value = ready
             }
+        }
+    }
+
+    fun setCode(securityKey: String) {
+        code.setCode(securityKey)
+        if (securityKey.length > 4) {
+            codeLength = 6
         }
     }
 }

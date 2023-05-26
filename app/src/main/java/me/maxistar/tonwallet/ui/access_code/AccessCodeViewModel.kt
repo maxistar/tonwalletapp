@@ -1,5 +1,6 @@
 package me.maxistar.tonwallet.ui.access_code
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,6 +9,7 @@ import me.maxistar.tonwallet.model.TransactionItem
 
 class AccessCodeViewModel : ViewModel() {
     var code: AccessCodeModel = AccessCodeModel()
+    var codeRepeat: AccessCodeModel = AccessCodeModel()
 
     private var enterMode: Boolean = true
 
@@ -30,7 +32,11 @@ class AccessCodeViewModel : ViewModel() {
 
     private var error: Boolean = false
 
-    private var progress: Int = 0
+    private val _liveError = MutableLiveData<Boolean>().apply {
+        value = error
+    }
+    val liveError: LiveData<Boolean> = _liveError
+
 
     private var step: Int = 0
 
@@ -42,6 +48,11 @@ class AccessCodeViewModel : ViewModel() {
 
     fun setCodeLength(lenght: Int) {
         codeLength = lenght
+        step = 0
+        _liveStep.value = step
+
+        enterMode = true
+        _liveEnterMode.value = enterMode
     }
 
     // todo simplify this!!!
@@ -60,12 +71,16 @@ class AccessCodeViewModel : ViewModel() {
                 code.code2 = char
             } else if (step == 2) {
                 code.code3 = char
-            } else {
+            } else if (step == 3) {
                 code.code4 = char
+            } else if (step == 4) {
+                code.code5 = char
+            } else {
+                code.code6 = char
             }
             step++
             _liveStep.value = step
-            if (step == 4) {
+            if ((step == 4 && codeLength == 4) || (step == 6 && codeLength == 6)) {
                 step = 0
                 _liveStep.value = step
                 enterMode = false
@@ -80,20 +95,31 @@ class AccessCodeViewModel : ViewModel() {
                 return
             }
             if (step == 0) {
-                error = code.code1 == char
+                codeRepeat.code1 = char
             } else if (step == 1) {
-                error = code.code2 == char
+                codeRepeat.code2 = char
             } else if (step == 2) {
-                error = code.code3 == char
+                codeRepeat.code3 = char
+            } else if (step == 3) {
+                codeRepeat.code4 = char
+            } else if (step == 4) {
+                codeRepeat.code5 = char
             } else {
-                error = code.code4 == char
+                codeRepeat.code6 = char
             }
             step++
             _liveStep.value = step
-            if (step == 4) {
-                step = 0
-                ready = true
-                _liveReady.value = ready
+            if ((step == 4 && codeLength == 4) || (step == 6 && codeLength == 6)) {
+                if (code.toString() != codeRepeat.toString()) {
+                    step = 0;
+                    _liveError.value = true
+                    error = false
+                    enterMode = true
+                    _liveEnterMode.value = enterMode
+                } else {
+                    ready = true
+                    _liveReady.value = ready
+                }
             }
         }
     }

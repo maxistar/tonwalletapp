@@ -73,25 +73,26 @@ class LockScreenFragment : Fragment() {
 
         viewModel.liveError.observe(viewLifecycleOwner) {
             if (it == true) {
-                pointImage1.setImageResource(R.drawable.point_red_24dp)
-                pointImage2.setImageResource(R.drawable.point_red_24dp)
-                pointImage3.setImageResource(R.drawable.point_red_24dp)
-                pointImage4.setImageResource(R.drawable.point_red_24dp)
-                pointImage5.setImageResource(R.drawable.point_red_24dp)
-                pointImage6.setImageResource(R.drawable.point_red_24dp)
+                val arr = arrayOf(pointImage1, pointImage2, pointImage3, pointImage4, pointImage5, pointImage6)
+                for (point in arr) {
+                    point.setImageResource(R.drawable.point_red_24dp)
+                }
 
                 Handler(Looper.getMainLooper()).postDelayed({
-                    pointImage1.setImageResource(R.drawable.point_empty_24dp)
-                    pointImage2.setImageResource(R.drawable.point_empty_24dp)
-                    pointImage3.setImageResource(R.drawable.point_empty_24dp)
-                    pointImage4.setImageResource(R.drawable.point_empty_24dp)
-                    pointImage5.setImageResource(R.drawable.point_empty_24dp)
-                    pointImage6.setImageResource(R.drawable.point_empty_24dp)
+                    for (point in arr) {
+                        point.setImageResource(R.drawable.point_empty_24dp)
+                    }
                 }, 500)
             }
         }
 
         setupButtonEventHandlers(root!!);
+
+        val pin = ServiceProvider.getSettingsService().getSecurityKey(context!!);
+        if (pin.length > 4) {
+            pointImage5.visibility = ImageView.VISIBLE
+            pointImage6.visibility = ImageView.VISIBLE
+        }
 
         val image =
             root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.fragment_central_image)
@@ -117,7 +118,8 @@ class LockScreenFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(LockScreenViewModel::class.java)
-        viewModel.code.setCode(ServiceProvider.getSettingsService().getSecurityKey(context!!))
+        val pin = ServiceProvider.getSettingsService().getSecurityKey(context!!);
+        viewModel.setCode(pin)
     }
 
     private fun setupButtonEventHandlers(root: View) {

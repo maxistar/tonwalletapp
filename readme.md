@@ -53,18 +53,18 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [x] it opens a form event the code is not correct
   - [ ] fingerprint authentication 
   - [x] support for delete characters
-- [ ] set secret code dialog
-  - [ ] make the same that I have done for pin code form
-  - [ ] set 6 digits option
+- [x] set secret code dialog
+  - [x] make the same that I have done for pin code form
+  - [x] set 6 digits option
 - [ ] settings pages
   - [x] make "delete wallet" to be red
   - [x] use better components for settings
   - [x] list of wallet types
   - [x] use wallet types in code
-  - [ ] connect elements with secret phrase
-  - [ ] make feature to enter pin code
+  - [x] connect elements with secret phrase
+  - [x] make feature to enter pin code
 - [ ] wallet activity
-  - [ ] show transactions and new icon
+  - [x] show transactions and new icon
   - [x] format list
   - [x] reverse order
   - [ ] store transaction in case there is no internet
