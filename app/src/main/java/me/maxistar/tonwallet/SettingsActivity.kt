@@ -44,15 +44,37 @@ class SettingsActivity : AppCompatActivity() {
     class SettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey)
-
             val deleteWalletPreference = findPreference<Preference>("delete_wallet")
-            Log.w("preference", deleteWalletPreference?.layoutResource.toString())
-            //R.styleable
             deleteWalletPreference?.layoutResource = R.layout.delete_wallet_preference_item
             deleteWalletPreference?.setOnPreferenceClickListener {
                 resetUserConfirmation()
                 true
             }
+
+
+            val pinWalletPreference = findPreference<Preference>("passcode")
+            pinWalletPreference?.setOnPreferenceClickListener {
+                setPassCode()
+                true
+            }
+
+            val seedPreference = findPreference<Preference>("phrase")
+            seedPreference?.setOnPreferenceClickListener {
+                showSeed()
+                true
+            }
+        }
+
+        private fun showSeed() {
+            val intent = Intent(context, CreateWalletActivity::class.java)
+            intent.putExtra("showSeed", true)
+            startActivity(intent)
+        }
+
+        private fun setPassCode() {
+            val intent = Intent(context, AccessCodeActivity::class.java)
+            intent.putExtra("changePasscode", true)
+            startActivity(intent)
         }
 
         private fun resetUserConfirmation() {

@@ -55,12 +55,6 @@
             app:key="delete_wallet"
             app:title="@string/settings__delete_wallet"
             app:useSimpleSummaryProvider="true" />
-
-<!--
-            app:summaryOff="@string/attachment_summary_off"
-            app:summaryOn="@string/attachment_summary_on"
--->
-
     </PreferenceCategory>
 
 </PreferenceScreen>
