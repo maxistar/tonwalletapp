@@ -26,27 +26,24 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 
 ## Screens
 
-![](screenshots/Screenshot-2023-05-22-at-07.46.01.png)
+![](screenshots/Screenshot 2023-05-26 at 16.31.15.png)
 
-![](screenshots/Screenshot-2023-05-22-at-07.46.12.png)
+![](screenshots/Screenshot 2023-05-26 at 16.31.31.png)
 
-![](screenshots/Screenshot-2023-05-22-at-07.46.34.png)
+![](screenshots/Screenshot 2023-05-26 at 16.31.48.png)
 
-![](screenshots/Screenshot-2023-05-22-at-07.47.16.png)
+![](screenshots/Screenshot 2023-05-26 at 16.31.59.png)
 
-![](screenshots/Screenshot-2023-05-22-at-07.47.46.png)
+![](screenshots/Screenshot 2023-05-26 at 16.32.16.png)
 
-![](screenshots/Screenshot-2023-05-22-at-07.48.12.png)
+![](screenshots/Screenshot 2023-05-26 at 16.32.29.png)
 
-![](screenshots/Screenshot-2023-05-22-at-07.48.23.png)
+![](screenshots/Screenshot 2023-05-26 at 16.32.51.png)
 
-![](screenshots/Screenshot-2023-05-22-at-07.48.39.png)
+![](screenshots/Screenshot 2023-05-26 at 16.33.30.png)
 
-![](screenshots/Screenshot-2023-05-22-at-07.48.54.png)
+![](screenshots/Screenshot 2023-05-26 at 16.33.49.png)
 
-![](screenshots/Screenshot-2023-05-22-at-07.49.09.png)
-
-![](screenshots/Screenshot-2023-05-22-at-07.49.37.png)
 
 ### Todo:
 
