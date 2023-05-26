@@ -63,17 +63,17 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] make "delete wallet" to be red
   - [ ] use better components for settings
   - [x] list of wallet types
-  - [ ] use wallet types in code
+  - [x] use wallet types in code
   - [ ] connect elements with secret phrase
   - [ ] make feature to show the secret phrase
 - [ ] wallet activity
   - [ ] show transactions and new icon
-    - [ ] format list
-    - [ ] reverse order
-    - [ ] store transaction in case there is no internet
-    - [ ] can we check the network in background to see if money arrived?
-    - [ ] can we show status message on the top as required in the mock?
-    - [ ] can we better format icons on the buttons?
+  - [x] format list
+  - [x] reverse order
+  - [ ] store transaction in case there is no internet
+  - [ ] can we check the network in background to see if money arrived?
+  - [ ] can we show status message on the top as required in the mock?
+  - [ ] can we better format icons on the buttons?
   - [ ] layout round corners 
 - [ ] send dialog
   - [x] add paste icon

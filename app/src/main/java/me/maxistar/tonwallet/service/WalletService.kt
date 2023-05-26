@@ -75,7 +75,8 @@ class WalletService {
                         item.getLong("Amount"),
                         "comment to do",
                         item.getString("Address"),
-                        item.getString("Type")
+                        item.getString("Type"),
+                        item.getLong("LT")
                     )
                 )
             }

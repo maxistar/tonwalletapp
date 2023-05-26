@@ -6,16 +6,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import me.maxistar.tonwallet.model.TransactionDisplayItem
 import me.maxistar.tonwallet.model.TransactionItem
 import me.maxistar.tonwallet.service.ServiceProvider
+import me.maxistar.tonwallet.util.TonFormatter
 
 class WalletViewModel : ViewModel() {
 
     private var _balance: Long = 0
 
-    private var _transactions: MutableList<TransactionItem> = mutableListOf()
+    private var _transactions: MutableList<TransactionDisplayItem> = mutableListOf()
 
-    private val _liveTransactions = MutableLiveData<MutableList<TransactionItem>>().apply {
+    private val _liveTransactions = MutableLiveData<MutableList<TransactionDisplayItem>>().apply {
         value = _transactions
     }
 
@@ -31,7 +33,7 @@ class WalletViewModel : ViewModel() {
             val transactions = walletService.getTransactionsSuspended(seed, walletVersion, configUrl)
             if (transactions != null) {
                 _transactions.clear()
-                _transactions.addAll(transactions.transactions)
+                _transactions.addAll(TonFormatter.formatTransactions(transactions.transactions))
                 _liveTransactions.value = _transactions
             }
 
@@ -39,7 +41,7 @@ class WalletViewModel : ViewModel() {
         }
     }
 
-    val transactions: LiveData<MutableList<TransactionItem>> = _liveTransactions
+    val transactions: LiveData<MutableList<TransactionDisplayItem>> = _liveTransactions
 
     val balance: LiveData<Long> = _liveBalance
 

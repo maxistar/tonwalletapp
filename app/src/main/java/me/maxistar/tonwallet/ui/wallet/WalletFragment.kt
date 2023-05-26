@@ -23,6 +23,7 @@ import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.ReceiveActivity
 import me.maxistar.tonwallet.SendActivity
 import me.maxistar.tonwallet.databinding.FragmentWalletBinding
+import me.maxistar.tonwallet.model.TransactionDisplayItem
 import me.maxistar.tonwallet.model.TransactionItem
 import me.maxistar.tonwallet.service.ServiceProvider
 import me.maxistar.tonwallet.util.TonFormatter
@@ -30,7 +31,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class WalletFragment : Fragment() {
+open class WalletFragment : Fragment() {
 
     companion object {
         fun newInstance() = WalletFragment()
@@ -155,9 +156,9 @@ class WalletFragment : Fragment() {
     protected class TransactionsAdapter(
         context: Context,
         textViewResourceId: Int,
-        values_: List<TransactionItem>
+        values_: List<TransactionDisplayItem>
     ) :
-        ArrayAdapter<TransactionItem?>(context, textViewResourceId, values_) {
+        ArrayAdapter<TransactionDisplayItem?>(context, textViewResourceId, values_) {
 
         val values = values_;
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -169,27 +170,27 @@ class WalletFragment : Fragment() {
                     v = vi.inflate(R.layout.transaction_item, g)
                 }
             }
-            val d: TransactionItem = values[position]
+            val d: TransactionDisplayItem = values[position]
             var tv = v!!.findViewById<TextView>(R.id.amount_label)
             val tonAmount = TonFormatter.nanoTonsToString(d.amount);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
 
                 if (d.transactionType == "in") {
                     tv.setText(
-                        Html.fromHtml("<span style=\"color:#37A818\">$tonAmount<span> from", Html.FROM_HTML_MODE_COMPACT),
+                        Html.fromHtml(context.resources.getString(R.string.wallet__transaction_html_from).format(tonAmount), Html.FROM_HTML_MODE_COMPACT),
                         TextView.BufferType.SPANNABLE
                     )
                 } else {
                     tv.setText(
-                        Html.fromHtml("<span style=\"color:#FE3C30\">$tonAmount<span> to", Html.FROM_HTML_MODE_COMPACT),
+                        Html.fromHtml(context.resources.getString(R.string.wallet__transaction_html_to).format(tonAmount), Html.FROM_HTML_MODE_COMPACT),
                         TextView.BufferType.SPANNABLE
                     )
                 }
             } else {
                 if (d.transactionType == "in") {
-                    tv.setText("$tonAmount from")
+                    tv.setText(context.resources.getString(R.string.wallet__transaction_from).format(tonAmount))
                 } else {
-                    tv.setText("$tonAmount to")
+                    tv.setText(context.resources.getString(R.string.wallet__transaction_to).format(tonAmount))
                 }
             }
 
@@ -198,6 +199,17 @@ class WalletFragment : Fragment() {
             tv.setText(d.comment)
             tv = v.findViewById(R.id.address_label)
             tv.setText(TonFormatter.addressShorten(d.address))
+
+            tv = v.findViewById(R.id.time_label)
+            tv.setText(d.time)
+
+            tv = v.findViewById(R.id.amount_day)
+            if (d.date !== "") {
+                tv.setText(d.date)
+                tv.visibility = View.VISIBLE
+            } else {
+                tv.visibility = View.GONE
+            }
             return v
         }
     }
