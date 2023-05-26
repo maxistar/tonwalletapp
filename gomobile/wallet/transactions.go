@@ -39,22 +39,10 @@ func GetTransactions(words string, version int, configUrl string) string {
 
 	seed := strings.Split(words, " ")
 
-	fmt.Println(words)
-
 	w, err := wallet.FromSeed(api, seed, wallet.Version(version))
 	if err != nil {
 		log.Println(err)
 	}
-
-	//block, err := api.CurrentMasterchainInfo(context.Background())
-	//if err != nil {
-	//	log.Println(err)
-	//}
-
-	//balance, err := w.GetBalance(context.Background(), block)
-	//if err != nil {
-	//	log.Println(err)
-	//}
 
 	info := AccountInfo{
 		//Balance: balance.NanoTON().Uint64(),
@@ -72,12 +60,6 @@ func GetTransactions(words string, version int, configUrl string) string {
 	}
 
 	addr := w.Address()
-
-	// ccount, err := api.GetAccount(context.Background(), b, w.Address())
-	// if err != nil {
-	//	log.Fatalln("get account err:", err.Error())
-	//	return ""
-	// }
 
 	res, err := api.WaitForBlock(b.SeqNo).GetAccount(ctx, b, addr)
 	if err != nil {

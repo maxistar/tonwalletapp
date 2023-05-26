@@ -4,4 +4,16 @@
         <item name="android:background">@color/black_overlay</item>
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
+
+
+    <style name="WalletListSection">
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:background">@drawable/wallet_list_shape</item>
+    </style>
+
+
 </resources>

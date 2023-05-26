@@ -61,11 +61,11 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] set 6 digits option
 - [ ] settings pages
   - [x] make "delete wallet" to be red
-  - [ ] use better components for settings
+  - [x] use better components for settings
   - [x] list of wallet types
   - [x] use wallet types in code
   - [ ] connect elements with secret phrase
-  - [ ] make feature to show the secret phrase
+  - [ ] make feature to enter pin code
 - [ ] wallet activity
   - [ ] show transactions and new icon
   - [x] format list
@@ -74,14 +74,14 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] can we check the network in background to see if money arrived?
   - [ ] can we show status message on the top as required in the mock?
   - [ ] can we better format icons on the buttons?
-  - [ ] layout round corners 
+  - [x] layout round corners
+  - [ ] for some wallets not all transactions are being shown
+  - [ ] storage fee and comments are not being shown
 - [ ] send dialog
   - [x] add paste icon
   - [ ] use paste icon
 - [ ] receive dialog
   - make fonts as provided 
-- [ ] scan wallet barcode
-  - add an image to the video screen 
 - [ ] security
   - [ ] do not show secret phrase to logs
   - [ ] can se use better method to store the wallet? e.g. secret phrase?

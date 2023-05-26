@@ -29,7 +29,6 @@ func GetBalance(words string, version int, configUrl string) string {
 
 	seed := strings.Split(words, " ")
 
-	fmt.Println(words)
 
 	w, err := wallet.FromSeed(api, seed, wallet.Version(version))
 	if err != nil {

@@ -33,8 +33,6 @@ func SendTons(words string, version int, configUrl string, destination string, a
 		return "error"
 	}
 
-	// address := wallet.Address()
-
 	addr := address.MustParseAddr(destination)
 
 	err = w.Transfer(ctx, addr, tlb.MustFromTON(fmt.Sprintf("%f", amount)),

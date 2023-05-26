@@ -2,19 +2,16 @@ package me.maxistar.tonwallet.ui.wallet
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
-import android.util.Log
 import android.view.ContextMenu
 import android.view.LayoutInflater
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ListView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
@@ -24,11 +21,9 @@ import me.maxistar.tonwallet.ReceiveActivity
 import me.maxistar.tonwallet.SendActivity
 import me.maxistar.tonwallet.databinding.FragmentWalletBinding
 import me.maxistar.tonwallet.model.TransactionDisplayItem
-import me.maxistar.tonwallet.model.TransactionItem
 import me.maxistar.tonwallet.service.ServiceProvider
 import me.maxistar.tonwallet.util.TonFormatter
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 open class WalletFragment : Fragment() {
@@ -73,6 +68,7 @@ open class WalletFragment : Fragment() {
             startActivity(intent)
         }
 
+
         val settingsService = ServiceProvider.getSettingsService();
         val textViewAddress = binding!!.walletAddressShort
         textViewAddress.text =
@@ -80,6 +76,24 @@ open class WalletFragment : Fragment() {
         val textYourWalletAddress = binding!!.yourWalletAddress
         textYourWalletAddress.text = settingsService.getWalletAddress(context!!)
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            buttonReceive.setText(
+                Html.fromHtml(
+                    "<img src=\"receive_icon_24dp\"> Receive",
+                    ImageGetter(context!!),
+                    null
+                ),
+                TextView.BufferType.SPANNABLE
+            )
+            buttonSend.setText(
+                Html.fromHtml(
+                    "<img src=\"send_icon_24dp\"> Send",
+                    ImageGetter(context!!),
+                    null
+                ),
+                TextView.BufferType.SPANNABLE
+            )
+        }
 
         val textView = binding!!.walletAddressBalance
         viewModel.balance.observe(viewLifecycleOwner) {
@@ -217,6 +231,28 @@ open class WalletFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+
+    class ImageGetter(context: Context) : Html.ImageGetter {
+
+        val context = context
+        override fun getDrawable(source: String): Drawable {
+            var id: Int
+            id = context.resources.getIdentifier(source, "drawable", context.getPackageName())
+            if (id == 0) {
+                // the drawable resource wasn't found in our package, maybe it is a stock android drawable?
+                id = context.resources.getIdentifier(source, "drawable", "android")
+            }
+            return if (id == 0) {
+                val d: Drawable = context.resources.getDrawable(R.drawable.receive_icon_24dp)
+                d.setBounds(0, 0, d.intrinsicWidth, d.intrinsicHeight)
+                d
+            } else {
+                val d: Drawable = context.resources.getDrawable(id)
+                d.setBounds(0, 0, d.intrinsicWidth, d.intrinsicHeight)
+                d
+            }
+        }
     }
 
 }
