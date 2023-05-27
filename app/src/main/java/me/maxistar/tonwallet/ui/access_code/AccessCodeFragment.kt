@@ -48,7 +48,6 @@ class AccessCodeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        //val root = inflater.inflate(R.layout.fragment_access_code, container, false)
         binding = FragmentAccessCodeBinding.inflate(inflater, container, false)
         val root = binding!!.root
 

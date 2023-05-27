@@ -71,12 +71,12 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 ### Todo:
 
 - [ ] create wallet
-  - [ ] check wallet does not check wallet!!!  
+  - [x] check wallet does not check wallet!!!  
 - [ ] security code form
   - [x] draw non active dots
   - [x] connect dots to the logic
   - [x] it opens a form event the code is not correct
-  - [ ] fingerprint authentication 
+  - [x] fingerprint authentication 
   - [x] support for delete characters
 - [x] set secret code dialog
   - [x] make the same that I have done for pin code form
