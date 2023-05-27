@@ -2,27 +2,24 @@ package me.maxistar.tonwallet.ui.access_code
 
 import android.content.Intent
 import android.os.Build
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.text.Html
 import android.view.ContextMenu
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.Spinner
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.WalletActivity
 import me.maxistar.tonwallet.databinding.FragmentAccessCodeBinding
-import me.maxistar.tonwallet.databinding.FragmentWalletBinding
 import me.maxistar.tonwallet.service.ServiceProvider
 
 class AccessCodeFragment : Fragment() {
@@ -62,6 +59,7 @@ class AccessCodeFragment : Fragment() {
         pointImage5 = binding!!.imageView4
         pointImage6 = binding!!.imageView5
 
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             decorateButtons(root)
         }
@@ -94,9 +92,14 @@ class AccessCodeFragment : Fragment() {
 
         viewModel.liveReady.observe(viewLifecycleOwner) {
             if (it) {
-                ServiceProvider.getSettingsService().storeSecurityKey(context!!, viewModel.code.toString())
-                val intent = Intent(context, WalletActivity::class.java)
-                startActivity(intent)
+                val settingsService = ServiceProvider.getSettingsService()
+                settingsService.storeSecurityKey(context!!, viewModel.code.toString())
+
+                if (settingsService.getUseBiometric(context!!)) {
+                    showBiometric()
+                } else {
+                    goToWallet()
+                }
             }
         }
 
@@ -116,6 +119,23 @@ class AccessCodeFragment : Fragment() {
         }
 
         return root
+    }
+
+    private fun goToWallet() {
+        val intent = Intent(context, WalletActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun showBiometric() {
+        val fingerprintService = ServiceProvider.getFingerprintService()
+        val successCallback = {
+            goToWallet()
+        }
+        val failureCallback = {
+            ServiceProvider.getSettingsService().setUseBiometric(context!!, false)
+            goToWallet()
+        }
+        fingerprintService.authenticate(this, successCallback, failureCallback)
     }
 
     private fun showPoints(step: Int) {

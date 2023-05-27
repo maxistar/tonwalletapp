@@ -229,5 +229,7 @@ zi1mRo4cX-r3W2Dwx-WEAoKP</string>
     <string name="wallet__transaction_to">%s to</string>
     <string name="wallet__transaction_html_from"><![CDATA[<span style=\"color:#37A818\">%s<span> from]]></string>
     <string name="wallet__transaction_html_to"><![CDATA[<span style=\"color:#FE3C30\">%s<span> to]]></string>
+    <string name="biometric_title">Biometric login for Ton Wallet</string>
+    <string name="biometric_use_pincode">Use pin code</string>
 
 </resources>

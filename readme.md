@@ -8,6 +8,29 @@ In order to work with Ton Network the [tonutils-go](https://github.com/xssnick/t
 
 Scanner library [zxing-android-embedded](https://github.com/journeyapps/zxing-android-embedded)
 
+## Gomobile
+
+Gomobile is a tool for building and running mobile apps written in Go.
+
+To install
+
+```shell
+go install golang.org/x/mobile/cmd/gomobile@latest
+gomobile init
+```
+
+compiled wallet.aar already included to the repository but it is always good idea to compile the one from scratch.
+
+in order to compile aar library do the following:
+
+```shell
+cd gomobile
+gomobile bind -o ../app/wallet.aar -target=android ./wallet
+```
+
+see more on [gomoble documentation page](https://pkg.go.dev/golang.org/x/mobile/cmd/gomobile)
+
+
 ## Roadmap
 
 Gomobile allows to write also iOS applications.
@@ -47,6 +70,8 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 
 ### Todo:
 
+- [ ] create wallet
+  - [ ] check wallet does not check wallet!!!  
 - [ ] security code form
   - [x] draw non active dots
   - [x] connect dots to the logic

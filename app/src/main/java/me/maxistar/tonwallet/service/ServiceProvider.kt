@@ -4,6 +4,8 @@ object ServiceProvider {
 
     private var walletService:WalletService? = null;
 
+    private var fingerprintService:FingerprintService? = null;
+
     private var settingsService:SettingsService? = null;
     fun getWalletService(): WalletService {
         if (walletService === null) {
@@ -17,5 +19,12 @@ object ServiceProvider {
             settingsService = SettingsService()
         }
         return settingsService as SettingsService
+    }
+
+    fun getFingerprintService(): FingerprintService {
+        if (fingerprintService === null) {
+            fingerprintService = FingerprintService()
+        }
+        return fingerprintService as FingerprintService
     }
 }

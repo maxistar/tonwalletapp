@@ -47,6 +47,7 @@ class SettingsService {
         editor.remove("address")
         editor.remove("secret")
         editor.remove("access")
+        editor.remove("biometric")
         editor.apply()
     }
 
@@ -56,7 +57,6 @@ class SettingsService {
         return key.length > 3
     }
     fun storeSecurityKey(context: Context, key: String) {
-        Log.w("security", key)
         val settings: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
         val editor: SharedPreferences.Editor = settings.edit()
         editor.putString("access", key)
@@ -66,5 +66,16 @@ class SettingsService {
     fun getSecurityKey(context: Context): String {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
         return sharedPreferences.getString("access", "") as String
+    }
+
+    fun setUseBiometric(context: Context, value: Boolean) {
+        val settings: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        val editor: SharedPreferences.Editor = settings.edit()
+        editor.putBoolean("biometric", value)
+        editor.apply()
+    }
+    fun getUseBiometric(context: Context): Boolean {
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+        return sharedPreferences.getBoolean("biometric", false)
     }
 }

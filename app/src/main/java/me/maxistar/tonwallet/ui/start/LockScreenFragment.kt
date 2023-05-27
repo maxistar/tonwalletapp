@@ -62,8 +62,8 @@ class LockScreenFragment : Fragment() {
                 pointImage4.setImageResource(R.drawable.point_green_24dp)
                 pointImage5.setImageResource(R.drawable.point_green_24dp)
                 pointImage6.setImageResource(R.drawable.point_green_24dp)
-                val intent = Intent(context, WalletActivity::class.java)
-                startActivity(intent)
+
+                gotoWallet();
             }
         }
 
@@ -99,8 +99,24 @@ class LockScreenFragment : Fragment() {
         image.setAnimation(R.raw.password)
         image.playAnimation()
 
+        val successCallback = {
+            gotoWallet()
+        }
+
+        val failureCallback = {
+
+        }
+
+        if (ServiceProvider.getSettingsService().getUseBiometric(context!!)) {
+            ServiceProvider.getFingerprintService().authenticate(this, successCallback, failureCallback)
+        }
 
         return root
+    }
+
+    private fun gotoWallet() {
+        val intent = Intent(context, WalletActivity::class.java)
+        startActivity(intent)
     }
 
 

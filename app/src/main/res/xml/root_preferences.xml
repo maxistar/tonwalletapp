@@ -48,7 +48,7 @@
             app:useSimpleSummaryProvider="true" />
 
         <SwitchPreferenceCompat
-            app:key="biometic"
+            app:key="biometric"
             app:title="@string/settings__biometric" />
 
         <Preference
