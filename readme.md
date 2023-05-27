@@ -70,40 +70,20 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 
 ### Todo:
 
-- [ ] create wallet
-  - [x] check wallet does not check wallet!!!  
 - [ ] security code form
-  - [x] draw non active dots
-  - [x] connect dots to the logic
-  - [x] it opens a form event the code is not correct
-  - [x] fingerprint authentication 
-  - [x] support for delete characters
-- [x] set secret code dialog
-  - [x] make the same that I have done for pin code form
-  - [x] set 6 digits option
 - [ ] settings pages
-  - [x] make "delete wallet" to be red
-  - [x] use better components for settings
-  - [x] list of wallet types
-  - [x] use wallet types in code
-  - [x] connect elements with secret phrase
-  - [x] make feature to enter pin code
+  - [ ] create dedicated page for secret code 
 - [ ] wallet activity
-  - [x] show transactions and new icon
-  - [x] format list
-  - [x] reverse order
   - [ ] store transaction in case there is no internet
   - [ ] can we check the network in background to see if money arrived?
   - [ ] can we show status message on the top as required in the mock?
   - [ ] can we better format icons on the buttons?
-  - [x] layout round corners
   - [ ] for some wallets not all transactions are being shown
   - [ ] storage fee and comments are not being shown
 - [ ] send dialog
-  - [x] add paste icon
   - [ ] use paste icon
 - [ ] receive dialog
-  - make fonts as provided 
+  - [ ] make fonts as provided 
 - [ ] security
   - [ ] do not show secret phrase to logs
   - [ ] can se use better method to store the wallet? e.g. secret phrase?
