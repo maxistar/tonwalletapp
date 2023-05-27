@@ -73,6 +73,7 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [ ] security code form
 - [ ] settings pages
   - [ ] create dedicated page for secret code 
+  - [ ] create set language
 - [ ] wallet activity
   - [ ] store transaction in case there is no internet
   - [ ] can we check the network in background to see if money arrived?
