@@ -16,6 +16,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import kotlinx.coroutines.Job
 import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.ReceiveActivity
 import me.maxistar.tonwallet.SendActivity
@@ -23,7 +24,6 @@ import me.maxistar.tonwallet.databinding.FragmentWalletBinding
 import me.maxistar.tonwallet.model.TransactionDisplayItem
 import me.maxistar.tonwallet.service.ServiceProvider
 import me.maxistar.tonwallet.util.TonFormatter
-import java.util.*
 
 
 open class WalletFragment : Fragment() {
@@ -36,16 +36,18 @@ open class WalletFragment : Fragment() {
 
     private var binding: FragmentWalletBinding? = null
 
+    private var job: Job? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val settingsService = ServiceProvider.getSettingsService();
+        val settingsService = ServiceProvider.getSettingsService()
 
         viewModel = ViewModelProvider(this).get(WalletViewModel::class.java)
-        viewModel.updateWallet(
-            settingsService.getWalletSecretPhrase(context!!),
-            settingsService.getWalletVersion(context!!),
-            settingsService.getTonConfiguration(context!!)
+        job = viewModel.updateWallet(
+            settingsService.getWalletSecretPhrase(requireContext()),
+            settingsService.getWalletVersion(requireContext()),
+            settingsService.getTonConfiguration(requireContext())
         )
     }
 
@@ -69,18 +71,18 @@ open class WalletFragment : Fragment() {
         }
 
 
-        val settingsService = ServiceProvider.getSettingsService();
+        val settingsService = ServiceProvider.getSettingsService()
         val textViewAddress = binding!!.walletAddressShort
         textViewAddress.text =
-            TonFormatter.addressShorten(settingsService.getWalletAddress(context!!))
+            TonFormatter.addressShorten(settingsService.getWalletAddress(requireContext()))
         val textYourWalletAddress = binding!!.yourWalletAddress
-        textYourWalletAddress.text = settingsService.getWalletAddress(context!!)
+        textYourWalletAddress.text = settingsService.getWalletAddress(requireContext())
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             buttonReceive.setText(
                 Html.fromHtml(
                     "<img src=\"receive_icon_24dp\"> Receive",
-                    ImageGetter(context!!),
+                    ImageGetter(requireContext()),
                     null
                 ),
                 TextView.BufferType.SPANNABLE
@@ -88,7 +90,7 @@ open class WalletFragment : Fragment() {
             buttonSend.setText(
                 Html.fromHtml(
                     "<img src=\"send_icon_24dp\"> Send",
-                    ImageGetter(context!!),
+                    ImageGetter(requireContext()),
                     null
                 ),
                 TextView.BufferType.SPANNABLE
@@ -108,6 +110,8 @@ open class WalletFragment : Fragment() {
             } else {
                 textView.setText(TonFormatter.nanoTonsToString(it))
             }
+
+            job = null
         }
 
         val listView = binding!!.transactions
@@ -119,7 +123,7 @@ open class WalletFragment : Fragment() {
                 viewModel.transactions.let {
                     it.value?.let { it1 ->
                         TransactionsAdapter(
-                            context!!,
+                            requireContext(),
                             R.layout.transaction_item,
                             it1.toList()
                         )
@@ -135,7 +139,7 @@ open class WalletFragment : Fragment() {
         image.setAnimation(R.raw.created)
         image.playAnimation()
 
-        return binding!!.root;
+        return binding!!.root
     }
 
     override fun onCreateContextMenu(
@@ -158,12 +162,14 @@ open class WalletFragment : Fragment() {
     }
 
     private fun refreshWallet() {
-        val settingsService = ServiceProvider.getSettingsService();
+        val settingsService = ServiceProvider.getSettingsService()
 
-        viewModel.updateWallet(
-            settingsService.getWalletSecretPhrase(context!!),
-            settingsService.getWalletVersion(context!!),
-            settingsService.getTonConfiguration(context!!)
+        job?.cancel()
+
+        job = viewModel.updateWallet(
+            settingsService.getWalletSecretPhrase(requireContext()),
+            settingsService.getWalletVersion(requireContext()),
+            settingsService.getTonConfiguration(requireContext())
         )
     }
 
@@ -174,7 +180,7 @@ open class WalletFragment : Fragment() {
     ) :
         ArrayAdapter<TransactionDisplayItem?>(context, textViewResourceId, values_) {
 
-        val values = values_;
+        val values = values_
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
             var v = convertView
             if (v == null) {
@@ -186,7 +192,7 @@ open class WalletFragment : Fragment() {
             }
             val d: TransactionDisplayItem = values[position]
             var tv = v!!.findViewById<TextView>(R.id.amount_label)
-            val tonAmount = TonFormatter.nanoTonsToString(d.amount);
+            val tonAmount = TonFormatter.nanoTonsToString(d.amount)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
 
                 if (d.transactionType == "in") {
@@ -231,11 +237,12 @@ open class WalletFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+        job?.cancel()
+        job = null
     }
 
-    class ImageGetter(context: Context) : Html.ImageGetter {
+    class ImageGetter(val context: Context) : Html.ImageGetter {
 
-        val context = context
         override fun getDrawable(source: String): Drawable {
             var id: Int
             id = context.resources.getIdentifier(source, "drawable", context.getPackageName())

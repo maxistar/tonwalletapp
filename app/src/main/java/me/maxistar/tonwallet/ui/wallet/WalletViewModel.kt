@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import me.maxistar.tonwallet.model.TransactionDisplayItem
 import me.maxistar.tonwallet.model.TransactionItem
@@ -25,11 +26,11 @@ class WalletViewModel : ViewModel() {
         value = _balance
     }
 
-    fun updateWallet(seed: String, walletVersion: Long, configUrl: String) {
+    fun updateWallet(seed: String, walletVersion: Long, configUrl: String): Job {
         Log.w("updateWallet", "UpdateWallet")
         val walletService = ServiceProvider.getWalletService();
 
-        viewModelScope.launch {
+        return viewModelScope.launch {
             val transactions = walletService.getTransactionsSuspended(seed, walletVersion, configUrl)
             if (transactions != null) {
                 _transactions.clear()

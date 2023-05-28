@@ -28,7 +28,6 @@ class WalletActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle item selection
         return when (item.itemId) {
             R.id.settings -> {
                 val intent = Intent(this, SettingsActivity::class.java)
@@ -36,8 +35,6 @@ class WalletActivity : AppCompatActivity() {
                 true
             }
             R.id.scan_menu -> {
-                //val intent = Intent(this, ScanActivity::class.java)
-                //startActivity(intent)
                 onButtonClick()
                 true
             }
@@ -45,7 +42,6 @@ class WalletActivity : AppCompatActivity() {
                 finishAffinity()
                 val pid = Process.myPid()
                 Process.killProcess(pid)
-                //System.exit(0);
                 true
             }
             else -> super.onOptionsItemSelected(item)
