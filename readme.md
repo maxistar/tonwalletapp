@@ -79,7 +79,8 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 - [x] security code form
 - [ ] settings pages
   - [x] create dedicated page for secret code 
-  - [ ] create set language
+  - [x] create set language
+  - [ ] load language during startup
 - [ ] wallet activity
   - [ ] store transaction in case there is no internet
   - [ ] can we check the network in background to see if money arrived?
@@ -88,14 +89,16 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] for some wallets not all transactions are being shown
   - [ ] storage fee and comments are not being shown
 - [ ] send dialog
-  - [ ] use paste icon
+  - [x] use paste icon
 - [ ] receive dialog
   - [ ] make fonts as provided 
 - [ ] security
-  - [ ] do not show secret phrase to logs
+  - [x] do not show secret phrase to logs
   - [ ] can se use better method to store the wallet? e.g. secret phrase?
   - [ ] can we cipher it in the application?
 - [ ] link for the external intents as described in the requirements
+  - [x] add intent
+  - [ ] connect to activity
 
 ### Links:
 

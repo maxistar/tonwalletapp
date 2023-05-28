@@ -1,5 +1,8 @@
 package me.maxistar.tonwallet.ui.send
 
+import android.annotation.SuppressLint
+import android.content.ClipboardManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -40,6 +43,7 @@ class SendRecipientFragment : Fragment() {
         binding = null
     }
 
+    @SuppressLint("ServiceCast")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -70,9 +74,13 @@ class SendRecipientFragment : Fragment() {
 
         val copyButton = binding!!.copyAddressButton
         copyButton.setOnClickListener {
-            // todo
-            //val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            //val clip: ClipData = ClipData.newUri(contentResolver, "URI", copyUri)
+            val clipboard = context?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            if (clipboard.hasPrimaryClip()) {
+                val item = clipboard.primaryClip?.getItemAt(0)
+                if (item != null) {
+                    recipientEditor.setText(item.text.toString())
+                }
+            }
         }
 
         return binding!!.root
