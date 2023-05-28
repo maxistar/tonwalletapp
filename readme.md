@@ -8,6 +8,14 @@ In order to work with Ton Network the [tonutils-go](https://github.com/xssnick/t
 
 Scanner library [zxing-android-embedded](https://github.com/journeyapps/zxing-android-embedded)
 
+Animations are being done with [Airbnb Lottie](https://github.com/airbnb/lottie-android)
+
+## How to compile 
+
+An application was developed and compiled using Android Studio 2022.2.1 Patch 1
+
+In order to compile aar library golang installation is needed. The complied version is included to source code.
+
 ## Gomobile
 
 Gomobile is a tool for building and running mobile apps written in Go.
@@ -33,9 +41,23 @@ see more on [gomoble documentation page](https://pkg.go.dev/golang.org/x/mobile/
 
 ## Roadmap
 
-Gomobile allows to write also iOS applications.
+### Kotlin Multiplatform
+
 The initial plan for this contest was to provide also ios application using Kotlin Multiplatform but
 this plan was too ambitious. The implementation of ios application will be done as a follow up stage.
+
+### Gomobile vs Android Native Code
+
+Golang is being compiled into native android code but can potentially create unecessary overhead.
+The application is created the way that golang code can be easily replaced with C/C++ implementation in the future.
+
+### Merkle Proof
+
+At the moment is not implemented. Planned to be added in the future versions.
+
+### Security
+
+At the moment wallet seed is stored in the walled as plain text this will be fixed in future versions
 
 
 ### Instrumentation Tests
