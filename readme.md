@@ -108,8 +108,6 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] can we better format icons on the buttons?
   - [ ] for some wallets not all transactions are being shown
   - [ ] storage fee and comments are not being shown
-- [ ] receive dialog
-  - [ ] make fonts as provided 
 - [ ] security
   - [ ] can se use better method to store the wallet? e.g. secret phrase?
   - [ ] can we cipher it in the application?

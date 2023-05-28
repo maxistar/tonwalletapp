@@ -15,8 +15,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/receive__title"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        style="@style/PrimaryTitle"
         app:layout_constraintTop_toTopOf="parent"
         />
     <TextView
@@ -28,7 +27,7 @@
         android:layout_marginEnd="8dp"
         android:text="@string/receive__description"
         android:textAlignment="center"
-        android:textSize="20sp"
+        style="@style/SecondaryText"
         app:layout_constraintTop_toBottomOf="@id/ton_wallet_title"
         />
 

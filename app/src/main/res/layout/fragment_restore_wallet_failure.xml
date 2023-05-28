@@ -26,9 +26,7 @@
         android:layout_marginBottom="316dp"
 
         android:text="@string/import_wallet_error_title"
-        android:textAlignment="center"
-        android:textSize="28sp"
-        android:textStyle="bold"
+        style="@style/PrimaryTitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

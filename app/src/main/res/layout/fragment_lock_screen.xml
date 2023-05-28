@@ -98,6 +98,7 @@
         android:layout_height="wrap_content"
         android:text="@string/access_code_number_1"
         android:layout_marginHorizontal="2pt"
+        android:padding="15dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/access_code_button_2"
         app:layout_constraintTop_toBottomOf="@id/dots_progress_bar" />
@@ -108,6 +109,7 @@
         android:layout_height="wrap_content"
         android:text="@string/access_code_number_2"
         android:layout_marginHorizontal="2pt"
+        android:padding="15dp"
         app:layout_constraintLeft_toRightOf="@id/access_code_button_1"
         app:layout_constraintRight_toLeftOf="@id/access_code_button_3"
         app:layout_constraintTop_toBottomOf="@id/dots_progress_bar" />
@@ -118,6 +120,7 @@
         android:layout_height="wrap_content"
         android:text="@string/access_code_number_3"
         android:layout_marginHorizontal="2pt"
+        android:padding="15dp"
         app:layout_constraintLeft_toRightOf="@id/access_code_button_2"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dots_progress_bar" />
@@ -127,6 +130,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/access_code_number_4"
+        android:padding="15dp"
         app:layout_constraintRight_toRightOf="@id/access_code_button_1"
         app:layout_constraintLeft_toLeftOf="@id/access_code_button_1"
         app:layout_constraintTop_toBottomOf="@id/access_code_button_1" />
@@ -136,6 +140,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/access_code_number_5"
+        android:padding="15dp"
         app:layout_constraintRight_toRightOf="@id/access_code_button_2"
         app:layout_constraintLeft_toLeftOf="@id/access_code_button_2"
         app:layout_constraintTop_toBottomOf="@id/access_code_button_1" />
@@ -145,6 +150,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/access_code_number_6"
+        android:padding="15dp"
         app:layout_constraintRight_toRightOf="@id/access_code_button_3"
         app:layout_constraintLeft_toLeftOf="@id/access_code_button_3"
         app:layout_constraintTop_toBottomOf="@id/access_code_button_1" />
@@ -154,6 +160,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/access_code_number_7"
+        android:padding="15dp"
         app:layout_constraintLeft_toLeftOf="@id/access_code_button_1"
         app:layout_constraintRight_toRightOf="@id/access_code_button_1"
         app:layout_constraintTop_toBottomOf="@id/access_code_button_4" />
@@ -163,6 +170,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/access_code_number_8"
+        android:padding="15dp"
         app:layout_constraintRight_toRightOf="@id/access_code_button_2"
         app:layout_constraintLeft_toLeftOf="@id/access_code_button_2"
         app:layout_constraintTop_toBottomOf="@id/access_code_button_4" />
@@ -172,6 +180,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/access_code_number_9"
+        android:padding="15dp"
         app:layout_constraintLeft_toLeftOf="@id/access_code_button_3"
         app:layout_constraintRight_toRightOf="@id/access_code_button_3"
         app:layout_constraintTop_toBottomOf="@id/access_code_button_4" />
@@ -182,6 +191,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/access_code_number_0"
+        android:padding="15dp"
         app:layout_constraintRight_toRightOf="@id/access_code_button_2"
         app:layout_constraintLeft_toLeftOf="@id/access_code_button_2"
         app:layout_constraintTop_toBottomOf="@id/access_code_button_7" />
@@ -191,6 +201,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/access_code_delete"
+        android:padding="15dp"
         app:layout_constraintRight_toRightOf="@id/access_code_button_3"
         app:layout_constraintLeft_toLeftOf="@id/access_code_button_3"
         app:layout_constraintTop_toBottomOf="@id/access_code_button_7" />

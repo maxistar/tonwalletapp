@@ -138,9 +138,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/wallet__wallet_created"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:textAlignment="center"/>
+                style="@style/PrimaryTitle"
+                />
 
             <TextView
                 android:layout_width="match_parent"

@@ -148,7 +148,6 @@ open class WalletFragment : Fragment() {
         menuInfo: ContextMenu.ContextMenuInfo?
     ) {
         super.onCreateContextMenu(menu, v, menuInfo)
-        menu.setHeaderTitle("Pick option")
         requireActivity().menuInflater.inflate(R.menu.wallet_context_menu, menu)
     }
 
