@@ -16,7 +16,7 @@ An application was developed and compiled using Android Studio 2022.2.1 Patch 1
 
 In order to compile aar library golang installation is needed. The complied version is included to source code.
 
-The latest compiled version is uploaded [here](https://maxistar.ru/media/files/app-debug.apk)
+The latest compiled version is uploaded [here](https://github.com/maxistar/tonwalletapp/actions/workflows/generate-apk-aab-debug-release.yml)
 
 ## Gomobile
 
@@ -45,12 +45,12 @@ see more on [gomoble documentation page](https://pkg.go.dev/golang.org/x/mobile/
 
 ### Kotlin Multiplatform
 
-The initial plan for this contest was to provide also ios application using Kotlin Multiplatform but
+The initial plan for this contest was to provide also iOS application using Kotlin Multiplatform but
 this plan was too ambitious. The implementation of ios application will be done as a follow up stage.
 
 ### Gomobile vs Android Native Code
 
-Golang is being compiled into native android code but can potentially create unecessary overhead.
+Golang is being compiled into native android code but can potentially create not necessary overhead.
 The application is created the way that golang code can be easily replaced with C/C++ implementation in the future.
 
 ### Merkle Proof
@@ -59,7 +59,7 @@ At the moment is not implemented. Planned to be added in the future versions.
 
 ### Security
 
-At the moment wallet seed is stored in the walled as plain text this will be fixed in future versions
+At the moment wallet seed is stored in the application as plain text this will be fixed in future versions
 
 
 ### Instrumentation Tests
