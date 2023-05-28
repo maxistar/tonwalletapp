@@ -52,7 +52,7 @@
             android:autofillHints="true"
             android:ems="3"
             android:fontFamily="sans-serif"
-            android:hint="0"
+            android:hint="@string/empty"
             android:inputType="number|textPersonName"
             android:text=""
             android:textColor="@color/black"

@@ -240,5 +240,6 @@ zi1mRo4cX-r3W2Dwx-WEAoKP</string>
     <string name="settings__language">Language</string>
     <string name="settings__choose_language">Choose Language</string>
     <string name="settings__about_message"><![CDATA[This is Simple TON Wallet for Android. To get more information visit https://maxistar.me<]]></string>
+    <string name="empty" />
 
 </resources>
