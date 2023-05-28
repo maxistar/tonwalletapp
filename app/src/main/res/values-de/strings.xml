@@ -1,0 +1,224 @@
+<resources>
+    <string name="app_name">Ton Wallet</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_wallet">Export</string>
+
+    <string name="ton_wallet">TON Wallet</string>
+    <string name="ton_wallet_description">TON Wallet allows you to make fast and secure blockchain-based payments without intermediaries.</string>
+    <string name="ton_wallet_create_wallet">Create my wallet</string>
+    <string name="ton_wallet_import">Import existing wallet</string>
+
+    <string name="screen2_title">Congratulations</string>
+    <string name="screen2_text">Your TON Wallet has just been created.\nOnly you control it.\n\nTo be able to always have access to it, please write down secret words and set up a secure passcode.</string>
+    <string name="screen2_button">Proceed</string>
+
+    <string name="success_screen_title">Perfekt!</string>
+    <string name="success_screen_text">Now set up a passcode to secure transactions.</string>
+    <string name="success_screen_bio">Enable Biometric Auth</string>
+    <string name="success_screen_button">Set a Passcode</string>
+    <string name="success_screen_use_fingerprint">Enable Biometric Auth</string>
+
+    <string name="wallet_title">Your Recovery Phrase</string>
+    <string name="wallet_comment">Write down these 24 words in this exact order and keep them in a secure place. Do not share this list with anyone. If you lose it, you will irrevocably lose access to your TON account.</string>
+    <string name="wallet_done">Done</string>
+
+
+    <string name="menu_create_new_wallet">Create new wallet</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_quit">Verlassen</string>
+    <string name="menu_scan">Scan</string>
+    <string name="menu_refresh">Refresh</string>
+
+    <string name="create_wallet_wordNumber_0">1</string>
+    <string name="create_wallet_wordNumber_1">2</string>
+    <string name="create_wallet_wordNumber_2">3</string>
+    <string name="create_wallet_wordNumber_3">4</string>
+    <string name="create_wallet_wordNumber_4">5</string>
+    <string name="create_wallet_wordNumber_5">6</string>
+    <string name="create_wallet_wordNumber_6">7</string>
+    <string name="create_wallet_wordNumber_7">8</string>
+    <string name="create_wallet_wordNumber_8">9</string>
+    <string name="create_wallet_wordNumber_9">10</string>
+    <string name="create_wallet_wordNumber_10">11</string>
+    <string name="create_wallet_wordNumber_11">12</string>
+    <string name="create_wallet_wordNumber_12">13</string>
+    <string name="create_wallet_wordNumber_13">14</string>
+    <string name="create_wallet_wordNumber_14">15</string>
+    <string name="create_wallet_wordNumber_15">16</string>
+    <string name="create_wallet_wordNumber_16">17</string>
+    <string name="create_wallet_wordNumber_17">18</string>
+    <string name="create_wallet_wordNumber_18">19</string>
+    <string name="create_wallet_wordNumber_19">20</string>
+    <string name="create_wallet_wordNumber_20">21</string>
+    <string name="create_wallet_wordNumber_21">22</string>
+    <string name="create_wallet_wordNumber_22">23</string>
+    <string name="create_wallet_wordNumber_23">24</string>
+
+    <string name="create_wallet_wordFiller">xxxxxx</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="create_wallet_confirmation_title">Sure done?</string>
+    <string name="create_wallet_confirmation_text">You didn’t have enough time to
+write these words down.</string>
+    <string name="create_wallet_confirmation_skip_button">Überspringen</string>
+    <string name="create_wallet_confirmation_ok_sorry_button">OK, sorry</string>
+
+    <string name="create_wallet__test_time__title">Test Time!</string>
+    <string name="create_wallet__test_time__description">Let’s check that you wrote them down correctly. Please enter the words
+5, 15 and 18.</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="access_code_title">Set a Passcode</string>
+    <string name="access_code_title_confirm">Confirm a Passcode</string>
+
+    <string name="access_code_enter_invitation">Enter the 4 digits in the passcode.</string>
+    <string name="access_code_options">Passcode options</string>
+    <string name="access_code_number_1">1</string>
+    <string name="access_code_number_2">2</string>
+    <string name="access_code_number_3">3</string>
+    <string name="access_code_number_4">4</string>
+    <string name="access_code_number_5">5</string>
+    <string name="access_code_number_6">6</string>
+    <string name="access_code_number_7">7</string>
+    <string name="access_code_number_8">8</string>
+    <string name="access_code_number_9">9</string>
+    <string name="access_code_number_0">0</string>
+
+
+    <string name="access_code_number_html_1">&lt;b&gt;1&lt;/b&gt; &lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/small&gt;</string>
+    <string name="access_code_number_html_2">&lt;b&gt;2&lt;/b&gt; &lt;small&gt;ABC&lt;/small&gt;</string>
+    <string name="access_code_number_html_3">&lt;b&gt;3&lt;/b&gt; &lt;small&gt;DEF&lt;/small&gt;</string>
+    <string name="access_code_number_html_4">&lt;b&gt;4&lt;/b&gt; &lt;small&gt;GHI&lt;/small&gt;</string>
+    <string name="access_code_number_html_5">&lt;b&gt;5&lt;/b&gt; &lt;small&gt;JKL&lt;/small&gt;</string>
+    <string name="access_code_number_html_6">&lt;b&gt;6&lt;/b&gt; &lt;small&gt;MNO&lt;/small&gt;</string>
+    <string name="access_code_number_html_7">&lt;b&gt;7&lt;/b&gt; &lt;small&gt;PQRS&lt;/small&gt;</string>
+    <string name="access_code_number_html_8">&lt;b&gt;8&lt;/b&gt; &lt;small&gt;TUV&lt;/small&gt;</string>
+    <string name="access_code_number_html_9">&lt;b&gt;9&lt;/b&gt; &lt;small&gt;WXYZ&lt;/small&gt;</string>
+    <string name="access_code_number_html_0">&lt;b&gt;0&lt;/b&gt; &lt;small&gt;+&lt;/small&gt;</string>
+
+    <string name="access_code_delete">⌫</string>
+
+    <string name="general__ok">OK</string>
+    <string name="general__continue">Continue</string>
+    <string name="general__edit">Bearbeiten</string>
+
+    <string name="import_wallet_title">24 Secret Words</string>
+    <string name="import_wallet_description">You can restore access to your wallet by entering 24 words you wrote when down you creating the wallet.</string>
+    <string name="import_wallet__button__do_not_have">I don’t have those</string>
+    <string name="import_wallet__button__proceed">Continue</string>
+    <string name="import_wallet__error_dialog__title">Incorrect words</string>
+    <string name="import_wallet__error_dialog__text">Sorry, you have entered incorrect secret words. Please double check and try again.</string>
+
+    <string name="import_wallet_word_number_1">1:</string>
+    <string name="import_wallet_word_number_2">2:</string>
+    <string name="import_wallet_word_number_3">3:</string>
+    <string name="import_wallet_word_number_4">4:</string>
+    <string name="import_wallet_word_number_5">5:</string>
+    <string name="import_wallet_word_number_6">6:</string>
+    <string name="import_wallet_word_number_7">7:</string>
+    <string name="import_wallet_word_number_8">8:</string>
+    <string name="import_wallet_word_number_9">9:</string>
+    <string name="import_wallet_word_number_10">10:</string>
+    <string name="import_wallet_word_number_11">11:</string>
+    <string name="import_wallet_word_number_12">12:</string>
+    <string name="import_wallet_word_number_13">13:</string>
+    <string name="import_wallet_word_number_14">14:</string>
+    <string name="import_wallet_word_number_15">15:</string>
+    <string name="import_wallet_word_number_16">16:</string>
+    <string name="import_wallet_word_number_17">17:</string>
+    <string name="import_wallet_word_number_18">18:</string>
+    <string name="import_wallet_word_number_19">19:</string>
+    <string name="import_wallet_word_number_20">20:</string>
+    <string name="import_wallet_word_number_21">21:</string>
+    <string name="import_wallet_word_number_22">22:</string>
+    <string name="import_wallet_word_number_23">23:</string>
+    <string name="import_wallet_word_number_24">24:</string>
+
+    <string name="import_wallet_error_title">Too Bad!</string>
+    <string name="import_wallet_error_description">Without the secret words you can’t restore access to the wallet.</string>
+    <string name="import_wallet_error_button_replay">Enter 24 secret words</string>
+    <string name="import_wallet_error_button_new_wallet">Create a new empty wallet instead</string>
+
+    <string name="wallet__button__receive">Receive</string>
+    <string name="wallet__button__send">Send</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <string name="send_form__title">Send TON</string>
+    <string name="send_form__label_address">Wallet Address or Domain</string>
+    <string name="send_form__address_text">Enter Wallet Address or Domain…</string>
+    <string name="send_form__address_sublabel">Paste the 24-letter wallet address of the recipient here or TON DNS.</string>
+    <string name="send_form__send_to">Send to: EQCc…9ZLD</string>
+    <string name="send_form__value_00">00</string>
+    <string name="send_form__send_all">Send all</string>
+    <string name="send_form__insufficient_funds">Insufficient funds</string>
+    <string name="send_form__confirm_and_send">Confirm and send</string>
+    <string name="send_form__comment">Comment (Optional)</string>
+    <string name="send_form__description">Description of the payment</string>
+    <string name="send_form__full_description">The comment is visible to everyone. You must include the note when sending to an exchange.</string>
+    <string name="send_form__details">Details</string>
+    <string name="send_form__recipient">Recipient</string>
+    <string name="send_form__recipient_value">EQCc…9ZLD</string>
+    <string name="send_form__amount">Amount</string>
+    <string name="send_form__amount_value">56</string>
+    <string name="send_form__fee">Fee</string>
+    <string name="send_form__fee_value">≈0.007</string>
+    <string name="send_form__sendind_title">Sending TON</string>
+    <string name="send_form__sendind_description">Please wait a few seconds for your
+    transaction to be processed…</string>
+    <string name="send_form__sent_done">Done!</string>
+    <string name="send_form__sent_description">%s Toncoin have been sent to %s</string>
+    <string name="send_form__button_my_wallet">View My Wallet</string>
+
+    <string name="settings__title_general">General</string>
+    <string name="settings__notifications">Notifications</string>
+    <string name="settings__active_address">Active address</string>
+    <string name="settings__currency">Primary currency</string>
+    <string name="settings__list_of_tokens">List of tokens</string>
+    <string name="settings__title_security">Security</string>
+    <string name="settings__phrase">Show recovery phrase</string>
+    <string name="settings__passcode">Change passcode</string>
+    <string name="settings__biometric">Biometric Auth</string>
+    <string name="settings__delete_wallet">Delete Wallet</string>
+    <string name="settings__config_url">TON Config URL</string>
+
+    <string name="receive__title">Receive TON</string>
+    <string name="receive__description">Share this address with other TON
+wallet owners to receive TON from them.</string>
+    <string name="receive__button_label">Share Wallet Address</string>
+    <string name="receive__address">lhGE49PbJckcU1y70jEQwf
+6InI414L1PLMIs3rrFx50F</string>
+
+
+    <string name="Warning">Warning</string>
+    <string name="User_Data_Is_About_To_Delete">User Data Is About To Delete</string>
+    <string name="general_Yes">Ja</string>
+    <string name="general_No">Nein</string>
+
+    <string name="wallet__wallet_created">Wallet Created</string>
+    <string name="wallet__your_wallet_address">Your wallet address</string>
+    <string name="wallet__your_wallet_address_defaul_value">UQBFz01R2CU7YA8pevUaNIYE
+zi1mRo4cX-r3W2Dwx-WEAoKP</string>
+    <string name="wallet__item_storage_fee">-0.000065732 storage fee</string>
+
+</resources>

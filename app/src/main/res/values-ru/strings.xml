@@ -1,0 +1,224 @@
+<resources>
+    <string name="app_name">ТОN Кошелек</string>
+    <string name="title_home">Дом</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Уведомления</string>
+    <string name="title_wallet">Экспорт</string>
+
+    <string name="ton_wallet">ТОN Кошелек</string>
+    <string name="ton_wallet_description">ТОN Кошелек позволяет совершать быстрые и безопасные платежи на основе блокчейна без посредников</string>
+    <string name="ton_wallet_create_wallet">Создать мой кошелек</string>
+    <string name="ton_wallet_import">Импорт существующего кошелька</string>
+
+    <string name="screen2_title">Поздравляем</string>
+    <string name="screen2_text">Ваш кошелек TON только что создан..\nOnly you control it.\n\nTo всегда иметь к нему доступ, пожалуйста, запишите секретные слова и установите безопасный пароль.</string>
+    <string name="screen2_button">Продолжить</string>
+
+    <string name="success_screen_title">Идеально!</string>
+    <string name="success_screen_text">Теперь установите пароль для защиты транзакций.</string>
+    <string name="success_screen_bio">Включить биометрическую аутентификацию</string>
+    <string name="success_screen_button">Установить пароль</string>
+    <string name="success_screen_use_fingerprint">Включить биометрическую аутентификацию</string>
+
+    <string name="wallet_title">Ваша фраза восстановления</string>
+    <string name="wallet_comment">Запишите эти 24 слова именно в таком порядке и сохраните их в надежном месте. Не делитесь этим списком ни с кем. Если вы его потеряете, вы безвозвратно потеряете доступ к своей учетной записи TON.</string>
+    <string name="wallet_done">Готово</string>
+
+
+    <string name="menu_create_new_wallet">Создать новый кошелек</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="menu_quit">Выход</string>
+    <string name="menu_scan">Сканировать</string>
+    <string name="menu_refresh">Обновить</string>
+
+    <string name="create_wallet_wordNumber_0">1</string>
+    <string name="create_wallet_wordNumber_1">2</string>
+    <string name="create_wallet_wordNumber_2">3</string>
+    <string name="create_wallet_wordNumber_3">4</string>
+    <string name="create_wallet_wordNumber_4">5</string>
+    <string name="create_wallet_wordNumber_5">6</string>
+    <string name="create_wallet_wordNumber_6">7</string>
+    <string name="create_wallet_wordNumber_7">8</string>
+    <string name="create_wallet_wordNumber_8">9</string>
+    <string name="create_wallet_wordNumber_9">10</string>
+    <string name="create_wallet_wordNumber_10">11</string>
+    <string name="create_wallet_wordNumber_11">12</string>
+    <string name="create_wallet_wordNumber_12">13</string>
+    <string name="create_wallet_wordNumber_13">14</string>
+    <string name="create_wallet_wordNumber_14">15</string>
+    <string name="create_wallet_wordNumber_15">16</string>
+    <string name="create_wallet_wordNumber_16">17</string>
+    <string name="create_wallet_wordNumber_17">18</string>
+    <string name="create_wallet_wordNumber_18">19</string>
+    <string name="create_wallet_wordNumber_19">20</string>
+    <string name="create_wallet_wordNumber_20">21</string>
+    <string name="create_wallet_wordNumber_21">22</string>
+    <string name="create_wallet_wordNumber_22">23</string>
+    <string name="create_wallet_wordNumber_23">24</string>
+
+    <string name="create_wallet_wordFiller">xxxxxx</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="create_wallet_confirmation_title">Готово ?</string>
+    <string name="create_wallet_confirmation_text">You didn’t have enough time to
+write these words down.</string>
+    <string name="create_wallet_confirmation_skip_button">Пропустить</string>
+    <string name="create_wallet_confirmation_ok_sorry_button">OK, извините</string>
+
+    <string name="create_wallet__test_time__title">Test Time!</string>
+    <string name="create_wallet__test_time__description">Давайте проверим, правильно ли вы их записали. Пожалуйста, введите слова
+5, 15 и 18.</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="access_code_title">Установить пароль</string>
+    <string name="access_code_title_confirm">Подтвердить пароль</string>
+
+    <string name="access_code_enter_invitation">Введите 4 цифры пароля.</string>
+    <string name="access_code_options">Passcode options</string>
+    <string name="access_code_number_1">1</string>
+    <string name="access_code_number_2">2</string>
+    <string name="access_code_number_3">3</string>
+    <string name="access_code_number_4">4</string>
+    <string name="access_code_number_5">5</string>
+    <string name="access_code_number_6">6</string>
+    <string name="access_code_number_7">7</string>
+    <string name="access_code_number_8">8</string>
+    <string name="access_code_number_9">9</string>
+    <string name="access_code_number_0">0</string>
+
+
+    <string name="access_code_number_html_1">&lt;b&gt;1&lt;/b&gt; &lt;small&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/small&gt;</string>
+    <string name="access_code_number_html_2">&lt;b&gt;2&lt;/b&gt; &lt;small&gt;ABC&lt;/small&gt;</string>
+    <string name="access_code_number_html_3">&lt;b&gt;3&lt;/b&gt; &lt;small&gt;DEF&lt;/small&gt;</string>
+    <string name="access_code_number_html_4">&lt;b&gt;4&lt;/b&gt; &lt;small&gt;GHI&lt;/small&gt;</string>
+    <string name="access_code_number_html_5">&lt;b&gt;5&lt;/b&gt; &lt;small&gt;JKL&lt;/small&gt;</string>
+    <string name="access_code_number_html_6">&lt;b&gt;6&lt;/b&gt; &lt;small&gt;MNO&lt;/small&gt;</string>
+    <string name="access_code_number_html_7">&lt;b&gt;7&lt;/b&gt; &lt;small&gt;PQRS&lt;/small&gt;</string>
+    <string name="access_code_number_html_8">&lt;b&gt;8&lt;/b&gt; &lt;small&gt;TUV&lt;/small&gt;</string>
+    <string name="access_code_number_html_9">&lt;b&gt;9&lt;/b&gt; &lt;small&gt;WXYZ&lt;/small&gt;</string>
+    <string name="access_code_number_html_0">&lt;b&gt;0&lt;/b&gt; &lt;small&gt;+&lt;/small&gt;</string>
+
+    <string name="access_code_delete">⌫</string>
+
+    <string name="general__ok">OK</string>
+    <string name="general__continue">Продолжать</string>
+    <string name="general__edit">Редактировать</string>
+
+    <string name="import_wallet_title">24  секретных слова</string>
+    <string name="import_wallet_description">Вы можете восстановить доступ к своему кошельку, введя 24 слова, которые вы написали при создании кошелька.</string>
+    <string name="import_wallet__button__do_not_have">I don’t have those</string>
+    <string name="import_wallet__button__proceed">Продолжать</string>
+    <string name="import_wallet__error_dialog__title">Неправильные слова</string>
+    <string name="import_wallet__error_dialog__text">Извините, вы ввели неправильные секретные слова. Пожалуйста, проверьте еще раз и повторите попытку.</string>
+
+    <string name="import_wallet_word_number_1">1:</string>
+    <string name="import_wallet_word_number_2">2:</string>
+    <string name="import_wallet_word_number_3">3:</string>
+    <string name="import_wallet_word_number_4">4:</string>
+    <string name="import_wallet_word_number_5">5:</string>
+    <string name="import_wallet_word_number_6">6:</string>
+    <string name="import_wallet_word_number_7">7:</string>
+    <string name="import_wallet_word_number_8">8:</string>
+    <string name="import_wallet_word_number_9">9:</string>
+    <string name="import_wallet_word_number_10">10:</string>
+    <string name="import_wallet_word_number_11">11:</string>
+    <string name="import_wallet_word_number_12">12:</string>
+    <string name="import_wallet_word_number_13">13:</string>
+    <string name="import_wallet_word_number_14">14:</string>
+    <string name="import_wallet_word_number_15">15:</string>
+    <string name="import_wallet_word_number_16">16:</string>
+    <string name="import_wallet_word_number_17">17:</string>
+    <string name="import_wallet_word_number_18">18:</string>
+    <string name="import_wallet_word_number_19">19:</string>
+    <string name="import_wallet_word_number_20">20:</string>
+    <string name="import_wallet_word_number_21">21:</string>
+    <string name="import_wallet_word_number_22">22:</string>
+    <string name="import_wallet_word_number_23">23:</string>
+    <string name="import_wallet_word_number_24">24:</string>
+
+    <string name="import_wallet_error_title">Too Bad!</string>
+    <string name="import_wallet_error_description">Без секретных слов вы не сможете восстановить доступ к кошельку.</string>
+    <string name="import_wallet_error_button_replay">Введите 24 секретных слова</string>
+    <string name="import_wallet_error_button_new_wallet">Вместо этого создайте новый пустой кошелек</string>
+
+    <string name="wallet__button__receive">Получить</string>
+    <string name="wallet__button__send">Отправить</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Сообщения</string>
+    <string name="sync_header">Синхронизировать</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Ваша подпись</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Периодически синхронизируйте электронную почту</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Автоматически загружать вложения для входящих писем
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <string name="send_form__title">Отправить ТОN</string>
+    <string name="send_form__label_address">Адрес кошелька или домен</string>
+    <string name="send_form__address_text">Введите адрес кошелька или домен…</string>
+    <string name="send_form__address_sublabel">Вставьте сюда 24-буквенный адрес кошелька получателя или TON DNS..</string>
+    <string name="send_form__send_to">Отправить : EQCc…9ZLD</string>
+    <string name="send_form__value_00">00</string>
+    <string name="send_form__send_all">Отправить всё</string>
+    <string name="send_form__insufficient_funds">Недостаточно средств</string>
+    <string name="send_form__confirm_and_send">Подтвердить и отправить</string>
+    <string name="send_form__comment">Комментарий (Optional)</string>
+    <string name="send_form__description">Описание платежа</string>
+    <string name="send_form__full_description">The comment is visible to everyone. You must include the note when sending to an exchange.</string>
+    <string name="send_form__details">Детали</string>
+    <string name="send_form__recipient">Получатель</string>
+    <string name="send_form__recipient_value">EQCc…9ZLD</string>
+    <string name="send_form__amount">Количество</string>
+    <string name="send_form__amount_value">56</string>
+    <string name="send_form__fee">Платеж</string>
+    <string name="send_form__fee_value">≈0.007</string>
+    <string name="send_form__sendind_title">Отправить TON</string>
+    <string name="send_form__sendind_description">Пожалуйста, подождите несколько секунд, пока ваш
+     транзакция в обработке…</string>
+    <string name="send_form__sent_done">Готово!</string>
+    <string name="send_form__sent_description">%s Toncoin have been sent to %s</string>
+    <string name="send_form__button_my_wallet">Посмотреть мой кошелек</string>
+
+    <string name="settings__title_general">Общий</string>
+    <string name="settings__notifications">Уведомления</string>
+    <string name="settings__active_address">Активный адрес</string>
+    <string name="settings__currency">Основная валюта</string>
+    <string name="settings__list_of_tokens">Список токенов</string>
+    <string name="settings__title_security">Безопасность</string>
+    <string name="settings__phrase">Показать фразу восстановления</string>
+    <string name="settings__passcode">Изменить пароль</string>
+    <string name="settings__biometric">Биометрическая аутентификация</string>
+    <string name="settings__delete_wallet">Удалить кошелек</string>
+    <string name="settings__config_url">URL-адрес конфигурации TON</string>
+
+    <string name="receive__title">Получить TON</string>
+    <string name="receive__description">Поделитесь этим адресом с другими TON
+владельцам кошельков получать от них TON.</string>
+    <string name="receive__button_label">Поделиться адресом кошелька</string>
+    <string name="receive__address">lhGE49PbJckcU1y70jEQwf
+6InI414L1PLMIs3rrFx50F</string>
+
+
+    <string name="Warning">Предупреждение</string>
+    <string name="User_Data_Is_About_To_Delete">Пользовательские данные собираются удалить</string>
+    <string name="general_Yes">Да</string>
+    <string name="general_No">Нет</string>
+
+    <string name="wallet__wallet_created">Кошелек создан</string>
+    <string name="wallet__your_wallet_address">Адрес Вашего кошелька</string>
+    <string name="wallet__your_wallet_address_defaul_value">UQBFz01R2CU7YA8pevUaNIYE
+zi1mRo4cX-r3W2Dwx-WEAoKP</string>
+    <string name="wallet__item_storage_fee">-0.000065732 storage fee</string>
+
+</resources>
