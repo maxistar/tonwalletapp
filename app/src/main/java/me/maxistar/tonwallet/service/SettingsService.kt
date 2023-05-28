@@ -33,7 +33,7 @@ class SettingsService {
     fun getWalletVersion(context: Context): Long {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
         val version = sharedPreferences.getString("walletversion", "32") as String
-        Log.w("version", version.toString())
+        Log.w("version", version)
         return version.toLong()
     }
 

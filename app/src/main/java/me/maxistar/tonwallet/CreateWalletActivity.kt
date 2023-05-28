@@ -1,9 +1,8 @@
 package me.maxistar.tonwallet
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import me.maxistar.tonwallet.service.ServiceProvider
-import me.maxistar.tonwallet.ui.create_wallet.CreateWalletFragment
 import me.maxistar.tonwallet.ui.create_wallet.CreateWalletStartFragment
 import me.maxistar.tonwallet.ui.create_wallet.ShowWalletFragment
 

@@ -2,12 +2,10 @@ package me.maxistar.tonwallet.ui.start
 
 import android.content.Intent
 import android.os.Build
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.text.Html
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,11 +13,11 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
-import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import me.maxistar.tonwallet.R
 import me.maxistar.tonwallet.WalletActivity
 import me.maxistar.tonwallet.service.ServiceProvider
-import me.maxistar.tonwallet.ui.access_code.AccessCodeViewModel
 
 class LockScreenFragment : Fragment() {
 
@@ -47,12 +45,12 @@ class LockScreenFragment : Fragment() {
             decorateButtons(root!!)
         }
 
-        pointImage1 = root.findViewById<ImageView>(R.id.imageView0)
-        pointImage2 = root.findViewById<ImageView>(R.id.imageView1)
-        pointImage3 = root.findViewById<ImageView>(R.id.imageView2)
-        pointImage4 = root.findViewById<ImageView>(R.id.imageView3)
-        pointImage5 = root.findViewById<ImageView>(R.id.imageView4)
-        pointImage6 = root.findViewById<ImageView>(R.id.imageView5)
+        pointImage1 = root.findViewById(R.id.imageView0)
+        pointImage2 = root.findViewById(R.id.imageView1)
+        pointImage3 = root.findViewById(R.id.imageView2)
+        pointImage4 = root.findViewById(R.id.imageView3)
+        pointImage5 = root.findViewById(R.id.imageView4)
+        pointImage6 = root.findViewById(R.id.imageView5)
 
         viewModel.liveReady.observe(viewLifecycleOwner) {
             if (it) {
@@ -63,7 +61,7 @@ class LockScreenFragment : Fragment() {
                 pointImage5.setImageResource(R.drawable.point_green_24dp)
                 pointImage6.setImageResource(R.drawable.point_green_24dp)
 
-                gotoWallet();
+                gotoWallet()
             }
         }
 
@@ -86,9 +84,9 @@ class LockScreenFragment : Fragment() {
             }
         }
 
-        setupButtonEventHandlers(root!!);
+        setupButtonEventHandlers(root!!)
 
-        val pin = ServiceProvider.getSettingsService().getSecurityKey(context!!);
+        val pin = ServiceProvider.getSettingsService().getSecurityKey(requireContext())
         if (pin.length > 4) {
             pointImage5.visibility = ImageView.VISIBLE
             pointImage6.visibility = ImageView.VISIBLE
@@ -107,7 +105,7 @@ class LockScreenFragment : Fragment() {
 
         }
 
-        if (ServiceProvider.getSettingsService().getUseBiometric(context!!)) {
+        if (ServiceProvider.getSettingsService().getUseBiometric(requireContext())) {
             ServiceProvider.getFingerprintService().authenticate(this, successCallback, failureCallback)
         }
 
@@ -134,7 +132,7 @@ class LockScreenFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(LockScreenViewModel::class.java)
-        val pin = ServiceProvider.getSettingsService().getSecurityKey(context!!);
+        val pin = ServiceProvider.getSettingsService().getSecurityKey(requireContext())
         viewModel.setCode(pin)
     }
 
@@ -155,7 +153,7 @@ class LockScreenFragment : Fragment() {
     private fun setupButton(root: View, accessCodeButton1: Int, s: Char) {
         val button = root.findViewById<Button>(accessCodeButton1)
         button.setOnClickListener {
-            viewModel.setCharacter(s);
+            viewModel.setCharacter(s)
         }
     }
 
@@ -177,7 +175,7 @@ class LockScreenFragment : Fragment() {
     private fun decorateButton(root: View, buttonId: Int, textId: Int) {
         val button3 = root.findViewById<Button>(buttonId)
         button3.setText(
-            Html.fromHtml(getResources().getString(textId), Html.FROM_HTML_MODE_LEGACY),
+            Html.fromHtml(resources.getString(textId), Html.FROM_HTML_MODE_LEGACY),
             TextView.BufferType.SPANNABLE
         )
 

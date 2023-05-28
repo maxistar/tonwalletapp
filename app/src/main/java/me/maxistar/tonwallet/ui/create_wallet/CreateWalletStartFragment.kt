@@ -41,7 +41,7 @@ class CreateWalletStartFragment : Fragment() {
 
         val settingsService = ServiceProvider.getSettingsService()
         viewModel = ViewModelProvider(this)[CreateWalletViewModel::class.java]
-        viewModel.generateNewWallet(settingsService.getWalletVersion(context!!), settingsService.getTonConfiguration(context!!))
+        viewModel.generateNewWallet(settingsService.getWalletVersion(requireContext()), settingsService.getTonConfiguration(requireContext()))
 
         viewModel.text.observe(viewLifecycleOwner) {
             if (it === "") {

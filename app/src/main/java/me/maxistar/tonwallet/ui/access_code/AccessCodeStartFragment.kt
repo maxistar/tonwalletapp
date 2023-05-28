@@ -28,7 +28,7 @@ class AccessCodeStartFragment : Fragment() {
         val button = root.findViewById<Button>(R.id.button)
         button.setOnClickListener {
 
-            ServiceProvider.getSettingsService().setUseBiometric(context!!, checkBox.isChecked)
+            ServiceProvider.getSettingsService().setUseBiometric(requireContext(), checkBox.isChecked)
 
             val fm: FragmentManager = parentFragmentManager
             fm.beginTransaction()

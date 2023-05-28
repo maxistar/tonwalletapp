@@ -32,7 +32,7 @@ class SendActivity : AppCompatActivity() {
         }
     }
 
-    private val barcodeLauncher = registerForActivityResult<ScanOptions, ScanIntentResult>(
+    private val barcodeLauncher = registerForActivityResult(
         ScanContract()
     ) { result: ScanIntentResult ->
         if (result.contents == null) {
@@ -56,23 +56,23 @@ class SendActivity : AppCompatActivity() {
 
     private fun extractWalletAddress(str: String?): String {
         if (str == null) {
-            return "";
+            return ""
         }
         val prefix = "ton://transfer/"
         if (str.indexOf(prefix) == 0) {
-            return str.substring(prefix.length);
+            return str.substring(prefix.length)
         }
-        return str;
+        return str
     }
 
-    fun scanBarcode() {
+    private fun scanBarcode() {
         val options = ScanOptions()
-        options.setDesiredBarcodeFormats(ScanOptions.QR_CODE);
-        options.setPrompt("Scan a barcode");
-        options.setCameraId(0);  // Use a specific camera of the device
-        options.setBeepEnabled(false);
-        options.setBarcodeImageEnabled(true);
-        options.setOrientationLocked(false);
+        options.setDesiredBarcodeFormats(ScanOptions.QR_CODE)
+        options.setPrompt("Scan a barcode")
+        options.setCameraId(0)  // Use a specific camera of the device
+        options.setBeepEnabled(false)
+        options.setBarcodeImageEnabled(true)
+        options.setOrientationLocked(false)
         barcodeLauncher.launch(options)
     }
 }

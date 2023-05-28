@@ -66,7 +66,7 @@ class SettingsActivity : AppCompatActivity() {
             }
 
             val pInfo: PackageInfo
-            val owner = activity!!
+            val owner = requireActivity()
             pInfo = owner.packageManager.getPackageInfo(owner.packageName, 0)
             findPreference<Preference>("version_name")?.summary = pInfo.versionName
 
@@ -96,7 +96,7 @@ class SettingsActivity : AppCompatActivity() {
 
         private fun resetWallet() {
             val settingsService = ServiceProvider.getSettingsService()
-            settingsService.resetWallet(context!!)
+            settingsService.resetWallet(requireContext())
 
             val intent = Intent(context, StartScreenActivity::class.java)
             startActivity(intent)

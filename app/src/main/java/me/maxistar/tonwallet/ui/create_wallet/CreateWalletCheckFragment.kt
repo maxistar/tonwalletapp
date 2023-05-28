@@ -55,13 +55,13 @@ class CreateWalletCheckFragment : Fragment() {
             if (!seedIsValid()) {
                 showErrorMessage()
             } else {
-                settings.storeWallet(context!!, address!!, seed!!)
+                settings.storeWallet(requireContext(), address!!, seed!!)
                 val intent = Intent(context, AccessCodeActivity::class.java)
                 startActivity(intent)
             }
         }
 
-        setupAutosuggestions(context!!, root)
+        setupAutosuggestions(requireContext(), root)
 
         val image = root.findViewById<com.airbnb.lottie.LottieAnimationView>(R.id.ton_image_layout)
         image.setAnimation(R.raw.test_time)

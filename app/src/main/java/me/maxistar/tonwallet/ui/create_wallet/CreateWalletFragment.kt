@@ -3,7 +3,6 @@ package me.maxistar.tonwallet.ui.create_wallet
 import android.content.Context
 import android.content.res.Resources
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

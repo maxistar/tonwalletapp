@@ -2,16 +2,16 @@ package me.maxistar.tonwallet.service
 
 object ServiceProvider {
 
-    private var walletService:WalletService? = null;
+    private var walletService:WalletService? = null
 
-    private var fingerprintService:FingerprintService? = null;
+    private var fingerprintService:FingerprintService? = null
 
-    private var settingsService:SettingsService? = null;
+    private var settingsService:SettingsService? = null
     fun getWalletService(): WalletService {
         if (walletService === null) {
-            walletService = WalletService();
+            walletService = WalletService()
         }
-        return walletService as WalletService;
+        return walletService as WalletService
     }
 
     fun getSettingsService(): SettingsService {

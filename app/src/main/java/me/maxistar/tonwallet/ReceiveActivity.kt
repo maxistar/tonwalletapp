@@ -19,13 +19,13 @@ class ReceiveActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_receive)
 
-        val walletService = ServiceProvider.getWalletService()
+        ServiceProvider.getWalletService()
         val settingsService = ServiceProvider.getSettingsService()
         val address = settingsService.getWalletAddress(this)
         val addressLink = "ton://transfer/$address"
 
         val addressLabel = findViewById<TextView>(R.id.ton_wallet_address)
-        addressLabel.text = address;
+        addressLabel.text = address
 
         try {
             val barcodeEncoder = BarcodeEncoder()

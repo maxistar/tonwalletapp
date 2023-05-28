@@ -1,6 +1,5 @@
 package me.maxistar.tonwallet.ui.start
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,7 +7,7 @@ import me.maxistar.tonwallet.model.AccessCodeModel
 
 class LockScreenViewModel : ViewModel() {
     private var code: AccessCodeModel = AccessCodeModel()
-    var codeCompare: AccessCodeModel = AccessCodeModel()
+    private var codeCompare: AccessCodeModel = AccessCodeModel()
 
     private var ready: Boolean = false
 
@@ -45,24 +44,31 @@ class LockScreenViewModel : ViewModel() {
             }
             return
         }
-        if (step == 0) {
-            codeCompare.code1 = char
-        } else if (step == 1) {
-            codeCompare.code2 = char
-        } else if (step == 2) {
-            codeCompare.code3 = char
-        } else if (step == 3) {
-            codeCompare.code4 = char
-        } else if (step == 4) {
-            codeCompare.code5 = char
-        } else {
-            codeCompare.code6 = char
+        when (step) {
+            0 -> {
+                codeCompare.code1 = char
+            }
+            1 -> {
+                codeCompare.code2 = char
+            }
+            2 -> {
+                codeCompare.code3 = char
+            }
+            3 -> {
+                codeCompare.code4 = char
+            }
+            4 -> {
+                codeCompare.code5 = char
+            }
+            else -> {
+                codeCompare.code6 = char
+            }
         }
         step++
         _liveStep.value = step
         if ((step == 4 && codeLength == 4) || (step == 6 && codeLength == 6)) {
             if (code.toString() != codeCompare.toString()) {
-                step = 0;
+                step = 0
                 _liveError.value = true
                 error = false
             } else {

@@ -8,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import me.maxistar.tonwallet.model.TransactionDisplayItem
-import me.maxistar.tonwallet.model.TransactionItem
 import me.maxistar.tonwallet.service.ServiceProvider
 import me.maxistar.tonwallet.util.TonFormatter
 
@@ -28,7 +27,7 @@ class WalletViewModel : ViewModel() {
 
     fun updateWallet(seed: String, walletVersion: Long, configUrl: String): Job {
         Log.w("updateWallet", "UpdateWallet")
-        val walletService = ServiceProvider.getWalletService();
+        val walletService = ServiceProvider.getWalletService()
 
         return viewModelScope.launch {
             val transactions = walletService.getTransactionsSuspended(seed, walletVersion, configUrl)

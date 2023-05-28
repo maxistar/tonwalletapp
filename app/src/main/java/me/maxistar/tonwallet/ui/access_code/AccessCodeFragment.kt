@@ -92,9 +92,9 @@ class AccessCodeFragment : Fragment() {
         viewModel.liveReady.observe(viewLifecycleOwner) {
             if (it) {
                 val settingsService = ServiceProvider.getSettingsService()
-                settingsService.storeSecurityKey(context!!, viewModel.code.toString())
+                settingsService.storeSecurityKey(requireContext(), viewModel.code.toString())
 
-                if (settingsService.getUseBiometric(context!!)) {
+                if (settingsService.getUseBiometric(requireContext())) {
                     showBiometric()
                 } else {
                     goToWallet()
@@ -131,7 +131,7 @@ class AccessCodeFragment : Fragment() {
             goToWallet()
         }
         val failureCallback = {
-            ServiceProvider.getSettingsService().setUseBiometric(context!!, false)
+            ServiceProvider.getSettingsService().setUseBiometric(requireContext(), false)
             goToWallet()
         }
         fingerprintService.authenticate(this, successCallback, failureCallback)
@@ -221,7 +221,7 @@ class AccessCodeFragment : Fragment() {
     private fun decorateButton(root: View, buttonId: Int, textId: Int) {
         val button3 = root.findViewById<Button>(buttonId)
         button3.setText(
-            Html.fromHtml(getResources().getString(textId), Html.FROM_HTML_MODE_LEGACY),
+            Html.fromHtml(resources.getString(textId), Html.FROM_HTML_MODE_LEGACY),
             TextView.BufferType.SPANNABLE)
 
     }

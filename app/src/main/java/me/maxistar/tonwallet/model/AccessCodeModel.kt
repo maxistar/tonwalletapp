@@ -9,13 +9,13 @@ class AccessCodeModel {
     var code6: Char? = null
 
     fun setCode(code: String) {
-        code1 = code[0];
-        code2 = code[1];
-        code3 = code[2];
-        code4 = code[3];
+        code1 = code[0]
+        code2 = code[1]
+        code3 = code[2]
+        code4 = code[3]
         if (code.length > 4) {
-            code5 = code[4];
-            code6 = code[5];
+            code5 = code[4]
+            code6 = code[5]
         }
     }
 

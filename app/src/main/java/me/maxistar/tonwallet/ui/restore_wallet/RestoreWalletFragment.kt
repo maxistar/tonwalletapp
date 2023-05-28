@@ -61,7 +61,7 @@ class RestoreWalletFragment : Fragment() {
         image.setAnimation(R.raw.recovery_phrase)
         image.playAnimation()
 
-        setupAutosuggestions(context!!, root)
+        setupAutosuggestions(requireContext(), root)
 
         return root;
     }
@@ -72,10 +72,10 @@ class RestoreWalletFragment : Fragment() {
             val seed = getSeed(view)
             val walletService = ServiceProvider.getWalletService()
             val settingsService = ServiceProvider.getSettingsService()
-            val info = walletService.loadWalletInfo(seed, settingsService.getWalletVersion(context!!), settingsService.getTonConfiguration(context!!))
+            val info = walletService.loadWalletInfo(seed, settingsService.getWalletVersion(requireContext()), settingsService.getTonConfiguration(requireContext()))
 
             if (info.getPublicAddress() !== "") {
-                settingsService.storeWallet(context!!, info.getPublicAddress(), info.getSeed())
+                settingsService.storeWallet(requireContext(), info.getPublicAddress(), info.getSeed())
                 return true
             }
         } catch (e: Throwable) {
