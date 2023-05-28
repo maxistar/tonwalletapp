@@ -12,6 +12,7 @@ class StartScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start_screen)
         val settingsService = ServiceProvider.getSettingsService()
+        settingsService.applyLocale(this)
         if (settingsService.securityKeyStored(this)) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, LockScreenFragment.newInstance())

@@ -2,8 +2,11 @@ package me.maxistar.tonwallet.service
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.util.Log
 import androidx.preference.PreferenceManager
+import java.util.Locale
+
 
 class SettingsService {
 
@@ -77,5 +80,23 @@ class SettingsService {
     fun getUseBiometric(context: Context): Boolean {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
         return sharedPreferences.getBoolean("biometric", false)
+    }
+
+    fun getLanguage(context: Context): String {
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+        val language = sharedPref.getString("language", "") as String;
+        return language
+    }
+    fun applyLocale(context: Context) {
+        val lang = getLanguage(context) as String
+        if ("" == lang) {
+            return  //use system default
+        } else {
+            val locale2 = Locale(lang)
+            Locale.setDefault(locale2)
+            val config2 = Configuration()
+            config2.locale = locale2
+            context.resources.updateConfiguration(config2, null)
+        }
     }
 }

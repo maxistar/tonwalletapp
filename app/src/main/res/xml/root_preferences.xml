@@ -34,6 +34,7 @@
             app:summary="@string/settings__click_to_change_language"
             app:title="@string/settings__language"
             app:dialogTitle="@string/settings__choose_language"
+            app:useSimpleSummaryProvider="true"
             />
 
         <EditTextPreference

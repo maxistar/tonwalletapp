@@ -4,13 +4,17 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageInfo
-import android.content.pm.PackageManager.NameNotFoundException
-import android.os.Build
+import android.content.res.Configuration
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import me.maxistar.tonwallet.service.ServiceProvider
+import me.maxistar.tonwallet.ui.start.StartScreenWalletFragment
+import java.util.Locale
 
 
 class SettingsActivity : AppCompatActivity() {
@@ -64,6 +68,30 @@ class SettingsActivity : AppCompatActivity() {
                 showSeed()
                 true
             }
+
+            val languagePreference = findPreference<Preference>("language")
+            languagePreference?.onPreferenceChangeListener =
+                Preference.OnPreferenceChangeListener { preference, newValue ->
+                    val settingsService = ServiceProvider.getSettingsService()
+
+                    settingsService.applyLocale(requireContext())
+
+                    val locale2 = Locale(settingsService.getLanguage(requireContext()))
+                    Locale.setDefault(locale2)
+                    val config2 = Configuration()
+                    config2.locale = locale2
+
+                    requireContext().getResources()
+                        .updateConfiguration(config2, null)
+
+
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        val intent = Intent(context, SettingsActivity::class.java)
+                        startActivity(intent)
+                    }, 500)
+
+                    return@OnPreferenceChangeListener true
+                }
 
             val pInfo: PackageInfo
             val owner = requireActivity()
