@@ -7,7 +7,7 @@
 
     <string name="ton_wallet">ТОN Кошелек</string>
     <string name="ton_wallet_description">ТОN Кошелек позволяет совершать быстрые и безопасные платежи на основе блокчейна без посредников</string>
-    <string name="ton_wallet_create_wallet">Создать мой кошелек</string>
+    <string name="ton_wallet_create_wallet">Создать новый кошелек</string>
     <string name="ton_wallet_import">Импорт существующего кошелька</string>
 
     <string name="screen2_title">Поздравляем</string>
@@ -220,5 +220,25 @@ write these words down.</string>
     <string name="wallet__your_wallet_address_defaul_value">UQBFz01R2CU7YA8pevUaNIYE
 zi1mRo4cX-r3W2Dwx-WEAoKP</string>
     <string name="wallet__item_storage_fee">-0.000065732 storage fee</string>
+
+    <string name="access_code__4_digit_code">4-х разрядный код</string>
+    <string name="access_code__6_digit_code">6-ти разрядный код</string>
+    <string name="send_form__copy_button">Копировать</string>
+    <string name="wallet__transaction_from">%s от</string>
+    <string name="wallet__transaction_to">%s в</string>
+    <string name="wallet__transaction_html_from"><![CDATA[<span style=\"color:#37A818\">%s<span> от]]></string>
+    <string name="wallet__transaction_html_to"><![CDATA[<span style=\"color:#FE3C30\">%s<span> в]]></string>
+    <string name="biometric_title">Биометрическая авторизация Ton Wallet</string>
+    <string name="biometric_use_pincode">Пин код</string>
+    <string name="settings__about">О программе</string>
+    <string name="settings__version">Версия</string>
+    <string name="settings__about_app">О приложении</string>
+    <string name="settings__just_a_little_fyi">Немного о приложении</string>
+    <string name="setting__warranty_information">Информация о лицензиях</string>
+    <string name="settings__click_to_change_language">выберите, чтобы сменить язык приложения</string>
+    <string name="settings__language">Язык</string>
+    <string name="settings__choose_language">Выберите язык</string>
+    <string name="settings__about_message"><![CDATA[Это простой кошелек TON для Андроид. Чтобы узнать больше зайдите https://maxistar.me<]]></string>
+    <string name="empty" />
 
 </resources>
