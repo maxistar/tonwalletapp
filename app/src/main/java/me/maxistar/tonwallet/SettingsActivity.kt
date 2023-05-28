@@ -9,11 +9,9 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import me.maxistar.tonwallet.service.ServiceProvider
-import me.maxistar.tonwallet.ui.start.StartScreenWalletFragment
 import java.util.Locale
 
 

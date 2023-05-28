@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class CreateWalletViewModel : ViewModel() {
 
-    var newWalletWords: String = ""
+    private var newWalletWords: String = ""
 
     var newWalletAddress: String = ""
 

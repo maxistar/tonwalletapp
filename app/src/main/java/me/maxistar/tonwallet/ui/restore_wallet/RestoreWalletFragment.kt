@@ -121,8 +121,8 @@ class RestoreWalletFragment : Fragment() {
             .setMessage(R.string.import_wallet__error_dialog__text)
             .setIcon(R.drawable.ic_launcher_background)
             .setPositiveButton(
-                R.string.general__ok,
-                { dialog, whichButton -> nothingToDo() })
+                R.string.general__ok
+            ) { dialog, whichButton -> nothingToDo() }
             .show()
     }
 

@@ -1,7 +1,6 @@
 package me.maxistar.tonwallet.ui.access_code
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.LifecycleOwner
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test

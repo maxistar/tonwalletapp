@@ -1,35 +1,31 @@
 <resources>
     <string name="app_name">Ton Wallet</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_wallet">Export</string>
 
     <string name="ton_wallet">TON Wallet</string>
-    <string name="ton_wallet_description">TON Wallet allows you to make fast and secure blockchain-based payments without intermediaries.</string>
-    <string name="ton_wallet_create_wallet">Create my wallet</string>
-    <string name="ton_wallet_import">Import existing wallet</string>
+    <string name="ton_wallet_description">Mit TON Wallet können Sie schnelle und sichere Blockchain-basierte Zahlungen ohne Zwischenhändler durchführen.</string>
+    <string name="ton_wallet_create_wallet">Erstelle meine Brieftasche</string>
+    <string name="ton_wallet_import">Vorhandenes Wallet importieren</string>
 
-    <string name="screen2_title">Congratulations</string>
-    <string name="screen2_text">Your TON Wallet has just been created.\nOnly you control it.\n\nTo be able to always have access to it, please write down secret words and set up a secure passcode.</string>
-    <string name="screen2_button">Proceed</string>
+    <string name="screen2_title">Glückwunsch</string>
+    <string name="screen2_text">Ihr TON-Wallet wurde gerade erstellt.\Nur Sie haben die Kontrolle darüber.\nund\nUm immer Zugriff darauf zu haben, notieren Sie sich bitte geheime Wörter und richten Sie einen sicheren Passcode ein.</string>
+    <string name="screen2_button">Fortfahren</string>
 
     <string name="success_screen_title">Perfekt!</string>
-    <string name="success_screen_text">Now set up a passcode to secure transactions.</string>
-    <string name="success_screen_bio">Enable Biometric Auth</string>
-    <string name="success_screen_button">Set a Passcode</string>
-    <string name="success_screen_use_fingerprint">Enable Biometric Auth</string>
+    <string name="success_screen_text">Richten Sie nun einen Passcode ein, um Transaktionen zu sichern.</string>
+    <string name="success_screen_bio">Biometrische Authentifizierung aktivieren</string>
+    <string name="success_screen_button">Legen Sie einen Passcode fest</string>
+    <string name="success_screen_use_fingerprint">Biometrische Authentifizierung aktivieren</string>
 
-    <string name="wallet_title">Your Recovery Phrase</string>
-    <string name="wallet_comment">Write down these 24 words in this exact order and keep them in a secure place. Do not share this list with anyone. If you lose it, you will irrevocably lose access to your TON account.</string>
-    <string name="wallet_done">Done</string>
+    <string name="wallet_title">Ihr Wiederherstellungssatz</string>
+    <string name="wallet_comment">Schreiben Sie diese 24 Wörter in genau dieser Reihenfolge auf und bewahren Sie sie an einem sicheren Ort auf. Teilen Sie diese Liste mit niemandem. Bei Verlust verlieren Sie unwiderruflich den Zugriff auf Ihr TON-Konto.</string>
+    <string name="wallet_done">Erledigt</string>
 
 
-    <string name="menu_create_new_wallet">Create new wallet</string>
-    <string name="menu_settings">Settings</string>
+    <string name="menu_create_new_wallet">Neues Wallet erstellen</string>
+    <string name="menu_settings">Einstellungen</string>
     <string name="menu_quit">Verlassen</string>
     <string name="menu_scan">Scan</string>
-    <string name="menu_refresh">Refresh</string>
+    <string name="menu_refresh">Aktualisierung</string>
 
     <string name="create_wallet_wordNumber_0">1</string>
     <string name="create_wallet_wordNumber_1">2</string>
@@ -57,8 +53,6 @@
     <string name="create_wallet_wordNumber_23">24</string>
 
     <string name="create_wallet_wordFiller">xxxxxx</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <string name="create_wallet_confirmation_title">Sure done?</string>
     <string name="create_wallet_confirmation_text">You didn’t have enough time to

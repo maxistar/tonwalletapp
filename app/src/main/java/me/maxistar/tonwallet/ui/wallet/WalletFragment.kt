@@ -180,7 +180,7 @@ open class WalletFragment : Fragment() {
     ) :
         ArrayAdapter<TransactionDisplayItem?>(context, textViewResourceId, values_) {
 
-        val values = values_
+        private val values = values_
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
             var v = convertView
             if (v == null) {

@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 import me.maxistar.tonwallet.service.ServiceProvider
 
 class SendStatusViewModel : ViewModel() {
-    var operationStatus: String = "new"
+    private var operationStatus: String = "new"
 
     private val _text = MutableLiveData<String>().apply {
         value = operationStatus

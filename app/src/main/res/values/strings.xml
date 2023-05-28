@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">Ton Wallet</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_wallet">Export</string>
 
     <string name="ton_wallet">TON Wallet</string>
     <string name="ton_wallet_description">TON Wallet allows you to make fast and secure blockchain-based payments without intermediaries.</string>
@@ -57,8 +53,6 @@
     <string name="create_wallet_wordNumber_23">24</string>
 
     <string name="create_wallet_wordFiller">xxxxxx</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <string name="create_wallet_confirmation_title">Sure done?</string>
     <string name="create_wallet_confirmation_text">You didn’t have enough time to

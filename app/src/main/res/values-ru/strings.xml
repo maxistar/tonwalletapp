@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">ТОN Кошелек</string>
-    <string name="title_home">Дом</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Уведомления</string>
-    <string name="title_wallet">Экспорт</string>
 
     <string name="ton_wallet">ТОN Кошелек</string>
     <string name="ton_wallet_description">ТОN Кошелек позволяет совершать быстрые и безопасные платежи на основе блокчейна без посредников</string>
@@ -57,8 +53,7 @@
     <string name="create_wallet_wordNumber_23">24</string>
 
     <string name="create_wallet_wordFiller">xxxxxx</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+
 
     <string name="create_wallet_confirmation_title">Готово ?</string>
     <string name="create_wallet_confirmation_text">You didn’t have enough time to

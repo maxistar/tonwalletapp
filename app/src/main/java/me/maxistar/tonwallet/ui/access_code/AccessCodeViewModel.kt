@@ -1,15 +1,13 @@
 package me.maxistar.tonwallet.ui.access_code
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import me.maxistar.tonwallet.model.AccessCodeModel
-import me.maxistar.tonwallet.model.TransactionItem
 
 class AccessCodeViewModel : ViewModel() {
     var code: AccessCodeModel = AccessCodeModel()
-    var codeRepeat: AccessCodeModel = AccessCodeModel()
+    private var codeRepeat: AccessCodeModel = AccessCodeModel()
 
     private var enterMode: Boolean = true
 
@@ -65,18 +63,25 @@ class AccessCodeViewModel : ViewModel() {
                 }
                 return
             }
-            if (step == 0) {
-                code.code1 = char
-            } else if (step == 1) {
-                code.code2 = char
-            } else if (step == 2) {
-                code.code3 = char
-            } else if (step == 3) {
-                code.code4 = char
-            } else if (step == 4) {
-                code.code5 = char
-            } else {
-                code.code6 = char
+            when (step) {
+                0 -> {
+                    code.code1 = char
+                }
+                1 -> {
+                    code.code2 = char
+                }
+                2 -> {
+                    code.code3 = char
+                }
+                3 -> {
+                    code.code4 = char
+                }
+                4 -> {
+                    code.code5 = char
+                }
+                else -> {
+                    code.code6 = char
+                }
             }
             step++
             _liveStep.value = step
@@ -94,18 +99,25 @@ class AccessCodeViewModel : ViewModel() {
                 }
                 return
             }
-            if (step == 0) {
-                codeRepeat.code1 = char
-            } else if (step == 1) {
-                codeRepeat.code2 = char
-            } else if (step == 2) {
-                codeRepeat.code3 = char
-            } else if (step == 3) {
-                codeRepeat.code4 = char
-            } else if (step == 4) {
-                codeRepeat.code5 = char
-            } else {
-                codeRepeat.code6 = char
+            when (step) {
+                0 -> {
+                    codeRepeat.code1 = char
+                }
+                1 -> {
+                    codeRepeat.code2 = char
+                }
+                2 -> {
+                    codeRepeat.code3 = char
+                }
+                3 -> {
+                    codeRepeat.code4 = char
+                }
+                4 -> {
+                    codeRepeat.code5 = char
+                }
+                else -> {
+                    codeRepeat.code6 = char
+                }
             }
             step++
             _liveStep.value = step
