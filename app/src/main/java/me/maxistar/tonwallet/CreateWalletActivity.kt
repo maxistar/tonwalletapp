@@ -5,6 +5,7 @@ import android.os.Bundle
 import me.maxistar.tonwallet.service.ServiceProvider
 import me.maxistar.tonwallet.ui.create_wallet.CreateWalletFragment
 import me.maxistar.tonwallet.ui.create_wallet.CreateWalletStartFragment
+import me.maxistar.tonwallet.ui.create_wallet.ShowWalletFragment
 
 class CreateWalletActivity : AppCompatActivity() {
 
@@ -16,7 +17,7 @@ class CreateWalletActivity : AppCompatActivity() {
         if (scanFlag) {
             val settingsService = ServiceProvider.getSettingsService()
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, CreateWalletFragment.newInstance(
+                .replace(R.id.container, ShowWalletFragment.newInstance(
                     settingsService.getWalletSecretPhrase(this),
                     settingsService.getWalletAddress(this)
                 ))

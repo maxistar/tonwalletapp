@@ -27,6 +27,15 @@
             app:title="@string/settings__list_of_tokens"
             app:useSimpleSummaryProvider="true" />
 
+        <ListPreference
+            app:entries="@array/language_names"
+            app:entryValues="@array/language_values"
+            app:key="language"
+            app:summary="@string/settings__click_to_change_language"
+            app:title="@string/settings__language"
+            app:dialogTitle="@string/settings__choose_language"
+            />
+
         <EditTextPreference
             app:key="configurl"
             app:title="@string/settings__config_url"
@@ -55,6 +64,13 @@
             app:key="delete_wallet"
             app:title="@string/settings__delete_wallet"
             app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        app:title="@string/settings__about">
+        <Preference
+            app:key="version_name"
+            app:summary=""
+            app:title="@string/settings__version" />
     </PreferenceCategory>
 
 </PreferenceScreen>

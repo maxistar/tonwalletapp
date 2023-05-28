@@ -231,5 +231,14 @@ zi1mRo4cX-r3W2Dwx-WEAoKP</string>
     <string name="wallet__transaction_html_to"><![CDATA[<span style=\"color:#FE3C30\">%s<span> to]]></string>
     <string name="biometric_title">Biometric login for Ton Wallet</string>
     <string name="biometric_use_pincode">Use pin code</string>
+    <string name="settings__about">About</string>
+    <string name="settings__version">Version</string>
+    <string name="settings__about_app">About App</string>
+    <string name="settings__just_a_little_fyi">Just a little FYI</string>
+    <string name="setting__warranty_information">Warranty Information</string>
+    <string name="settings__click_to_change_language">сlick to change language of interface</string>
+    <string name="settings__language">Language</string>
+    <string name="settings__choose_language">Choose Language</string>
+    <string name="settings__about_message"><![CDATA[This is Simple TON Wallet for Android. To get more information visit https://maxistar.me<]]></string>
 
 </resources>

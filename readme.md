@@ -67,12 +67,18 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 
 ![](screenshots/Screenshot_2023-05-26_at_16.33.49.png)
 
+## What is not done
+
+- transactions comments are not being displayed. Comment is not part of transaction Class in tonutils-go this should be implemented there first
+- there is a but in tonutils-go which is not showing some transactions
+
+
 
 ### Todo:
 
-- [ ] security code form
+- [x] security code form
 - [ ] settings pages
-  - [ ] create dedicated page for secret code 
+  - [x] create dedicated page for secret code 
   - [ ] create set language
 - [ ] wallet activity
   - [ ] store transaction in case there is no internet

@@ -3,9 +3,10 @@ package me.maxistar.tonwallet
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.pm.PackageInfo
+import android.content.pm.PackageManager.NameNotFoundException
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -63,6 +64,12 @@ class SettingsActivity : AppCompatActivity() {
                 showSeed()
                 true
             }
+
+            val pInfo: PackageInfo
+            val owner = activity!!
+            pInfo = owner.packageManager.getPackageInfo(owner.packageName, 0)
+            findPreference<Preference>("version_name")?.summary = pInfo.versionName
+
         }
 
         private fun showSeed() {
@@ -97,3 +104,5 @@ class SettingsActivity : AppCompatActivity() {
 
     }
 }
+
+
