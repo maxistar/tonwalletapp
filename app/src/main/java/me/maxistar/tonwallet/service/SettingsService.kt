@@ -88,7 +88,7 @@ class SettingsService {
         return language
     }
     fun applyLocale(context: Context) {
-        val lang = getLanguage(context) as String
+        val lang = getLanguage(context)
         if ("" == lang) {
             return  //use system default
         } else {

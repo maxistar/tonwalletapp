@@ -69,7 +69,7 @@ class SettingsActivity : AppCompatActivity() {
 
             val languagePreference = findPreference<Preference>("language")
             languagePreference?.onPreferenceChangeListener =
-                Preference.OnPreferenceChangeListener { preference, newValue ->
+                Preference.OnPreferenceChangeListener { _, _ ->
                     val settingsService = ServiceProvider.getSettingsService()
 
                     settingsService.applyLocale(requireContext())
@@ -116,7 +116,7 @@ class SettingsActivity : AppCompatActivity() {
                 .setMessage(R.string.User_Data_Is_About_To_Delete)
                 .setPositiveButton(
                     R.string.general_Yes,
-                    DialogInterface.OnClickListener { dialog, whichButton -> resetWallet() })
+                    DialogInterface.OnClickListener { _, _ -> resetWallet() })
                 .setNegativeButton(R.string.general_No, null).show()
         }
 

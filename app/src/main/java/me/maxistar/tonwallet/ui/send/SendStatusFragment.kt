@@ -42,9 +42,9 @@ class SendStatusFragment : Fragment() {
         val settingsService = ServiceProvider.getSettingsService();
 
         viewModel.sendTransaction(
-            settingsService.getWalletSecretPhrase(context!!),
-            settingsService.getWalletVersion(context!!),
-            settingsService.getTonConfiguration(context!!),
+            settingsService.getWalletSecretPhrase(requireContext()),
+            settingsService.getWalletVersion(requireContext()),
+            settingsService.getTonConfiguration(requireContext()),
             recipient!!,
             amount!!.toDouble(),
             comment!!
