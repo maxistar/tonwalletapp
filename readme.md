@@ -16,6 +16,8 @@ An application was developed and compiled using Android Studio 2022.2.1 Patch 1
 
 In order to compile aar library golang installation is needed. The complied version is included to source code.
 
+The latest compiled version is uploaded [here](https://maxistar.ru/media/files/app-debug.apk)
+
 ## Gomobile
 
 Gomobile is a tool for building and running mobile apps written in Go.
@@ -99,10 +101,6 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
 ### Todo:
 
 - [x] security code form
-- [ ] settings pages
-  - [x] create dedicated page for secret code 
-  - [x] create set language
-  - [ ] load language during startup
 - [ ] wallet activity
   - [ ] store transaction in case there is no internet
   - [ ] can we check the network in background to see if money arrived?
@@ -110,12 +108,9 @@ address is EQB9sKy3ziopLGzwS8sKtz1QIt0EiPfPVSf30A5UrXHVvtjc
   - [ ] can we better format icons on the buttons?
   - [ ] for some wallets not all transactions are being shown
   - [ ] storage fee and comments are not being shown
-- [ ] send dialog
-  - [x] use paste icon
 - [ ] receive dialog
   - [ ] make fonts as provided 
 - [ ] security
-  - [x] do not show secret phrase to logs
   - [ ] can se use better method to store the wallet? e.g. secret phrase?
   - [ ] can we cipher it in the application?
 - [ ] link for the external intents as described in the requirements
